@@ -1,0 +1,194 @@
+﻿[
+    {
+        "scale":  0.38125,
+        "name":  "punch-start",
+        "baseline":  128,
+        "crop":  [
+                     76,
+                     33,
+                     173,
+                     267
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.38125,
+        "name":  "punch-contact",
+        "baseline":  128,
+        "crop":  [
+                     354,
+                     35,
+                     229,
+                     264
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.38125,
+        "name":  "elbow-start",
+        "baseline":  128,
+        "crop":  [
+                     703,
+                     36,
+                     195,
+                     263
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.38125,
+        "name":  "elbow-contact",
+        "baseline":  128,
+        "crop":  [
+                     1009,
+                     33,
+                     198,
+                     267
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.38125,
+        "name":  "kick-start",
+        "baseline":  128,
+        "crop":  [
+                     110,
+                     337,
+                     171,
+                     292
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.38125,
+        "name":  "kick-contact",
+        "baseline":  128,
+        "crop":  [
+                     347,
+                     346,
+                     261,
+                     283
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.38125,
+        "name":  "kick-recover",
+        "baseline":  128,
+        "crop":  [
+                     712,
+                     340,
+                     171,
+                     289
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.38125,
+        "name":  "taunt",
+        "baseline":  128,
+        "crop":  [
+                     1026,
+                     342,
+                     170,
+                     286
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.38125,
+        "name":  "blue-start",
+        "baseline":  128,
+        "crop":  [
+                     29,
+                     666,
+                     243,
+                     267
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.38125,
+        "name":  "blue-contact",
+        "baseline":  128,
+        "crop":  [
+                     323,
+                     667,
+                     270,
+                     267
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.38125,
+        "name":  "red-start",
+        "baseline":  128,
+        "crop":  [
+                     658,
+                     666,
+                     235,
+                     263
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.38125,
+        "name":  "red-contact",
+        "baseline":  128,
+        "crop":  [
+                     950,
+                     665,
+                     276,
+                     268
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.38125,
+        "name":  "purple-low",
+        "baseline":  128,
+        "crop":  [
+                     57,
+                     984,
+                     211,
+                     246
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.38125,
+        "name":  "purple-charge",
+        "baseline":  128,
+        "crop":  [
+                     327,
+                     974,
+                     278,
+                     255
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.38125,
+        "name":  "purple-contact",
+        "baseline":  128,
+        "crop":  [
+                     628,
+                     975,
+                     320,
+                     255
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.38125,
+        "name":  "purple-recover",
+        "baseline":  128,
+        "crop":  [
+                     1021,
+                     967,
+                     161,
+                     270
+                 ],
+        "canvas":  128
+    }
+]

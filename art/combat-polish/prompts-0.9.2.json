@@ -1,0 +1,49 @@
+[
+  {
+    "character": "NarutoShippuden",
+    "tool": "built-in image_gen",
+    "transparent_background": true,
+    "reference": "img/NarutoShippuden/combat/poses/stance.png",
+    "prompt": "Production game sprite atlas, use reference as appearance/style reference. Naruto Shippuden chibi orange black outfit. Exactly 16 separate full body sprites in aligned 4x4 equal grid on genuine transparent alpha background, NO text labels grid shadows. Large transparent gutters. All face LEFT. Same character proportions scale and feet baseline each cell, complete weapons and limbs inside each cell. Original hand drawn crisp outlines flat shading matching reference. Row1: punch anticipation; punch extension contact; pull fist recovery; knee raised kick windup. Row2: extended forward kick contact; kick recovery; low crouch jump windup; airborne forward kick. Row3: holding blue Rasengan ball charge low; ball charge raised arm; forward run Rasengan hand thrust; thrust recoil recovery. Row4: kunai hand drawn back windup; kunai release hand extended no attached weapon; clone hand sign; confident hands behind head victory. These are animation body poses not VFX, only small blue hand orb on Rasengan. Keep outfit and identity constant. No copied anime frames, no gore. Save image for local project.",
+    "output": "art/combat-polish/NarutoShippuden/0.9.2/atlas.png",
+    "runtime_frames": "img/NarutoShippuden/combat/polish/"
+  },
+  {
+    "character": "SasukeShippuden",
+    "tool": "built-in image_gen",
+    "transparent_background": true,
+    "reference": "img/SasukeShippuden/combat/poses/stance.png",
+    "prompt": "Production game sprite atlas, reference is appearance/style. Sasuke Shippuden chibi black hair purple rope belt. EXACTLY 16 separate full body poses aligned 4x4 equal grid genuine transparent alpha, no text/grid/shadows. Large gutters. All face LEFT, identical proportions/scale/baseline each cell, whole weapon and limbs fully contained. Original crisp dark outline flat-shaded drawing matching reference. Row1: short sword drawn back windup; leftward horizontal sword swing contact; sword recoil; second sword backswing raised. Row2: second reverse swing blade left contact; knee raised kick windup; forward extended kick contact; kick recovery. Row3: Chidori blue lightning small energy at hand charging crouch; charge arm drawn back; fast forward lunge extended Chidori hand; lunge recoil. Row4: shuriken windup holding shuriken; release hand extended no weapon attached; fire breath preparation hands sign; fire breath release face and mouth left (no large detached flames). Keep outfit identity fixed. No VFX except small lightning at hand, no gore/copied anime frames.",
+    "output": "art/combat-polish/SasukeShippuden/0.9.2/atlas.png",
+    "runtime_frames": "img/SasukeShippuden/combat/polish/",
+    "cleanup_prompt": "Edit target is this entire 4x4 Sasuke animation sheet. Remove ONLY the dark gray backdrop and all broad light glows behind the figures. Output actual fully transparent alpha everywhere outside the 16 character figures, no opaque backdrop or checkerboard. Preserve each character pose, outfit, grid position, exact scale, swords and small blue lightning touching hand. Keep separate 16 sprites and their crisp edges. No rearrangement or new drawings."
+  },
+  {
+    "character": "GojoSatoru",
+    "tool": "built-in image_gen",
+    "transparent_background": true,
+    "reference": "img/GojoSatoru/combat/poses/stance.png",
+    "prompt": "Production game animation sprite atlas. Reference appearance/style: Gojo chibi white hair black blindfold black uniform. EXACTLY 16 full body separate sprites aligned 4x4 grid genuine transparent alpha, no text grid shadows. Large empty gutters. All face LEFT consistent body proportions scale and baseline each cell complete limbs inside cells. Crisp outlined flat shaded original drawing. Row1: relaxed punch windup; left extended punch contact; elbow drawn back windup; left elbow strike contact. Row2: raised knee kick windup; extended left kick contact; kick recovery; confident taunt hands behind head. Row3: Blue pull preparation hand raised tiny blue orb; Blue pull released curling hand toward self; Red push anticipation tiny red orb; Red push contact palm facing left. Row4: Purple special crouched fingers charging small purple orb; purple special fingers aimed forward left; purple release hand thrust left; purple recoil relaxed recovery. Preserve same appearance all sprites. No large VFX backgrounds no gore no copied anime frames.",
+    "output": "art/combat-polish/GojoSatoru/0.9.2/atlas.png",
+    "runtime_frames": "img/GojoSatoru/combat/polish/"
+  },
+  {
+    "character": "SukunaRyomen",
+    "tool": "built-in image_gen",
+    "transparent_background": true,
+    "reference": "img/SukunaRyomen/combat/poses/stance.png",
+    "prompt": "Production animation sprite atlas. Reference appearance/style Sukuna chibi pink hair face markings white kimono dark belt. EXACTLY 16 separate full body sprites aligned 4x4 grid genuine transparent alpha, no text/grid/shadows. All face LEFT consistent proportions scale feet baseline each cell. Large transparent gutters full limbs contained. Crisp outlines flat shading matching reference. Row1: fist drawn back anticipation; strong forward punch contact; two fingers raised slash windup; two finger slicing leftward gesture contact. Row2: heavy palm strike crouch anticipation; extended left palm heavy finisher contact; heavy recoil; aggressive forward dash. Row3: cursed slash hands held inward anticipation; slicing gesture extended left; second multi-slash hand drawn back; second multi-slash hand sweep left. Row4: fire arrow preparation crouch; fire bow drawn back tiny orange energy hand; release fire arrow hand extended left (no detached projectile); confident dominant victory. No large VFX gore blood or copied anime frames. Outfit and face markings fixed.",
+    "output": "art/combat-polish/SukunaRyomen/0.9.2/atlas.png",
+    "runtime_frames": "img/SukunaRyomen/combat/polish/"
+  },
+  {
+    "character": "AstaBlackClover",
+    "tool": "built-in image_gen",
+    "transparent_background": true,
+    "reference": "img/AstaBlackClover/combat/poses/stance.png",
+    "prompt": "Production game sprite animation atlas. Reference appearance/style Asta chibi gray hair black headband green eyes black cloak black tunic huge dark slab sword. EXACTLY 16 full body separate sprites aligned 4x4 grid genuine transparent alpha no labels grid shadows. All face LEFT consistent proportions scale feet baseline. LARGE gutters complete huge sword and limbs inside each cell, sword physically gripped in hand. Crisp dark outlines flat shaded original drawing. Row1: light sword windup rear; forward left sword swing contact; back swing windup; back swing contact blade left low. Row2: heavy sword raised high anticipation; heavy sword mid descending swing; sword floor impact contact heavy stance; heavy recovery kneeling sword low. Row3: dash sword windup; forward lunge dash sword contact; jumping sword preparation; airborne left down sword slash contact. Row4: anti magic charge sword held in both hands tiny dark aura; anti magic charged forward sword thrust contact; guarded broad sword parry; energetic victory fist raised with sword resting in other hand. Sword appears in all poses attached to hand. Match reference outfit identity all frames, no floating weapon, no detached VFX no blood gore or copied anime frames.",
+    "output": "art/combat-polish/AstaBlackClover/0.9.2/atlas.png",
+    "runtime_frames": "img/AstaBlackClover/combat/polish/",
+    "cleanup_prompt": "Edit target is this entire Asta 4x4 animation sprite sheet. Remove ONLY the dark gray background and broad diffuse light glow. Make all empty space actual transparent alpha (zero alpha), no backdrop, checkerboard or shadow. Preserve all 16 full body sprites exact pose position proportions outfit giant sword attached to hands, same colors and layout. Keep small purple anti magic details around last row hands but eliminate background. No rearrangement, no new characters, no text."
+  }
+]

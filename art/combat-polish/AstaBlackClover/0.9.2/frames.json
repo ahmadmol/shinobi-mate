@@ -1,0 +1,194 @@
+﻿[
+    {
+        "scale":  0.2982885085574572,
+        "name":  "sword-start",
+        "baseline":  128,
+        "crop":  [
+                     107,
+                     18,
+                     268,
+                     242
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.2982885085574572,
+        "name":  "sword-contact",
+        "baseline":  128,
+        "crop":  [
+                     341,
+                     63,
+                     409,
+                     197
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.2982885085574572,
+        "name":  "backswing-start",
+        "baseline":  128,
+        "crop":  [
+                     859,
+                     51,
+                     282,
+                     209
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.2982885085574572,
+        "name":  "backswing-contact",
+        "baseline":  128,
+        "crop":  [
+                     1154,
+                     79,
+                     336,
+                     184
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.2982885085574572,
+        "name":  "heavy-start",
+        "baseline":  128,
+        "crop":  [
+                     104,
+                     281,
+                     295,
+                     253
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.2982885085574572,
+        "name":  "heavy-swing",
+        "baseline":  128,
+        "crop":  [
+                     473,
+                     271,
+                     283,
+                     263
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.2982885085574572,
+        "name":  "heavy-contact",
+        "baseline":  128,
+        "crop":  [
+                     794,
+                     359,
+                     305,
+                     184
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.2982885085574572,
+        "name":  "heavy-recover",
+        "baseline":  128,
+        "crop":  [
+                     1176,
+                     361,
+                     321,
+                     181
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.2982885085574572,
+        "name":  "dash-start",
+        "baseline":  128,
+        "crop":  [
+                     79,
+                     600,
+                     300,
+                     176
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.2982885085574572,
+        "name":  "dash-contact",
+        "baseline":  128,
+        "crop":  [
+                     404,
+                     598,
+                     403,
+                     179
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.2982885085574572,
+        "name":  "jump-start",
+        "baseline":  128,
+        "crop":  [
+                     891,
+                     544,
+                     211,
+                     224
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.2982885085574572,
+        "name":  "jump-contact",
+        "baseline":  128,
+        "crop":  [
+                     1187,
+                     552,
+                     312,
+                     229
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.2982885085574572,
+        "name":  "anti-start",
+        "baseline":  128,
+        "crop":  [
+                     42,
+                     792,
+                     319,
+                     212
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.2982885085574572,
+        "name":  "anti-contact",
+        "baseline":  128,
+        "crop":  [
+                     391,
+                     816,
+                     406,
+                     188
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.2982885085574572,
+        "name":  "parry",
+        "baseline":  128,
+        "crop":  [
+                     836,
+                     784,
+                     257,
+                     218
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.2982885085574572,
+        "name":  "new-victory",
+        "baseline":  128,
+        "crop":  [
+                     1156,
+                     774,
+                     318,
+                     231
+                 ],
+        "canvas":  128
+    }
+]

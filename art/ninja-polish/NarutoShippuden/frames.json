@@ -1,0 +1,578 @@
+[
+  {
+    "name": "idle",
+    "sourceCell": 0,
+    "crop": [
+      121,
+      9,
+      293,
+      211
+    ],
+    "bodyPivotSource": 179.0,
+    "scale": 0.5818181818181818,
+    "canvas": 288,
+    "anchor": [
+      144,
+      288
+    ],
+    "authoredFacing": "left",
+    "bounds": [
+      110,
+      170,
+      210,
+      288
+    ]
+  },
+  {
+    "name": "approach",
+    "sourceCell": 1,
+    "crop": [
+      94,
+      35,
+      310,
+      209
+    ],
+    "bodyPivotSource": 185.64000000000001,
+    "scale": 0.5565217391304348,
+    "canvas": 288,
+    "anchor": [
+      144,
+      288
+    ],
+    "authoredFacing": "left",
+    "bounds": [
+      93,
+      191,
+      213,
+      288
+    ]
+  },
+  {
+    "name": "punch-start",
+    "sourceCell": 2,
+    "crop": [
+      97,
+      12,
+      303,
+      212
+    ],
+    "bodyPivotSource": 189.21,
+    "scale": 0.48484848484848486,
+    "canvas": 288,
+    "anchor": [
+      144,
+      288
+    ],
+    "authoredFacing": "left",
+    "bounds": [
+      99,
+      191,
+      199,
+      288
+    ]
+  },
+  {
+    "name": "punch-contact",
+    "sourceCell": 3,
+    "crop": [
+      76,
+      11,
+      293,
+      212
+    ],
+    "bodyPivotSource": 200.48000000000002,
+    "scale": 0.5925925925925926,
+    "canvas": 288,
+    "anchor": [
+      144,
+      288
+    ],
+    "authoredFacing": "left",
+    "bounds": [
+      70,
+      169,
+      199,
+      288
+    ]
+  },
+  {
+    "name": "punch-recover",
+    "sourceCell": 4,
+    "crop": [
+      113,
+      0,
+      300,
+      204
+    ],
+    "bodyPivotSource": 179.0,
+    "scale": 0.5663716814159292,
+    "canvas": 288,
+    "anchor": [
+      144,
+      288
+    ],
+    "authoredFacing": "left",
+    "bounds": [
+      107,
+      172,
+      213,
+      288
+    ]
+  },
+  {
+    "name": "kick-start",
+    "sourceCell": 5,
+    "crop": [
+      122,
+      0,
+      291,
+      203
+    ],
+    "bodyPivotSource": 171.35999999999999,
+    "scale": 0.5981308411214953,
+    "canvas": 288,
+    "anchor": [
+      144,
+      288
+    ],
+    "authoredFacing": "left",
+    "bounds": [
+      114,
+      167,
+      215,
+      288
+    ]
+  },
+  {
+    "name": "kick-contact",
+    "sourceCell": 6,
+    "crop": [
+      68,
+      0,
+      311,
+      204
+    ],
+    "bodyPivotSource": 199.92000000000002,
+    "scale": 0.5871559633027523,
+    "canvas": 288,
+    "anchor": [
+      144,
+      288
+    ],
+    "authoredFacing": "left",
+    "bounds": [
+      67,
+      168,
+      210,
+      288
+    ]
+  },
+  {
+    "name": "kick-recover",
+    "sourceCell": 7,
+    "crop": [
+      113,
+      0,
+      304,
+      210
+    ],
+    "bodyPivotSource": 182.58,
+    "scale": 0.5871559633027523,
+    "canvas": 288,
+    "anchor": [
+      144,
+      288
+    ],
+    "authoredFacing": "left",
+    "bounds": [
+      103,
+      165,
+      215,
+      288
+    ]
+  },
+  {
+    "name": "jump-start",
+    "sourceCell": 8,
+    "crop": [
+      110,
+      3,
+      292,
+      177
+    ],
+    "bodyPivotSource": 175.42,
+    "scale": 0.5871559633027523,
+    "canvas": 288,
+    "anchor": [
+      144,
+      288
+    ],
+    "authoredFacing": "left",
+    "bounds": [
+      106,
+      186,
+      213,
+      288
+    ]
+  },
+  {
+    "name": "jump-contact",
+    "sourceCell": 9,
+    "crop": [
+      83,
+      0,
+      316,
+      172
+    ],
+    "bodyPivotSource": 182.07,
+    "scale": 0.6213592233009708,
+    "canvas": 288,
+    "anchor": [
+      144,
+      288
+    ],
+    "authoredFacing": "left",
+    "bounds": [
+      82,
+      181,
+      227,
+      288
+    ]
+  },
+  {
+    "name": "rasengan-low",
+    "sourceCell": 10,
+    "crop": [
+      125,
+      0,
+      306,
+      178
+    ],
+    "bodyPivotSource": 182.07,
+    "scale": 0.5565217391304348,
+    "canvas": 288,
+    "anchor": [
+      144,
+      288
+    ],
+    "authoredFacing": "left",
+    "bounds": [
+      112,
+      189,
+      213,
+      288
+    ]
+  },
+  {
+    "name": "rasengan-charge",
+    "sourceCell": 11,
+    "crop": [
+      81,
+      0,
+      314,
+      179
+    ],
+    "bodyPivotSource": 189.74,
+    "scale": 0.5614035087719298,
+    "canvas": 288,
+    "anchor": [
+      144,
+      288
+    ],
+    "authoredFacing": "left",
+    "bounds": [
+      83,
+      188,
+      214,
+      288
+    ]
+  },
+  {
+    "name": "rasengan-contact",
+    "sourceCell": 12,
+    "crop": [
+      39,
+      0,
+      329,
+      173
+    ],
+    "bodyPivotSource": 182.58,
+    "scale": 0.5818181818181818,
+    "canvas": 288,
+    "anchor": [
+      144,
+      288
+    ],
+    "authoredFacing": "left",
+    "bounds": [
+      60,
+      187,
+      229,
+      288
+    ]
+  },
+  {
+    "name": "rasengan-recover",
+    "sourceCell": 13,
+    "crop": [
+      108,
+      0,
+      302,
+      184
+    ],
+    "bodyPivotSource": 178.5,
+    "scale": 0.5714285714285714,
+    "canvas": 288,
+    "anchor": [
+      144,
+      288
+    ],
+    "authoredFacing": "left",
+    "bounds": [
+      104,
+      183,
+      215,
+      288
+    ]
+  },
+  {
+    "name": "kunai-start",
+    "sourceCell": 14,
+    "crop": [
+      110,
+      0,
+      322,
+      175
+    ],
+    "bodyPivotSource": 185.64000000000001,
+    "scale": 0.48484848484848486,
+    "canvas": 288,
+    "anchor": [
+      144,
+      288
+    ],
+    "authoredFacing": "left",
+    "bounds": [
+      107,
+      203,
+      210,
+      288
+    ]
+  },
+  {
+    "name": "kunai-contact",
+    "sourceCell": 15,
+    "crop": [
+      74,
+      0,
+      315,
+      167
+    ],
+    "bodyPivotSource": 189.74,
+    "scale": 0.5614035087719298,
+    "canvas": 288,
+    "anchor": [
+      144,
+      288
+    ],
+    "authoredFacing": "left",
+    "bounds": [
+      79,
+      194,
+      214,
+      288
+    ]
+  },
+  {
+    "name": "shuriken-start",
+    "sourceCell": 16,
+    "crop": [
+      89,
+      0,
+      304,
+      173
+    ],
+    "bodyPivotSource": 189.74,
+    "scale": 0.5517241379310345,
+    "canvas": 288,
+    "anchor": [
+      144,
+      288
+    ],
+    "authoredFacing": "left",
+    "bounds": [
+      88,
+      193,
+      207,
+      288
+    ]
+  },
+  {
+    "name": "shuriken-contact",
+    "sourceCell": 17,
+    "crop": [
+      73,
+      0,
+      301,
+      170
+    ],
+    "bodyPivotSource": 185.64000000000001,
+    "scale": 0.5871559633027523,
+    "canvas": 288,
+    "anchor": [
+      144,
+      288
+    ],
+    "authoredFacing": "left",
+    "bounds": [
+      78,
+      188,
+      212,
+      288
+    ]
+  },
+  {
+    "name": "clone-sign",
+    "sourceCell": 18,
+    "crop": [
+      119,
+      0,
+      301,
+      173
+    ],
+    "bodyPivotSource": 185.64000000000001,
+    "scale": 0.5765765765765766,
+    "canvas": 288,
+    "anchor": [
+      144,
+      288
+    ],
+    "authoredFacing": "left",
+    "bounds": [
+      106,
+      188,
+      211,
+      288
+    ]
+  },
+  {
+    "name": "dodge",
+    "sourceCell": 19,
+    "crop": [
+      90,
+      0,
+      304,
+      155
+    ],
+    "bodyPivotSource": 193.32000000000002,
+    "scale": 0.5714285714285714,
+    "canvas": 288,
+    "anchor": [
+      144,
+      288
+    ],
+    "authoredFacing": "left",
+    "bounds": [
+      85,
+      199,
+      207,
+      288
+    ]
+  },
+  {
+    "name": "block",
+    "sourceCell": 20,
+    "crop": [
+      128,
+      0,
+      309,
+      161
+    ],
+    "bodyPivotSource": 179.0,
+    "scale": 0.64,
+    "canvas": 288,
+    "anchor": [
+      144,
+      288
+    ],
+    "authoredFacing": "left",
+    "bounds": [
+      111,
+      185,
+      227,
+      288
+    ]
+  },
+  {
+    "name": "hit",
+    "sourceCell": 21,
+    "crop": [
+      92,
+      0,
+      308,
+      162
+    ],
+    "bodyPivotSource": 192.78,
+    "scale": 0.5981308411214953,
+    "canvas": 288,
+    "anchor": [
+      144,
+      288
+    ],
+    "authoredFacing": "left",
+    "bounds": [
+      84,
+      191,
+      213,
+      288
+    ]
+  },
+  {
+    "name": "ko",
+    "sourceCell": 22,
+    "crop": [
+      62,
+      51,
+      353,
+      146
+    ],
+    "bodyPivotSource": 196.35000000000002,
+    "scale": 0.5765765765765766,
+    "canvas": 288,
+    "anchor": [
+      144,
+      288
+    ],
+    "authoredFacing": "left",
+    "bounds": [
+      67,
+      233,
+      235,
+      288
+    ]
+  },
+  {
+    "name": "victory",
+    "sourceCell": 23,
+    "crop": [
+      117,
+      1,
+      278,
+      177
+    ],
+    "bodyPivotSource": 189.74,
+    "scale": 0.4740740740740741,
+    "canvas": 288,
+    "anchor": [
+      144,
+      288
+    ],
+    "authoredFacing": "left",
+    "bounds": [
+      110,
+      205,
+      186,
+      288
+    ]
+  }
+]

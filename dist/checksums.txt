@@ -1,0 +1,6 @@
+64c40f99aa369ccfc6bc6f605e5bf59ab290bb7231c21ca8848d05fd824fa54e  ShinobiMate-Portable-0.9.0-beta.zip
+96ac18b77402c33efe04097dcd748933d43e5bfa5a0df20cad04d87b904aa906  ShinobiMate-Portable-0.9.2-beta.zip
+c82b55c9eb5dfe262cd212d389e5dd8c5b4027f4ae17bb5e01a1d271aecc32a2  ShinobiMate-Portable-0.9.3-beta.zip
+1d118e0b9fbad5027a7ba0ee4de9b9addec55cfca46b77e5d5feb07af08ffd8d  ShinobiMate-Setup-0.9.0-beta.exe
+f935f3b139d779f7e54d20e6c78a0b34e2c61a7938195817be1ce34ecc1b8df7  ShinobiMate-Setup-0.9.2-beta.exe
+7ed937ecdbfe74e1d3d025e2a690b6d4f75698408de0be01d2f18e982a0fffa1  ShinobiMate-Setup-0.9.3-beta.exe

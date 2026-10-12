@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Tick = 40ms. Dedicated combat poses and original bounded VFX; baseline combat timings preserved. -->
+<combat version="1" width="128" height="128" anchorX="64" anchorY="128" movementSpeed="6">
+  <hurtbox x="-23" y="-95" width="46" height="87" />
+  <personality aggression="0.5" technique="0.65" dodge="0.3" block="0.13" counter="0.65" taunt="0.0" dodgeSpeed="12" jumpHeight="0" defenseCooldown="20" defenseCost="20" blockReduction="0.65" projectileParry="0" blockEffect="spark" dodgeEffect="dust" />
+  <animations>
+    <animation id="idle">
+      <frame image="combat/poses/stance.png" ticks="3" />
+    </animation>
+    <animation id="approach">
+      <frame image="combat/poses/stance.png" ticks="3" />
+      <frame image="combat/poses/dodge-start.png" ticks="3" />
+    </animation>
+    <animation id="dodge">
+      <frame image="combat/poses/dodge-start.png" ticks="3" />
+      <frame image="combat/poses/dodge-active.png" ticks="3" />
+      <frame image="combat/poses/dodge-active.png" ticks="3" />
+    </animation>
+    <animation id="block">
+      <frame image="combat/poses/block.png" ticks="3" />
+    </animation>
+    <animation id="hit">
+      <frame image="combat/poses/hit.png" ticks="3" />
+    </animation>
+    <animation id="knockback">
+      <frame image="combat/poses/knockback.png" ticks="3" />
+    </animation>
+    <animation id="recover">
+      <frame image="combat/poses/melee-recovery.png" ticks="3" />
+      <frame image="combat/poses/stance.png" ticks="3" />
+    </animation>
+    <animation id="ko">
+      <frame image="combat/poses/ko.png" ticks="3" />
+    </animation>
+    <animation id="victory">
+      <frame image="combat/poses/victory.png" ticks="3" />
+    </animation>
+    <animation id="charge">
+      <frame image="combat/poses/special-start.png" ticks="3" />
+    </animation>
+    <animation id="heavy-charge">
+      <frame image="combat/poses/special-start.png" ticks="3" />
+    </animation>
+    <animation id="melee">
+      <frame image="combat/poses/melee-active.png" ticks="3" />
+    </animation>
+    <animation id="sword">
+      <frame image="combat/poses/melee-active.png" ticks="3" />
+    </animation>
+    <animation id="ranged">
+      <frame image="combat/poses/ranged-active.png" ticks="3" />
+    </animation>
+    <animation id="dash">
+      <frame image="combat/poses/special-active.png" ticks="3" />
+    </animation>
+    <animation id="aerial">
+      <frame image="combat/poses/dodge-active.png" ticks="3" />
+      <frame image="combat/poses/melee-active.png" ticks="3" />
+    </animation>
+    <animation id="melee-start">
+      <frame image="combat/poses/melee-start.png" ticks="3" />
+    </animation>
+    <animation id="ranged-recovery">
+      <frame image="combat/poses/melee-recovery.png" ticks="3" />
+    </animation>
+    <animation id="special-active">
+      <frame image="combat/poses/special-active.png" ticks="3" />
+    </animation>
+    <animation id="melee-recovery">
+      <frame image="combat/poses/melee-recovery.png" ticks="3" />
+    </animation>
+    <animation id="special-recovery">
+      <frame image="combat/poses/special-recovery.png" ticks="3" />
+    </animation>
+    <animation id="ranged-start">
+      <frame image="combat/poses/ranged-start.png" ticks="3" />
+    </animation>
+  </animations>
+  <effects>
+    <effect id="slash" frameTicks="2" cloneImage="Stand.png">
+      <frame image="combat/vfx/slash0.png" />
+      <frame image="combat/vfx/slash1.png" />
+      <frame image="combat/vfx/slash2.png" />
+      <frame image="combat/vfx/slash3.png" />
+    </effect>
+    <effect id="impact" frameTicks="2" cloneImage="Stand.png">
+      <frame image="combat/vfx/impact0.png" />
+      <frame image="combat/vfx/impact1.png" />
+      <frame image="combat/vfx/impact2.png" />
+      <frame image="combat/vfx/impact3.png" />
+    </effect>
+    <effect id="dust" frameTicks="2" cloneImage="Stand.png">
+      <frame image="combat/vfx/dust0.png" />
+      <frame image="combat/vfx/dust1.png" />
+      <frame image="combat/vfx/dust2.png" />
+      <frame image="combat/vfx/dust3.png" />
+    </effect>
+    <effect id="energy" frameTicks="2" cloneImage="Stand.png">
+      <frame image="combat/vfx/energy0.png" />
+      <frame image="combat/vfx/energy1.png" />
+      <frame image="combat/vfx/energy2.png" />
+      <frame image="combat/vfx/energy3.png" />
+    </effect>
+    <effect id="projectile" frameTicks="2" cloneImage="Stand.png">
+      <frame image="combat/vfx/projectile0.png" />
+      <frame image="combat/vfx/projectile1.png" />
+      <frame image="combat/vfx/projectile2.png" />
+      <frame image="combat/vfx/projectile3.png" />
+    </effect>
+    <effect id="spark" frameTicks="2" cloneImage="Stand.png">
+      <frame image="combat/vfx/spark0.png" />
+      <frame image="combat/vfx/spark1.png" />
+      <frame image="combat/vfx/spark2.png" />
+      <frame image="combat/vfx/spark3.png" />
+    </effect>
+    <effect id="blue" frameTicks="2" cloneImage="Stand.png">
+      <frame image="combat/vfx/blue0.png" />
+      <frame image="combat/vfx/blue1.png" />
+      <frame image="combat/vfx/blue2.png" />
+      <frame image="combat/vfx/blue3.png" />
+    </effect>
+    <effect id="red" frameTicks="2" cloneImage="Stand.png">
+      <frame image="combat/vfx/red0.png" />
+      <frame image="combat/vfx/red1.png" />
+      <frame image="combat/vfx/red2.png" />
+      <frame image="combat/vfx/red3.png" />
+    </effect>
+    <effect id="fire" frameTicks="2" cloneImage="Stand.png">
+      <frame image="combat/vfx/fire0.png" />
+      <frame image="combat/vfx/fire1.png" />
+      <frame image="combat/vfx/fire2.png" />
+      <frame image="combat/vfx/fire3.png" />
+    </effect>
+    <effect id="lightning" frameTicks="2" cloneImage="Stand.png">
+      <frame image="combat/vfx/lightning0.png" />
+      <frame image="combat/vfx/lightning1.png" />
+      <frame image="combat/vfx/lightning2.png" />
+      <frame image="combat/vfx/lightning3.png" />
+    </effect>
+    <effect id="charge" frameTicks="1">
+      <frame image="combat/vfx/charge0.png" />
+      <frame image="combat/vfx/charge1.png" />
+      <frame image="combat/vfx/charge2.png" />
+      <frame image="combat/vfx/charge3.png" />
+    </effect>
+    <effect id="hitflash" frameTicks="1">
+      <frame image="combat/vfx/hitflash0.png" />
+      <frame image="combat/vfx/hitflash1.png" />
+      <frame image="combat/vfx/hitflash2.png" />
+      <frame image="combat/vfx/hitflash3.png" />
+    </effect>
+  </effects>
+  <attacks>
+    <attack id="sword-combo" kind="melee" minRange="0" range="105" damage="12" cooldown="30" startup="5" active="7" recovery="10" speed="1" projectileSpeed="0" knockback="28" jumpHeight="0" cost="0" weight="1.6" animation="sword" chargeAnimation="melee-start" effect="slash" clone="false" recoveryAnimation="melee-recovery" chargeEffect="charge">
+      <hitbox x="14" y="-102" width="86" height="100" />
+    </attack>
+    <attack id="shuriken" kind="ranged" minRange="95" range="440" damage="9" cooldown="38" startup="5" active="2" recovery="10" speed="0" projectileSpeed="24" knockback="16" jumpHeight="0" cost="7" weight="1.0" animation="ranged" chargeAnimation="ranged-start" effect="projectile" clone="false" recoveryAnimation="ranged-recovery" chargeEffect="charge">
+      <hitbox x="-12" y="-76" width="24" height="32" />
+    </attack>
+    <attack id="fire-style" kind="ranged" minRange="110" range="340" damage="16" cooldown="80" startup="12" active="3" recovery="14" speed="0" projectileSpeed="13" knockback="34" jumpHeight="0" cost="22" weight="0.8" animation="ranged" chargeAnimation="ranged-start" effect="fire" clone="false" recoveryAnimation="ranged-recovery" chargeEffect="charge">
+      <hitbox x="-12" y="-76" width="24" height="32" />
+    </attack>
+    <attack id="chidori" kind="special" minRange="65" range="260" damage="25" cooldown="125" startup="14" active="12" recovery="17" speed="17" projectileSpeed="0" knockback="58" jumpHeight="0" cost="35" weight="1.3" animation="special-active" chargeAnimation="charge" effect="lightning" clone="false" recoveryAnimation="special-recovery" chargeEffect="charge">
+      <hitbox x="14" y="-102" width="86" height="100" />
+    </attack>
+    <attack id="aerial-sword" kind="aerial" minRange="0" range="155" damage="14" cooldown="50" startup="7" active="12" recovery="12" speed="5" projectileSpeed="0" knockback="30" jumpHeight="24" cost="10" weight="0.8" animation="aerial" chargeAnimation="melee-start" effect="slash" clone="false" recoveryAnimation="melee-recovery" chargeEffect="charge">
+      <hitbox x="14" y="-102" width="86" height="100" />
+    </attack>
+  </attacks>
+</combat>

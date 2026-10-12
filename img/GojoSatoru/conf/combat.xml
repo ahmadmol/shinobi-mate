@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!-- Tick = 40ms. Dedicated combat poses and original bounded VFX; baseline combat timings preserved. --><combat anchorX="64" anchorY="128" height="128" movementSpeed="6" version="1" width="128">
+      
+    <hurtbox height="87" width="46" x="-23" y="-95"/>
+      
+    <personality aggression="0.4" block="0.29" blockEffect="blue" blockReduction="0.8" counter="0.25" defenseCooldown="45" defenseCost="27" dodge="0.24" dodgeEffect="blue" dodgeSpeed="13" jumpHeight="0" projectileParry="0" taunt="0.1" technique="0.9"/>
+      
+    <animations>
+            
+        <animation id="idle">
+                  
+            <frame image="combat/poses/stance.png" ticks="3"/>
+                
+        </animation>
+            
+        <animation id="approach">
+                  
+            <frame image="combat/poses/stance.png" ticks="3"/>
+                  
+            <frame image="combat/poses/dodge-start.png" ticks="3"/>
+                
+        </animation>
+            
+        <animation id="dodge">
+                  
+            <frame image="combat/poses/dodge-start.png" ticks="3"/>
+                  
+            <frame image="combat/poses/dodge-active.png" ticks="3"/>
+                  
+            <frame image="combat/poses/dodge-active.png" ticks="3"/>
+                
+        </animation>
+            
+        <animation id="block">
+                  
+            <frame image="combat/poses/block.png" ticks="3"/>
+                
+        </animation>
+            
+        <animation id="hit">
+                  
+            <frame image="combat/poses/hit.png" ticks="3"/>
+                
+        </animation>
+            
+        <animation id="knockback">
+                  
+            <frame image="combat/poses/knockback.png" ticks="3"/>
+                
+        </animation>
+            
+        <animation id="recover">
+                  
+            <frame image="combat/poses/melee-recovery.png" ticks="3"/>
+                  
+            <frame image="combat/poses/stance.png" ticks="3"/>
+                
+        </animation>
+            
+        <animation id="ko">
+                  
+            <frame image="combat/poses/ko.png" ticks="3"/>
+                
+        </animation>
+            
+        <animation id="victory">
+                  
+            <frame image="combat/poses/victory.png" ticks="3"/>
+                
+        </animation>
+            
+        <animation id="charge">
+                  
+            <frame image="combat/poses/special-start.png" ticks="3"/>
+                
+        </animation>
+            
+        <animation id="heavy-charge">
+                  
+            <frame image="combat/poses/special-start.png" ticks="3"/>
+                
+        </animation>
+            
+        <animation id="melee">
+                  
+            <frame image="combat/poses/melee-active.png" ticks="3"/>
+                
+        </animation>
+            
+        <animation id="sword">
+                  
+            <frame image="combat/poses/melee-active.png" ticks="3"/>
+                
+        </animation>
+            
+        <animation id="ranged">
+                  
+            <frame image="combat/poses/ranged-active.png" ticks="3"/>
+                
+        </animation>
+            
+        <animation id="dash">
+                  
+            <frame image="combat/poses/special-active.png" ticks="3"/>
+                
+        </animation>
+            
+        <animation id="aerial">
+                  
+            <frame image="combat/poses/dodge-active.png" ticks="3"/>
+                  
+            <frame image="combat/poses/melee-active.png" ticks="3"/>
+                
+        </animation>
+            
+        <animation id="melee-start">
+                  
+            <frame image="combat/poses/melee-start.png" ticks="3"/>
+                
+        </animation>
+            
+        <animation id="ranged-recovery">
+                  
+            <frame image="combat/poses/melee-recovery.png" ticks="3"/>
+                
+        </animation>
+            
+        <animation id="special-active">
+                  
+            <frame image="combat/poses/special-active.png" ticks="3"/>
+                
+        </animation>
+            
+        <animation id="melee-recovery">
+                  
+            <frame image="combat/poses/melee-recovery.png" ticks="3"/>
+                
+        </animation>
+            
+        <animation id="special-recovery">
+                  
+            <frame image="combat/poses/special-recovery.png" ticks="3"/>
+                
+        </animation>
+            
+        <animation id="ranged-start">
+                  
+            <frame image="combat/poses/ranged-start.png" ticks="3"/>
+                
+        </animation>
+          
+        <animation id="fast-melee-start">
+            <frame image="combat/polish/punch-start.png" ticks="3"/>
+        </animation>
+        <animation id="fast-melee-active">
+            <frame image="combat/polish/punch-contact.png" ticks="3"/>
+        </animation>
+        <animation id="fast-melee-recover">
+            <frame image="combat/polish/kick-recover.png" ticks="3"/>
+        </animation>
+        <animation id="fast-melee-contact-0">
+            <frame image="combat/polish/punch-contact.png" ticks="3"/>
+        </animation>
+        <animation id="fast-melee-windup-0">
+            <frame image="combat/polish/punch-start.png" ticks="3"/>
+        </animation>
+        <animation id="fast-melee-contact-1">
+            <frame image="combat/polish/elbow-contact.png" ticks="3"/>
+        </animation>
+        <animation id="fast-melee-windup-1">
+            <frame image="combat/polish/elbow-start.png" ticks="3"/>
+        </animation>
+        <animation id="fast-melee-contact-2">
+            <frame image="combat/polish/kick-contact.png" ticks="3"/>
+        </animation>
+        <animation id="fast-melee-windup-2">
+            <frame image="combat/polish/kick-start.png" ticks="3"/>
+        </animation>
+        <animation id="blue-pull-start">
+            <frame image="combat/polish/blue-start.png" ticks="3"/>
+        </animation>
+        <animation id="blue-pull-active">
+            <frame image="combat/polish/blue-contact.png" ticks="3"/>
+        </animation>
+        <animation id="blue-pull-recover">
+            <frame image="combat/polish/purple-recover.png" ticks="3"/>
+        </animation>
+        <animation id="red-blast-start">
+            <frame image="combat/polish/red-start.png" ticks="3"/>
+        </animation>
+        <animation id="red-blast-active">
+            <frame image="combat/polish/red-contact.png" ticks="3"/>
+        </animation>
+        <animation id="red-blast-recover">
+            <frame image="combat/polish/purple-recover.png" ticks="3"/>
+        </animation>
+        <animation id="blue-red-special-start">
+            <frame image="combat/polish/purple-low.png" ticks="3"/>
+            <frame image="combat/polish/purple-charge.png" ticks="3"/>
+        </animation>
+        <animation id="blue-red-special-active">
+            <frame image="combat/polish/purple-contact.png" ticks="3"/>
+        </animation>
+        <animation id="blue-red-special-recover">
+            <frame image="combat/polish/purple-recover.png" ticks="3"/>
+        </animation>
+        <animation id="taunt">
+            <frame image="combat/polish/taunt.png" ticks="3"/>
+        </animation>
+    </animations>
+      
+    <effects>
+            
+        <effect cloneImage="Stand.png" frameTicks="2" id="slash">
+                  
+            <frame image="combat/vfx/slash0.png"/>
+                  
+            <frame image="combat/vfx/slash1.png"/>
+                  
+            <frame image="combat/vfx/slash2.png"/>
+                  
+            <frame image="combat/vfx/slash3.png"/>
+                
+        </effect>
+            
+        <effect cloneImage="Stand.png" frameTicks="2" id="impact">
+                  
+            <frame image="combat/vfx/impact0.png"/>
+                  
+            <frame image="combat/vfx/impact1.png"/>
+                  
+            <frame image="combat/vfx/impact2.png"/>
+                  
+            <frame image="combat/vfx/impact3.png"/>
+                
+        </effect>
+            
+        <effect cloneImage="Stand.png" frameTicks="2" id="dust">
+                  
+            <frame image="combat/vfx/dust0.png"/>
+                  
+            <frame image="combat/vfx/dust1.png"/>
+                  
+            <frame image="combat/vfx/dust2.png"/>
+                  
+            <frame image="combat/vfx/dust3.png"/>
+                
+        </effect>
+            
+        <effect cloneImage="Stand.png" frameTicks="2" id="energy">
+                  
+            <frame image="combat/vfx/energy0.png"/>
+                  
+            <frame image="combat/vfx/energy1.png"/>
+                  
+            <frame image="combat/vfx/energy2.png"/>
+                  
+            <frame image="combat/vfx/energy3.png"/>
+                
+        </effect>
+            
+        <effect cloneImage="Stand.png" frameTicks="2" id="projectile">
+                  
+            <frame image="combat/vfx/projectile0.png"/>
+                  
+            <frame image="combat/vfx/projectile1.png"/>
+                  
+            <frame image="combat/vfx/projectile2.png"/>
+                  
+            <frame image="combat/vfx/projectile3.png"/>
+                
+        </effect>
+            
+        <effect cloneImage="Stand.png" frameTicks="2" id="spark">
+                  
+            <frame image="combat/vfx/spark0.png"/>
+                  
+            <frame image="combat/vfx/spark1.png"/>
+                  
+            <frame image="combat/vfx/spark2.png"/>
+                  
+            <frame image="combat/vfx/spark3.png"/>
+                
+        </effect>
+            
+        <effect cloneImage="Stand.png" frameTicks="2" id="blue">
+                  
+            <frame image="combat/vfx/blue0.png"/>
+                  
+            <frame image="combat/vfx/blue1.png"/>
+                  
+            <frame image="combat/vfx/blue2.png"/>
+                  
+            <frame image="combat/vfx/blue3.png"/>
+                
+        </effect>
+            
+        <effect cloneImage="Stand.png" frameTicks="2" id="red">
+                  
+            <frame image="combat/vfx/red0.png"/>
+                  
+            <frame image="combat/vfx/red1.png"/>
+                  
+            <frame image="combat/vfx/red2.png"/>
+                  
+            <frame image="combat/vfx/red3.png"/>
+                
+        </effect>
+            
+        <effect cloneImage="Stand.png" frameTicks="2" id="fire">
+                  
+            <frame image="combat/vfx/fire0.png"/>
+                  
+            <frame image="combat/vfx/fire1.png"/>
+                  
+            <frame image="combat/vfx/fire2.png"/>
+                  
+            <frame image="combat/vfx/fire3.png"/>
+                
+        </effect>
+            
+        <effect cloneImage="Stand.png" frameTicks="2" id="lightning">
+                  
+            <frame image="combat/vfx/lightning0.png"/>
+                  
+            <frame image="combat/vfx/lightning1.png"/>
+                  
+            <frame image="combat/vfx/lightning2.png"/>
+                  
+            <frame image="combat/vfx/lightning3.png"/>
+                
+        </effect>
+            
+        <effect frameTicks="1" id="charge">
+                  
+            <frame image="combat/vfx/charge0.png"/>
+                  
+            <frame image="combat/vfx/charge1.png"/>
+                  
+            <frame image="combat/vfx/charge2.png"/>
+                  
+            <frame image="combat/vfx/charge3.png"/>
+                
+        </effect>
+            
+        <effect frameTicks="1" id="hitflash">
+                  
+            <frame image="combat/vfx/hitflash0.png"/>
+                  
+            <frame image="combat/vfx/hitflash1.png"/>
+                  
+            <frame image="combat/vfx/hitflash2.png"/>
+                  
+            <frame image="combat/vfx/hitflash3.png"/>
+                
+        </effect>
+          
+        <effect cloneImage="combat/polish/punch-contact.png" frameTicks="2" id="chakra">
+            <frame image="combat/vfx/chakra0.png"/>
+            <frame image="combat/vfx/chakra1.png"/>
+            <frame image="combat/vfx/chakra2.png"/>
+            <frame image="combat/vfx/chakra3.png"/>
+        </effect>
+        <effect cloneImage="combat/polish/punch-contact.png" frameTicks="2" id="cursed">
+            <frame image="combat/vfx/cursed0.png"/>
+            <frame image="combat/vfx/cursed1.png"/>
+            <frame image="combat/vfx/cursed2.png"/>
+            <frame image="combat/vfx/cursed3.png"/>
+        </effect>
+        <effect cloneImage="combat/polish/punch-contact.png" frameTicks="2" id="anti-magic">
+            <frame image="combat/vfx/anti-magic0.png"/>
+            <frame image="combat/vfx/anti-magic1.png"/>
+            <frame image="combat/vfx/anti-magic2.png"/>
+            <frame image="combat/vfx/anti-magic3.png"/>
+        </effect>
+        <effect cloneImage="combat/polish/punch-contact.png" frameTicks="2" id="purple">
+            <frame image="combat/vfx/purple0.png"/>
+            <frame image="combat/vfx/purple1.png"/>
+            <frame image="combat/vfx/purple2.png"/>
+            <frame image="combat/vfx/purple3.png"/>
+        </effect>
+        <effect cloneImage="combat/polish/punch-contact.png" frameTicks="2" id="shockwave">
+            <frame image="combat/vfx/shockwave0.png"/>
+            <frame image="combat/vfx/shockwave1.png"/>
+            <frame image="combat/vfx/shockwave2.png"/>
+            <frame image="combat/vfx/shockwave3.png"/>
+        </effect>
+    </effects>
+      
+    <attacks>
+            
+        <attack active="15" animation="fast-melee-active" attackSound="whoosh" chargeAnimation="fast-melee-start" chargeEffect="charge" clone="false" cooldown="20" cost="0" damage="9" effect="impact" id="fast-melee" impactSound="impact" jumpHeight="0" kind="melee" knockback="18" minRange="0" projectileSpeed="0" range="100" recovery="6" recoveryAnimation="fast-melee-recover" speed="2" startup="3" startupSound="grunt" weapon="none" weight="1.5">
+                  
+            <hitbox height="50" width="56" x="12" y="-80"/>
+                
+            <strike animation="fast-melee-contact-0" at="0" damage="3" duration="3" knockback="0" windup="fast-melee-windup-0"/>
+            <strike animation="fast-melee-contact-1" at="6" damage="3" duration="3" knockback="0" windup="fast-melee-windup-1"/>
+            <strike animation="fast-melee-contact-2" at="12" damage="6" duration="3" knockback="25" windup="fast-melee-windup-2"/>
+        </attack>
+            
+        <attack active="2" animation="blue-pull-active" attackSound="chakra" chargeAnimation="blue-pull-start" chargeEffect="blue" clone="false" cooldown="55" cost="18" damage="11" effect="blue" id="blue-pull" impactSound="impact" jumpHeight="0" kind="ranged" knockback="-48" minRange="90" projectileSpeed="16" range="350" recovery="12" recoveryAnimation="blue-pull-recover" speed="0" startup="9" startupSound="chakra" weapon="energy" weight="1.1">
+                  
+            <hitbox height="22" width="20" x="-10" y="-71"/>
+                
+        </attack>
+            
+        <attack active="2" animation="red-blast-active" attackSound="whoosh" chargeAnimation="red-blast-start" chargeEffect="red" clone="false" cooldown="65" cost="22" damage="14" effect="red" id="red-blast" impactSound="heavy" jumpHeight="0" kind="ranged" knockback="70" minRange="90" projectileSpeed="18" range="360" recovery="14" recoveryAnimation="red-blast-recover" speed="0" startup="11" startupSound="chakra" weapon="energy" weight="1.1">
+                  
+            <hitbox height="22" width="20" x="-10" y="-71"/>
+                
+        </attack>
+            
+        <attack active="2" animation="blue-red-special-active" attackSound="chakra" chargeAnimation="blue-red-special-start" chargeEffect="purple" clone="false" cooldown="250" cost="40" damage="35" effect="purple" id="blue-red-special" impactSound="heavy" jumpHeight="0" kind="special" knockback="75" minRange="0" projectileSpeed="16" range="390" recovery="21" recoveryAnimation="blue-red-special-recover" speed="0" startup="18" startupSound="chakra" weapon="energy" weight="0.3">
+                  
+            <hitbox height="22" width="20" x="-10" y="-71"/>
+                
+        </attack>
+          
+    </attacks>
+    
+</combat>

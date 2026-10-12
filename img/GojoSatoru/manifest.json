@@ -1,0 +1,43 @@
+{
+  "id": "GojoSatoru",
+  "displayName": "Gojo Satoru",
+  "version": "1.1.0",
+  "author": "ShinobiMate",
+  "description": "Chibi desktop companion with original combat poses and optional local activities.",
+  "preview": "Preview.png",
+  "supportedLanguages": [
+    "ar",
+    "en"
+  ],
+  "supportsCombat": true,
+  "supportsCloud": true,
+  "supportsMood": true,
+  "minimumShinobiMateVersion": "0.9.0",
+  "moodPoses": {
+    "ANNOYED": "DragWince.png",
+    "NORMAL": "Stand.png",
+    "SLEEPY": "SitLegsDown.png",
+    "BORED": "Sit.png",
+    "HAPPY": "Smile.png",
+    "EXCITED": "HandSign.png"
+  },
+  "idleActivities": {
+    "sleep": "SitLegsDown.png",
+    "look": "SitHeadTurn3.png",
+    "train": "HandSign.png",
+    "stretch": "SitLegsUp.png",
+    "sit": "Sit.png",
+    "relax": "Sit.png"
+  },
+  "socialPoses": [
+    "Smile.png",
+    "HandSign.png"
+  ],
+  "interactionPoses": {
+    "DOUBLE_CLICK": "HandSign.png",
+    "CLICK": "Smile.png",
+    "DRAG": "DragWince.png",
+    "HOVER": "MouseSurprise.png",
+    "LOOK_UP": "SitLookUp.png"
+  }
+}

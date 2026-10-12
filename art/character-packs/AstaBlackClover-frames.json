@@ -1,0 +1,828 @@
+﻿[
+    {
+        "crop":  [
+                     59,
+                     5,
+                     191,
+                     230
+                 ],
+        "source":  "AstaBlackClover-core.png",
+        "alignment":  "floor",
+        "row":  0,
+        "column":  0,
+        "scale":  0.49777777777777776,
+        "file":  "Stand.png"
+    },
+    {
+        "crop":  [
+                     256,
+                     5,
+                     388,
+                     230
+                 ],
+        "source":  "AstaBlackClover-core.png",
+        "alignment":  "floor",
+        "row":  0,
+        "column":  1,
+        "scale":  0.49777777777777776,
+        "file":  "Smile.png"
+    },
+    {
+        "crop":  [
+                     458,
+                     6,
+                     589,
+                     230
+                 ],
+        "source":  "AstaBlackClover-core.png",
+        "alignment":  "floor",
+        "row":  0,
+        "column":  2,
+        "scale":  0.49777777777777776,
+        "file":  "Blink.png"
+    },
+    {
+        "crop":  [
+                     669,
+                     5,
+                     802,
+                     230
+                 ],
+        "source":  "AstaBlackClover-core.png",
+        "alignment":  "floor",
+        "row":  0,
+        "column":  3,
+        "scale":  0.49777777777777776,
+        "file":  "MouseSurprise.png"
+    },
+    {
+        "crop":  [
+                     810,
+                     5,
+                     1065,
+                     231
+                 ],
+        "source":  "AstaBlackClover-core.png",
+        "alignment":  "floor",
+        "row":  0,
+        "column":  4,
+        "scale":  0.49777777777777776,
+        "file":  "HandSign.png"
+    },
+    {
+        "crop":  [
+                     1068,
+                     5,
+                     1224,
+                     231
+                 ],
+        "source":  "AstaBlackClover-core.png",
+        "alignment":  "floor",
+        "row":  0,
+        "column":  5,
+        "scale":  0.49777777777777776,
+        "file":  "Preview.png"
+    },
+    {
+        "crop":  [
+                     54,
+                     233,
+                     186,
+                     466
+                 ],
+        "source":  "AstaBlackClover-core.png",
+        "alignment":  "floor",
+        "row":  1,
+        "column":  0,
+        "scale":  0.49777777777777776,
+        "file":  "WalkLeft.png"
+    },
+    {
+        "crop":  [
+                     254,
+                     236,
+                     382,
+                     467
+                 ],
+        "source":  "AstaBlackClover-core.png",
+        "alignment":  "floor",
+        "row":  1,
+        "column":  1,
+        "scale":  0.49777777777777776,
+        "file":  "WalkPass1.png"
+    },
+    {
+        "crop":  [
+                     449,
+                     234,
+                     590,
+                     466
+                 ],
+        "source":  "AstaBlackClover-core.png",
+        "alignment":  "floor",
+        "row":  1,
+        "column":  2,
+        "scale":  0.49777777777777776,
+        "file":  "WalkRight.png"
+    },
+    {
+        "crop":  [
+                     661,
+                     234,
+                     793,
+                     464
+                 ],
+        "source":  "AstaBlackClover-core.png",
+        "alignment":  "floor",
+        "row":  1,
+        "column":  3,
+        "scale":  0.49777777777777776,
+        "file":  "WalkPass2.png"
+    },
+    {
+        "crop":  [
+                     852,
+                     273,
+                     994,
+                     469
+                 ],
+        "source":  "AstaBlackClover-core.png",
+        "alignment":  "floor",
+        "row":  1,
+        "column":  4,
+        "scale":  0.49777777777777776,
+        "file":  "JumpStart.png"
+    },
+    {
+        "crop":  [
+                     1059,
+                     233,
+                     1232,
+                     439
+                 ],
+        "source":  "AstaBlackClover-core.png",
+        "alignment":  "floor",
+        "row":  1,
+        "column":  5,
+        "scale":  0.49777777777777776,
+        "file":  "NinjaJump.png"
+    },
+    {
+        "crop":  [
+                     28,
+                     485,
+                     224,
+                     668
+                 ],
+        "source":  "AstaBlackClover-core.png",
+        "alignment":  "floor",
+        "row":  2,
+        "column":  0,
+        "scale":  0.49777777777777776,
+        "file":  "Falling.png"
+    },
+    {
+        "crop":  [
+                     251,
+                     492,
+                     398,
+                     680
+                 ],
+        "source":  "AstaBlackClover-core.png",
+        "alignment":  "floor",
+        "row":  2,
+        "column":  1,
+        "scale":  0.49777777777777776,
+        "file":  "BounceCompress.png"
+    },
+    {
+        "crop":  [
+                     460,
+                     470,
+                     593,
+                     681
+                 ],
+        "source":  "AstaBlackClover-core.png",
+        "alignment":  "floor",
+        "row":  2,
+        "column":  2,
+        "scale":  0.49777777777777776,
+        "file":  "BounceExtend.png"
+    },
+    {
+        "crop":  [
+                     659,
+                     470,
+                     795,
+                     678
+                 ],
+        "source":  "AstaBlackClover-core.png",
+        "alignment":  "floor",
+        "row":  2,
+        "column":  3,
+        "scale":  0.49777777777777776,
+        "file":  "DragWince.png"
+    },
+    {
+        "crop":  [
+                     846,
+                     471,
+                     1006,
+                     664
+                 ],
+        "source":  "AstaBlackClover-core.png",
+        "alignment":  "floor",
+        "row":  2,
+        "column":  4,
+        "scale":  0.49777777777777776,
+        "file":  "Resist1.png"
+    },
+    {
+        "crop":  [
+                     1079,
+                     467,
+                     1233,
+                     679
+                 ],
+        "source":  "AstaBlackClover-core.png",
+        "alignment":  "floor",
+        "row":  2,
+        "column":  5,
+        "scale":  0.49777777777777776,
+        "file":  "Resist2.png"
+    },
+    {
+        "crop":  [
+                     50,
+                     679,
+                     188,
+                     869
+                 ],
+        "source":  "AstaBlackClover-core.png",
+        "alignment":  "floor",
+        "row":  3,
+        "column":  0,
+        "scale":  0.49777777777777776,
+        "file":  "Sit.png"
+    },
+    {
+        "crop":  [
+                     254,
+                     689,
+                     389,
+                     868
+                 ],
+        "source":  "AstaBlackClover-core.png",
+        "alignment":  "floor",
+        "row":  3,
+        "column":  1,
+        "scale":  0.49777777777777776,
+        "file":  "SitLookUp.png"
+    },
+    {
+        "crop":  [
+                     453,
+                     695,
+                     587,
+                     869
+                 ],
+        "source":  "AstaBlackClover-core.png",
+        "alignment":  "floor",
+        "row":  3,
+        "column":  2,
+        "scale":  0.49777777777777776,
+        "file":  "SitHeadTurn1.png"
+    },
+    {
+        "crop":  [
+                     660,
+                     691,
+                     792,
+                     869
+                 ],
+        "source":  "AstaBlackClover-core.png",
+        "alignment":  "floor",
+        "row":  3,
+        "column":  3,
+        "scale":  0.49777777777777776,
+        "file":  "SitHeadTurn2.png"
+    },
+    {
+        "crop":  [
+                     868,
+                     674,
+                     999,
+                     887
+                 ],
+        "source":  "AstaBlackClover-core.png",
+        "alignment":  "floor",
+        "row":  3,
+        "column":  4,
+        "scale":  0.49777777777777776,
+        "file":  "SitLegsDown.png"
+    },
+    {
+        "crop":  [
+                     1068,
+                     690,
+                     1236,
+                     860
+                 ],
+        "source":  "AstaBlackClover-core.png",
+        "alignment":  "floor",
+        "row":  3,
+        "column":  5,
+        "scale":  0.49777777777777776,
+        "file":  "SitLegsUp.png"
+    },
+    {
+        "crop":  [
+                     52,
+                     870,
+                     182,
+                     1052
+                 ],
+        "source":  "AstaBlackClover-core.png",
+        "alignment":  "floor",
+        "row":  4,
+        "column":  0,
+        "scale":  0.49777777777777776,
+        "file":  "SitDangle1.png"
+    },
+    {
+        "crop":  [
+                     250,
+                     870,
+                     396,
+                     1050
+                 ],
+        "source":  "AstaBlackClover-core.png",
+        "alignment":  "floor",
+        "row":  4,
+        "column":  1,
+        "scale":  0.49777777777777776,
+        "file":  "SitDangle2.png"
+    },
+    {
+        "crop":  [
+                     433,
+                     899,
+                     599,
+                     1044
+                 ],
+        "source":  "AstaBlackClover-core.png",
+        "alignment":  "floor",
+        "row":  4,
+        "column":  2,
+        "scale":  0.49777777777777776,
+        "file":  "CreepContract.png"
+    },
+    {
+        "crop":  [
+                     629,
+                     908,
+                     835,
+                     1044
+                 ],
+        "source":  "AstaBlackClover-core.png",
+        "alignment":  "floor",
+        "row":  4,
+        "column":  3,
+        "scale":  0.49777777777777776,
+        "file":  "CreepExtend.png"
+    },
+    {
+        "crop":  [
+                     897,
+                     872,
+                     1025,
+                     1055
+                 ],
+        "source":  "AstaBlackClover-core.png",
+        "alignment":  "wall",
+        "row":  4,
+        "column":  4,
+        "scale":  0.49777777777777776,
+        "file":  "GrabWall.png"
+    },
+    {
+        "crop":  [
+                     1081,
+                     875,
+                     1230,
+                     1059
+                 ],
+        "source":  "AstaBlackClover-core.png",
+        "alignment":  "wall",
+        "row":  4,
+        "column":  5,
+        "scale":  0.49777777777777776,
+        "file":  "ClimbWallExtend.png"
+    },
+    {
+        "crop":  [
+                     49,
+                     1046,
+                     189,
+                     1245
+                 ],
+        "source":  "AstaBlackClover-core.png",
+        "alignment":  "wall",
+        "row":  5,
+        "column":  0,
+        "scale":  0.49777777777777776,
+        "file":  "ClimbWallContract.png"
+    },
+    {
+        "crop":  [
+                     250,
+                     1050,
+                     396,
+                     1243
+                 ],
+        "source":  "AstaBlackClover-core.png",
+        "alignment":  "ceiling",
+        "row":  5,
+        "column":  1,
+        "scale":  0.49777777777777776,
+        "file":  "GrabCeiling.png"
+    },
+    {
+        "crop":  [
+                     476,
+                     1051,
+                     611,
+                     1244
+                 ],
+        "source":  "AstaBlackClover-core.png",
+        "alignment":  "ceiling",
+        "row":  5,
+        "column":  2,
+        "scale":  0.49777777777777776,
+        "file":  "ClimbCeiling1.png"
+    },
+    {
+        "crop":  [
+                     677,
+                     1055,
+                     790,
+                     1242
+                 ],
+        "source":  "AstaBlackClover-core.png",
+        "alignment":  "ceiling",
+        "row":  5,
+        "column":  3,
+        "scale":  0.49777777777777776,
+        "file":  "ClimbCeiling2.png"
+    },
+    {
+        "crop":  [
+                     842,
+                     1061,
+                     1014,
+                     1245
+                 ],
+        "source":  "AstaBlackClover-core.png",
+        "alignment":  "floor",
+        "row":  5,
+        "column":  4,
+        "scale":  0.49777777777777776,
+        "file":  "hug1.png"
+    },
+    {
+        "crop":  [
+                     1081,
+                     1059,
+                     1230,
+                     1246
+                 ],
+        "source":  "AstaBlackClover-core.png",
+        "alignment":  "floor",
+        "row":  5,
+        "column":  5,
+        "scale":  0.49777777777777776,
+        "file":  "hug2.png"
+    },
+    {
+        "crop":  [
+                     48,
+                     18,
+                     235,
+                     260
+                 ],
+        "source":  "AstaBlackClover-utility.png",
+        "alignment":  "floor",
+        "row":  0,
+        "column":  0,
+        "scale":  0.44444444444444442,
+        "file":  "SitHeadTurn3.png"
+    },
+    {
+        "crop":  [
+                     308,
+                     21,
+                     484,
+                     258
+                 ],
+        "source":  "AstaBlackClover-utility.png",
+        "alignment":  "floor",
+        "row":  0,
+        "column":  1,
+        "scale":  0.44444444444444442,
+        "file":  "SitHeadTurn4.png"
+    },
+    {
+        "crop":  [
+                     565,
+                     22,
+                     765,
+                     258
+                 ],
+        "source":  "AstaBlackClover-utility.png",
+        "alignment":  "floor",
+        "row":  0,
+        "column":  2,
+        "scale":  0.44444444444444442,
+        "file":  "SitHeadTurn5.png"
+    },
+    {
+        "crop":  [
+                     800,
+                     28,
+                     972,
+                     258
+                 ],
+        "source":  "AstaBlackClover-utility.png",
+        "alignment":  "floor",
+        "row":  0,
+        "column":  3,
+        "scale":  0.44444444444444442,
+        "file":  "SitHeadTurn6.png"
+    },
+    {
+        "crop":  [
+                     1036,
+                     19,
+                     1264,
+                     261
+                 ],
+        "source":  "AstaBlackClover-utility.png",
+        "alignment":  "floor",
+        "row":  0,
+        "column":  4,
+        "scale":  0.44444444444444442,
+        "file":  "StruggleHard1.png"
+    },
+    {
+        "crop":  [
+                     1312,
+                     20,
+                     1526,
+                     261
+                 ],
+        "source":  "AstaBlackClover-utility.png",
+        "alignment":  "floor",
+        "row":  0,
+        "column":  5,
+        "scale":  0.44444444444444442,
+        "file":  "StruggleHard2.png"
+    },
+    {
+        "crop":  [
+                     23,
+                     279,
+                     251,
+                     510
+                 ],
+        "source":  "AstaBlackClover-utility.png",
+        "alignment":  "floor",
+        "row":  1,
+        "column":  0,
+        "scale":  0.44444444444444442,
+        "file":  "StruggleHard3.png"
+    },
+    {
+        "crop":  [
+                     288,
+                     281,
+                     512,
+                     517
+                 ],
+        "source":  "AstaBlackClover-utility.png",
+        "alignment":  "floor",
+        "row":  1,
+        "column":  1,
+        "scale":  0.44444444444444442,
+        "file":  "StruggleHard4.png"
+    },
+    {
+        "crop":  [
+                     559,
+                     269,
+                     734,
+                     512
+                 ],
+        "source":  "AstaBlackClover-utility.png",
+        "alignment":  "floor",
+        "row":  1,
+        "column":  2,
+        "scale":  0.44444444444444442,
+        "file":  "hug3.png"
+    },
+    {
+        "crop":  [
+                     800,
+                     275,
+                     971,
+                     517
+                 ],
+        "source":  "AstaBlackClover-utility.png",
+        "alignment":  "floor",
+        "row":  1,
+        "column":  3,
+        "scale":  0.44444444444444442,
+        "file":  "hug4.png"
+    },
+    {
+        "crop":  [
+                     1060,
+                     264,
+                     1240,
+                     522
+                 ],
+        "source":  "AstaBlackClover-utility.png",
+        "alignment":  "floor",
+        "row":  1,
+        "column":  4,
+        "scale":  0.44444444444444442,
+        "file":  "DivideTwist1.png"
+    },
+    {
+        "crop":  [
+                     1318,
+                     261,
+                     1510,
+                     526
+                 ],
+        "source":  "AstaBlackClover-utility.png",
+        "alignment":  "floor",
+        "row":  1,
+        "column":  5,
+        "scale":  0.44444444444444442,
+        "file":  "DivideTwist2.png"
+    },
+    {
+        "crop":  [
+                     45,
+                     514,
+                     205,
+                     755
+                 ],
+        "source":  "AstaBlackClover-utility.png",
+        "alignment":  "floor",
+        "row":  2,
+        "column":  0,
+        "scale":  0.44444444444444442,
+        "file":  "DivideTwist3.png"
+    },
+    {
+        "crop":  [
+                     265,
+                     549,
+                     519,
+                     754
+                 ],
+        "source":  "AstaBlackClover-utility.png",
+        "alignment":  "floor",
+        "row":  2,
+        "column":  1,
+        "scale":  0.44444444444444442,
+        "file":  "DivideSplit.png"
+    },
+    {
+        "crop":  [
+                     546,
+                     514,
+                     750,
+                     759
+                 ],
+        "source":  "AstaBlackClover-utility.png",
+        "alignment":  "floor",
+        "row":  2,
+        "column":  2,
+        "scale":  0.44444444444444442,
+        "file":  "DivideComplete.png"
+    },
+    {
+        "crop":  [
+                     777,
+                     532,
+                     989,
+                     757
+                 ],
+        "source":  "AstaBlackClover-utility.png",
+        "alignment":  "floor",
+        "row":  2,
+        "column":  3,
+        "scale":  0.44444444444444442,
+        "file":  "PullUpPrepare.png"
+    },
+    {
+        "crop":  [
+                     1046,
+                     532,
+                     1270,
+                     756
+                 ],
+        "source":  "AstaBlackClover-utility.png",
+        "alignment":  "floor",
+        "row":  2,
+        "column":  4,
+        "scale":  0.44444444444444442,
+        "file":  "PullUpHalf.png"
+    },
+    {
+        "crop":  [
+                     1304,
+                     532,
+                     1531,
+                     758
+                 ],
+        "source":  "AstaBlackClover-utility.png",
+        "alignment":  "floor",
+        "row":  2,
+        "column":  5,
+        "scale":  0.44444444444444442,
+        "file":  "PullUpEffort.png"
+    },
+    {
+        "crop":  [
+                     54,
+                     761,
+                     238,
+                     1009
+                 ],
+        "source":  "AstaBlackClover-utility.png",
+        "alignment":  "floor",
+        "row":  3,
+        "column":  0,
+        "scale":  0.44444444444444442,
+        "file":  "PullUpComplete.png"
+    },
+    {
+        "crop":  [
+                     303,
+                     763,
+                     482,
+                     1011
+                 ],
+        "source":  "AstaBlackClover-utility.png",
+        "alignment":  "floor",
+        "row":  3,
+        "column":  1,
+        "scale":  0.44444444444444442,
+        "file":  "StandWithWindow.png"
+    },
+    {
+        "crop":  [
+                     569,
+                     763,
+                     739,
+                     1010
+                 ],
+        "source":  "AstaBlackClover-utility.png",
+        "alignment":  "floor",
+        "row":  3,
+        "column":  2,
+        "scale":  0.44444444444444442,
+        "file":  "WalkWithWindow1.png"
+    },
+    {
+        "crop":  [
+                     806,
+                     768,
+                     969,
+                     1011
+                 ],
+        "source":  "AstaBlackClover-utility.png",
+        "alignment":  "floor",
+        "row":  3,
+        "column":  3,
+        "scale":  0.44444444444444442,
+        "file":  "WalkWithWindow2.png"
+    },
+    {
+        "crop":  [
+                     1022,
+                     789,
+                     1281,
+                     1007
+                 ],
+        "source":  "AstaBlackClover-utility.png",
+        "alignment":  "floor",
+        "row":  3,
+        "column":  4,
+        "scale":  0.44444444444444442,
+        "file":  "ThrowWindow.png"
+    }
+]

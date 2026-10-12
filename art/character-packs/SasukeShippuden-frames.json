@@ -1,0 +1,828 @@
+﻿[
+    {
+        "crop":  [
+                     50,
+                     18,
+                     172,
+                     243
+                 ],
+        "source":  "SasukeShippuden-core.png",
+        "alignment":  "floor",
+        "row":  0,
+        "column":  0,
+        "scale":  0.49777777777777776,
+        "file":  "Stand.png"
+    },
+    {
+        "crop":  [
+                     257,
+                     12,
+                     386,
+                     242
+                 ],
+        "source":  "SasukeShippuden-core.png",
+        "alignment":  "floor",
+        "row":  0,
+        "column":  1,
+        "scale":  0.49777777777777776,
+        "file":  "Smile.png"
+    },
+    {
+        "crop":  [
+                     461,
+                     14,
+                     587,
+                     243
+                 ],
+        "source":  "SasukeShippuden-core.png",
+        "alignment":  "floor",
+        "row":  0,
+        "column":  2,
+        "scale":  0.49777777777777776,
+        "file":  "Blink.png"
+    },
+    {
+        "crop":  [
+                     671,
+                     13,
+                     789,
+                     243
+                 ],
+        "source":  "SasukeShippuden-core.png",
+        "alignment":  "floor",
+        "row":  0,
+        "column":  3,
+        "scale":  0.49777777777777776,
+        "file":  "MouseSurprise.png"
+    },
+    {
+        "crop":  [
+                     877,
+                     12,
+                     1000,
+                     243
+                 ],
+        "source":  "SasukeShippuden-core.png",
+        "alignment":  "floor",
+        "row":  0,
+        "column":  4,
+        "scale":  0.49777777777777776,
+        "file":  "HandSign.png"
+    },
+    {
+        "crop":  [
+                     1089,
+                     13,
+                     1216,
+                     241
+                 ],
+        "source":  "SasukeShippuden-core.png",
+        "alignment":  "floor",
+        "row":  0,
+        "column":  5,
+        "scale":  0.49777777777777776,
+        "file":  "Preview.png"
+    },
+    {
+        "crop":  [
+                     51,
+                     248,
+                     183,
+                     470
+                 ],
+        "source":  "SasukeShippuden-core.png",
+        "alignment":  "floor",
+        "row":  1,
+        "column":  0,
+        "scale":  0.49777777777777776,
+        "file":  "WalkLeft.png"
+    },
+    {
+        "crop":  [
+                     254,
+                     247,
+                     379,
+                     469
+                 ],
+        "source":  "SasukeShippuden-core.png",
+        "alignment":  "floor",
+        "row":  1,
+        "column":  1,
+        "scale":  0.49777777777777776,
+        "file":  "WalkPass1.png"
+    },
+    {
+        "crop":  [
+                     465,
+                     250,
+                     593,
+                     470
+                 ],
+        "source":  "SasukeShippuden-core.png",
+        "alignment":  "floor",
+        "row":  1,
+        "column":  2,
+        "scale":  0.49777777777777776,
+        "file":  "WalkRight.png"
+    },
+    {
+        "crop":  [
+                     664,
+                     250,
+                     794,
+                     470
+                 ],
+        "source":  "SasukeShippuden-core.png",
+        "alignment":  "floor",
+        "row":  1,
+        "column":  3,
+        "scale":  0.49777777777777776,
+        "file":  "WalkPass2.png"
+    },
+    {
+        "crop":  [
+                     858,
+                     283,
+                     1015,
+                     468
+                 ],
+        "source":  "SasukeShippuden-core.png",
+        "alignment":  "floor",
+        "row":  1,
+        "column":  4,
+        "scale":  0.49777777777777776,
+        "file":  "JumpStart.png"
+    },
+    {
+        "crop":  [
+                     1059,
+                     246,
+                     1247,
+                     443
+                 ],
+        "source":  "SasukeShippuden-core.png",
+        "alignment":  "floor",
+        "row":  1,
+        "column":  5,
+        "scale":  0.49777777777777776,
+        "file":  "NinjaJump.png"
+    },
+    {
+        "crop":  [
+                     28,
+                     485,
+                     230,
+                     679
+                 ],
+        "source":  "SasukeShippuden-core.png",
+        "alignment":  "floor",
+        "row":  2,
+        "column":  0,
+        "scale":  0.49777777777777776,
+        "file":  "Falling.png"
+    },
+    {
+        "crop":  [
+                     257,
+                     500,
+                     411,
+                     683
+                 ],
+        "source":  "SasukeShippuden-core.png",
+        "alignment":  "floor",
+        "row":  2,
+        "column":  1,
+        "scale":  0.49777777777777776,
+        "file":  "BounceCompress.png"
+    },
+    {
+        "crop":  [
+                     462,
+                     474,
+                     594,
+                     685
+                 ],
+        "source":  "SasukeShippuden-core.png",
+        "alignment":  "floor",
+        "row":  2,
+        "column":  2,
+        "scale":  0.49777777777777776,
+        "file":  "BounceExtend.png"
+    },
+    {
+        "crop":  [
+                     661,
+                     471,
+                     795,
+                     680
+                 ],
+        "source":  "SasukeShippuden-core.png",
+        "alignment":  "floor",
+        "row":  2,
+        "column":  3,
+        "scale":  0.49777777777777776,
+        "file":  "DragWince.png"
+    },
+    {
+        "crop":  [
+                     854,
+                     471,
+                     1020,
+                     671
+                 ],
+        "source":  "SasukeShippuden-core.png",
+        "alignment":  "floor",
+        "row":  2,
+        "column":  4,
+        "scale":  0.49777777777777776,
+        "file":  "Resist1.png"
+    },
+    {
+        "crop":  [
+                     1093,
+                     471,
+                     1244,
+                     684
+                 ],
+        "source":  "SasukeShippuden-core.png",
+        "alignment":  "floor",
+        "row":  2,
+        "column":  5,
+        "scale":  0.49777777777777776,
+        "file":  "Resist2.png"
+    },
+    {
+        "crop":  [
+                     46,
+                     689,
+                     180,
+                     869
+                 ],
+        "source":  "SasukeShippuden-core.png",
+        "alignment":  "floor",
+        "row":  3,
+        "column":  0,
+        "scale":  0.49777777777777776,
+        "file":  "Sit.png"
+    },
+    {
+        "crop":  [
+                     249,
+                     691,
+                     397,
+                     869
+                 ],
+        "source":  "SasukeShippuden-core.png",
+        "alignment":  "floor",
+        "row":  3,
+        "column":  1,
+        "scale":  0.49777777777777776,
+        "file":  "SitLookUp.png"
+    },
+    {
+        "crop":  [
+                     457,
+                     693,
+                     599,
+                     867
+                 ],
+        "source":  "SasukeShippuden-core.png",
+        "alignment":  "floor",
+        "row":  3,
+        "column":  2,
+        "scale":  0.49777777777777776,
+        "file":  "SitHeadTurn1.png"
+    },
+    {
+        "crop":  [
+                     660,
+                     694,
+                     796,
+                     868
+                 ],
+        "source":  "SasukeShippuden-core.png",
+        "alignment":  "floor",
+        "row":  3,
+        "column":  3,
+        "scale":  0.49777777777777776,
+        "file":  "SitHeadTurn2.png"
+    },
+    {
+        "crop":  [
+                     874,
+                     677,
+                     1004,
+                     895
+                 ],
+        "source":  "SasukeShippuden-core.png",
+        "alignment":  "floor",
+        "row":  3,
+        "column":  4,
+        "scale":  0.49777777777777776,
+        "file":  "SitLegsDown.png"
+    },
+    {
+        "crop":  [
+                     1076,
+                     715,
+                     1242,
+                     871
+                 ],
+        "source":  "SasukeShippuden-core.png",
+        "alignment":  "floor",
+        "row":  3,
+        "column":  5,
+        "scale":  0.49777777777777776,
+        "file":  "SitLegsUp.png"
+    },
+    {
+        "crop":  [
+                     46,
+                     890,
+                     174,
+                     1062
+                 ],
+        "source":  "SasukeShippuden-core.png",
+        "alignment":  "floor",
+        "row":  4,
+        "column":  0,
+        "scale":  0.49777777777777776,
+        "file":  "SitDangle1.png"
+    },
+    {
+        "crop":  [
+                     256,
+                     880,
+                     404,
+                     1057
+                 ],
+        "source":  "SasukeShippuden-core.png",
+        "alignment":  "floor",
+        "row":  4,
+        "column":  1,
+        "scale":  0.49777777777777776,
+        "file":  "SitDangle2.png"
+    },
+    {
+        "crop":  [
+                     431,
+                     914,
+                     611,
+                     1052
+                 ],
+        "source":  "SasukeShippuden-core.png",
+        "alignment":  "floor",
+        "row":  4,
+        "column":  2,
+        "scale":  0.49777777777777776,
+        "file":  "CreepContract.png"
+    },
+    {
+        "crop":  [
+                     630,
+                     930,
+                     847,
+                     1053
+                 ],
+        "source":  "SasukeShippuden-core.png",
+        "alignment":  "floor",
+        "row":  4,
+        "column":  3,
+        "scale":  0.49777777777777776,
+        "file":  "CreepExtend.png"
+    },
+    {
+        "crop":  [
+                     842,
+                     897,
+                     1035,
+                     1075
+                 ],
+        "source":  "SasukeShippuden-core.png",
+        "alignment":  "wall",
+        "row":  4,
+        "column":  4,
+        "scale":  0.49777777777777776,
+        "file":  "GrabWall.png"
+    },
+    {
+        "crop":  [
+                     1107,
+                     875,
+                     1236,
+                     1067
+                 ],
+        "source":  "SasukeShippuden-core.png",
+        "alignment":  "wall",
+        "row":  4,
+        "column":  5,
+        "scale":  0.49777777777777776,
+        "file":  "ClimbWallExtend.png"
+    },
+    {
+        "crop":  [
+                     41,
+                     1063,
+                     194,
+                     1242
+                 ],
+        "source":  "SasukeShippuden-core.png",
+        "alignment":  "wall",
+        "row":  5,
+        "column":  0,
+        "scale":  0.49777777777777776,
+        "file":  "ClimbWallContract.png"
+    },
+    {
+        "crop":  [
+                     256,
+                     1057,
+                     404,
+                     1248
+                 ],
+        "source":  "SasukeShippuden-core.png",
+        "alignment":  "ceiling",
+        "row":  5,
+        "column":  1,
+        "scale":  0.49777777777777776,
+        "file":  "GrabCeiling.png"
+    },
+    {
+        "crop":  [
+                     465,
+                     1050,
+                     609,
+                     1249
+                 ],
+        "source":  "SasukeShippuden-core.png",
+        "alignment":  "ceiling",
+        "row":  5,
+        "column":  2,
+        "scale":  0.49777777777777776,
+        "file":  "ClimbCeiling1.png"
+    },
+    {
+        "crop":  [
+                     674,
+                     1053,
+                     806,
+                     1248
+                 ],
+        "source":  "SasukeShippuden-core.png",
+        "alignment":  "ceiling",
+        "row":  5,
+        "column":  3,
+        "scale":  0.49777777777777776,
+        "file":  "ClimbCeiling2.png"
+    },
+    {
+        "crop":  [
+                     842,
+                     1075,
+                     1035,
+                     1249
+                 ],
+        "source":  "SasukeShippuden-core.png",
+        "alignment":  "floor",
+        "row":  5,
+        "column":  4,
+        "scale":  0.49777777777777776,
+        "file":  "hug1.png"
+    },
+    {
+        "crop":  [
+                     1090,
+                     1068,
+                     1211,
+                     1250
+                 ],
+        "source":  "SasukeShippuden-core.png",
+        "alignment":  "floor",
+        "row":  5,
+        "column":  5,
+        "scale":  0.49777777777777776,
+        "file":  "hug2.png"
+    },
+    {
+        "crop":  [
+                     54,
+                     29,
+                     231,
+                     254
+                 ],
+        "source":  "SasukeShippuden-utility.png",
+        "alignment":  "floor",
+        "row":  0,
+        "column":  0,
+        "scale":  0.45714285714285713,
+        "file":  "SitHeadTurn3.png"
+    },
+    {
+        "crop":  [
+                     304,
+                     29,
+                     490,
+                     253
+                 ],
+        "source":  "SasukeShippuden-utility.png",
+        "alignment":  "floor",
+        "row":  0,
+        "column":  1,
+        "scale":  0.45714285714285713,
+        "file":  "SitHeadTurn4.png"
+    },
+    {
+        "crop":  [
+                     567,
+                     33,
+                     747,
+                     253
+                 ],
+        "source":  "SasukeShippuden-utility.png",
+        "alignment":  "floor",
+        "row":  0,
+        "column":  2,
+        "scale":  0.45714285714285713,
+        "file":  "SitHeadTurn5.png"
+    },
+    {
+        "crop":  [
+                     824,
+                     35,
+                     1007,
+                     253
+                 ],
+        "source":  "SasukeShippuden-utility.png",
+        "alignment":  "floor",
+        "row":  0,
+        "column":  3,
+        "scale":  0.45714285714285713,
+        "file":  "SitHeadTurn6.png"
+    },
+    {
+        "crop":  [
+                     1060,
+                     17,
+                     1274,
+                     270
+                 ],
+        "source":  "SasukeShippuden-utility.png",
+        "alignment":  "floor",
+        "row":  0,
+        "column":  4,
+        "scale":  0.45714285714285713,
+        "file":  "StruggleHard1.png"
+    },
+    {
+        "crop":  [
+                     1304,
+                     16,
+                     1510,
+                     272
+                 ],
+        "source":  "SasukeShippuden-utility.png",
+        "alignment":  "floor",
+        "row":  0,
+        "column":  5,
+        "scale":  0.45714285714285713,
+        "file":  "StruggleHard2.png"
+    },
+    {
+        "crop":  [
+                     33,
+                     282,
+                     243,
+                     516
+                 ],
+        "source":  "SasukeShippuden-utility.png",
+        "alignment":  "floor",
+        "row":  1,
+        "column":  0,
+        "scale":  0.45714285714285713,
+        "file":  "StruggleHard3.png"
+    },
+    {
+        "crop":  [
+                     312,
+                     288,
+                     511,
+                     527
+                 ],
+        "source":  "SasukeShippuden-utility.png",
+        "alignment":  "floor",
+        "row":  1,
+        "column":  1,
+        "scale":  0.45714285714285713,
+        "file":  "StruggleHard4.png"
+    },
+    {
+        "crop":  [
+                     556,
+                     278,
+                     730,
+                     514
+                 ],
+        "source":  "SasukeShippuden-utility.png",
+        "alignment":  "floor",
+        "row":  1,
+        "column":  2,
+        "scale":  0.45714285714285713,
+        "file":  "hug3.png"
+    },
+    {
+        "crop":  [
+                     809,
+                     282,
+                     984,
+                     513
+                 ],
+        "source":  "SasukeShippuden-utility.png",
+        "alignment":  "floor",
+        "row":  1,
+        "column":  3,
+        "scale":  0.45714285714285713,
+        "file":  "hug4.png"
+    },
+    {
+        "crop":  [
+                     1059,
+                     275,
+                     1235,
+                     517
+                 ],
+        "source":  "SasukeShippuden-utility.png",
+        "alignment":  "floor",
+        "row":  1,
+        "column":  4,
+        "scale":  0.45714285714285713,
+        "file":  "DivideTwist1.png"
+    },
+    {
+        "crop":  [
+                     1341,
+                     276,
+                     1498,
+                     518
+                 ],
+        "source":  "SasukeShippuden-utility.png",
+        "alignment":  "floor",
+        "row":  1,
+        "column":  5,
+        "scale":  0.45714285714285713,
+        "file":  "DivideTwist2.png"
+    },
+    {
+        "crop":  [
+                     49,
+                     521,
+                     210,
+                     759
+                 ],
+        "source":  "SasukeShippuden-utility.png",
+        "alignment":  "floor",
+        "row":  2,
+        "column":  0,
+        "scale":  0.45714285714285713,
+        "file":  "DivideTwist3.png"
+    },
+    {
+        "crop":  [
+                     282,
+                     560,
+                     533,
+                     762
+                 ],
+        "source":  "SasukeShippuden-utility.png",
+        "alignment":  "floor",
+        "row":  2,
+        "column":  1,
+        "scale":  0.45714285714285713,
+        "file":  "DivideSplit.png"
+    },
+    {
+        "crop":  [
+                     565,
+                     525,
+                     751,
+                     765
+                 ],
+        "source":  "SasukeShippuden-utility.png",
+        "alignment":  "floor",
+        "row":  2,
+        "column":  2,
+        "scale":  0.45714285714285713,
+        "file":  "DivideComplete.png"
+    },
+    {
+        "crop":  [
+                     793,
+                     546,
+                     1011,
+                     758
+                 ],
+        "source":  "SasukeShippuden-utility.png",
+        "alignment":  "floor",
+        "row":  2,
+        "column":  3,
+        "scale":  0.45714285714285713,
+        "file":  "PullUpPrepare.png"
+    },
+    {
+        "crop":  [
+                     1069,
+                     539,
+                     1258,
+                     753
+                 ],
+        "source":  "SasukeShippuden-utility.png",
+        "alignment":  "floor",
+        "row":  2,
+        "column":  4,
+        "scale":  0.45714285714285713,
+        "file":  "PullUpHalf.png"
+    },
+    {
+        "crop":  [
+                     1310,
+                     543,
+                     1523,
+                     760
+                 ],
+        "source":  "SasukeShippuden-utility.png",
+        "alignment":  "floor",
+        "row":  2,
+        "column":  5,
+        "scale":  0.45714285714285713,
+        "file":  "PullUpEffort.png"
+    },
+    {
+        "crop":  [
+                     42,
+                     771,
+                     241,
+                     1014
+                 ],
+        "source":  "SasukeShippuden-utility.png",
+        "alignment":  "floor",
+        "row":  3,
+        "column":  0,
+        "scale":  0.45714285714285713,
+        "file":  "PullUpComplete.png"
+    },
+    {
+        "crop":  [
+                     310,
+                     769,
+                     495,
+                     1014
+                 ],
+        "source":  "SasukeShippuden-utility.png",
+        "alignment":  "floor",
+        "row":  3,
+        "column":  1,
+        "scale":  0.45714285714285713,
+        "file":  "StandWithWindow.png"
+    },
+    {
+        "crop":  [
+                     562,
+                     770,
+                     727,
+                     1011
+                 ],
+        "source":  "SasukeShippuden-utility.png",
+        "alignment":  "floor",
+        "row":  3,
+        "column":  2,
+        "scale":  0.45714285714285713,
+        "file":  "WalkWithWindow1.png"
+    },
+    {
+        "crop":  [
+                     820,
+                     768,
+                     985,
+                     1013
+                 ],
+        "source":  "SasukeShippuden-utility.png",
+        "alignment":  "floor",
+        "row":  3,
+        "column":  3,
+        "scale":  0.45714285714285713,
+        "file":  "WalkWithWindow2.png"
+    },
+    {
+        "crop":  [
+                     1029,
+                     776,
+                     1257,
+                     1008
+                 ],
+        "source":  "SasukeShippuden-utility.png",
+        "alignment":  "floor",
+        "row":  3,
+        "column":  4,
+        "scale":  0.45714285714285713,
+        "file":  "ThrowWindow.png"
+    }
+]

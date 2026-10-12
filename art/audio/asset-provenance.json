@@ -1,0 +1,932 @@
+[
+  {
+    "path": "audio/common/sounds/combat/block.wav",
+    "sha256": "205703ccd7b0ed519ac66e447b5a26a6e22201e55252b018f26a921d6f6d830e",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "audio/common/sounds/combat/chakra.wav",
+    "sha256": "9dc88899255ccf177f5b677277736e50afc5641564965d96ffee77279d9511b7",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "audio/common/sounds/combat/charge.wav",
+    "sha256": "7c64b6b6da1eec64ab3ac3bbde34d6c62622e9d7fdad4199c81cd1a2a554906b",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "audio/common/sounds/combat/dark.wav",
+    "sha256": "ed300e1a0c5f818adaccb37e816fce2359cd72b1057864b829b15ba1bb377cd5",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "audio/common/sounds/combat/electric.wav",
+    "sha256": "3dacac5d5d80e72b6d590f2df8f6fad02bc3a626e377748f5a458c110c315c58",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "audio/common/sounds/combat/fire.wav",
+    "sha256": "21f0270603e945b2ec91d67c5b1524220fd7a4d0aaf07e4eb023adc59a509c10",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "audio/common/sounds/combat/generic_breath.wav",
+    "sha256": "adf3ba6949f8d82cc66be04923858623df99677f9d0e1242998128f6edea8b8d",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "audio/common/sounds/combat/heavy.wav",
+    "sha256": "0be173a1619f1f1051218673028690d13430e70cc0e8cc8dc8c75b63e799015c",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "audio/common/sounds/combat/heavy_hit.wav",
+    "sha256": "ab86a3794719f581d917ff8e855879f858330debebd07dd5dd3771fa374872be",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "audio/common/sounds/combat/hit_body_01.wav",
+    "sha256": "9b794cc4fcd0bbbf087b0704e05c49cb2f8c7f9cfe47dd9ec134d2c68193cd20",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "audio/common/sounds/combat/hit_body_02.wav",
+    "sha256": "dde3a097d59c03d1c66ad7664fee79f1113bdb17ec3fbf340b06c9b2f0b44b7a",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "audio/common/sounds/combat/impact.wav",
+    "sha256": "fcd0ff78e3f25682dd39e603a3f328dbdbbdbfb5150d2a15d5aa61c921d70811",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "audio/common/sounds/combat/kick_01.wav",
+    "sha256": "0a5c85429c89450afdeedf74b873fd771e5da8b6b944f615e116c47165dc4bf9",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "audio/common/sounds/combat/kick_02.wav",
+    "sha256": "88c29a16fc150adef196d11cc755a629540b8759f097eab7de87b6e61562cd63",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "audio/common/sounds/combat/knockback.wav",
+    "sha256": "c7bef3f98ff0506ac9ee4f9959dc3a4d62d318e8f15c9b8f03514a58d1f90a19",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "audio/common/sounds/combat/KO.wav",
+    "sha256": "258436fd3ef3e4d017b5ce3723c394220cf0bc4b4169cb59357630bd92af92d3",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "audio/common/sounds/combat/melee_ready.wav",
+    "sha256": "cbd8f9a90259c906451f9d793bf0d77bbea188e01d1f74490da3d672d47606c3",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "audio/common/sounds/combat/parry.wav",
+    "sha256": "34bd953157528b1ee015e09cb8137d5330080394aad1afc2192aac1709e97786",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "audio/common/sounds/combat/punch_heavy_01.wav",
+    "sha256": "95ec75ac2b38efed715e09af42edbab3e8f3fac86d207cd8520a14ecd7a2846e",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "audio/common/sounds/combat/punch_light_01.wav",
+    "sha256": "8af77e5f81e4b692c28e8a5af0d06dc96cd84b2533ea0d27fe85f21a3abc291b",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "audio/common/sounds/combat/punch_light_02.wav",
+    "sha256": "d517b99504b36673c3cfc292a71d77db2737cce65dc8bcc43204dfbf5754b4bb",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "audio/common/sounds/combat/sword.wav",
+    "sha256": "5138d875e7f5aefdb7cd4a651872c5a3f98258a3ccd920e1411c09e03ad74f78",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "audio/common/sounds/combat/victory.wav",
+    "sha256": "5be36bcace8253631063e74c12739bed7b9eaf2f2331bd5da69ea3c2e9882149",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "audio/common/sounds/combat/whoosh.wav",
+    "sha256": "c4051f31464fd9b08d355c816d69f70fbcf2313560b50d894ae1c41eef12120c",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "audio/common/sounds/movement/air_whoosh.wav",
+    "sha256": "9988e73a431e4bd91bd233281011ab21d6dd29951ad7eb872e429568c45bde6e",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "audio/common/sounds/movement/dodge_whoosh_01.wav",
+    "sha256": "65a0b0d75803720f54462368dc84e7c6c9229e94be06e716006238b44773801b",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "audio/common/sounds/movement/dodge_whoosh_02.wav",
+    "sha256": "c4eb7dfae54c5d0df628df4c22f479d58e58804e2dd8794b91852e88ad381049",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "audio/common/sounds/movement/drag_release.wav",
+    "sha256": "4ccbeac1a1591e6e4fdf236362f4bb23948489172945bc106c78f6addf9ae5fb",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "audio/common/sounds/movement/drag_start.wav",
+    "sha256": "132a173200914498875532799a20ccdf17833c92eb73c2e0dbc2b71da5baca60",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "audio/common/sounds/movement/footstep_01.wav",
+    "sha256": "aa568b2b446f3e23a6d92f8aad52aa27096960f0a8f93f0813e9aa6cd8e1fc4b",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "audio/common/sounds/movement/footstep_02.wav",
+    "sha256": "978359a9fcd1d3efb2f6cd90a75872a0bd065c4f026c48e96de620f2064378c5",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "audio/common/sounds/movement/footstep_03.wav",
+    "sha256": "2754b83f42dd65f2843ad3614232be312b8525abf2f24f9c88272123ff9a6a82",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "audio/common/sounds/movement/footstep_04.wav",
+    "sha256": "3ed5916fbd1c980b603da709d9d4333658fb819a89c605647ff3429a02e288a5",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "audio/common/sounds/movement/jump_whoosh.wav",
+    "sha256": "c2dbc2162ea8b8d653f8bbdaf3153ef24444d82a65ed66410314bebbfed373fb",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "audio/common/sounds/movement/landing.wav",
+    "sha256": "8b3aed3273e7a5ff43289d419360b09aa885428d6c2f2007716f496e5c24424a",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "audio/common/sounds/movement/landing_heavy.wav",
+    "sha256": "1a333975e347bc921247b26d84e9bbc2ba43e7efb6d0b27449b15c71da87e101",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "audio/common/sounds/movement/run_01.wav",
+    "sha256": "0712094d3ffc3527e5335ef46cf2739881032f870f6838f95539a0924b1f923d",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "audio/common/sounds/movement/run_02.wav",
+    "sha256": "e0fe98a9ad265003ddc47cec2663eb0287c97c6991fa844af37a3a12d74726e4",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "audio/common/sounds/movement/run_03.wav",
+    "sha256": "5ada00541ecb97d8fdf48792cbd760bddfd06791e86ecd90d82441df021afcff",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "audio/common/sounds/movement/run_04.wav",
+    "sha256": "9a792f40afd57b398295e964e5ce5d97462b557fbc5e8ffcb6d97a3d7ec09eba",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "audio/common/sounds/ui/ui.wav",
+    "sha256": "e1f535ff268fc7ca96240009431bd2617faa35a3543781fcdd397a914374e436",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "audio/common/sounds/ui/ui_character_select.wav",
+    "sha256": "e1f535ff268fc7ca96240009431bd2617faa35a3543781fcdd397a914374e436",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "audio/common/sounds/ui/ui_character_spawn.wav",
+    "sha256": "e1f535ff268fc7ca96240009431bd2617faa35a3543781fcdd397a914374e436",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "audio/common/sounds/ui/ui_click.wav",
+    "sha256": "e1f535ff268fc7ca96240009431bd2617faa35a3543781fcdd397a914374e436",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "audio/common/sounds/ui/ui_combat_end.wav",
+    "sha256": "e1f535ff268fc7ca96240009431bd2617faa35a3543781fcdd397a914374e436",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "audio/common/sounds/ui/ui_combat_select.wav",
+    "sha256": "e1f535ff268fc7ca96240009431bd2617faa35a3543781fcdd397a914374e436",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "audio/common/sounds/ui/ui_combat_start.wav",
+    "sha256": "e1f535ff268fc7ca96240009431bd2617faa35a3543781fcdd397a914374e436",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "audio/common/sounds/ui/ui_manager_open.wav",
+    "sha256": "e1f535ff268fc7ca96240009431bd2617faa35a3543781fcdd397a914374e436",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "audio/common/sounds/ui/ui_settings_open.wav",
+    "sha256": "e1f535ff268fc7ca96240009431bd2617faa35a3543781fcdd397a914374e436",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "audio/common/sounds/weapons/kunai_impact_01.wav",
+    "sha256": "f957237d904f75c9404dbf89ef6912c235d6885ad1d8dd98fda6c61043d6f658",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "audio/common/sounds/weapons/kunai_impact_02.wav",
+    "sha256": "ef0897145cba9fb7c91ecdc3f148ee69864590b6d8754e53fe8b35a48419ce70",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "audio/common/sounds/weapons/kunai_throw_01.wav",
+    "sha256": "7bb3cfdbde3c18e5f8a24f4ce7f548d5fc88e1123f4b1d4d2b0db6d6326e7e06",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "audio/common/sounds/weapons/kunai_throw_02.wav",
+    "sha256": "ca0160367ed82b2ee3bb0b99e1aaab645786f42827ef8a237c95054054bba958",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "audio/common/sounds/weapons/shuriken_impact_01.wav",
+    "sha256": "252ce752c821f65aef7ccafd6b7e692c3dcfabe4a0e2faa70af45e5a564218eb",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "audio/common/sounds/weapons/shuriken_impact_02.wav",
+    "sha256": "c55074d8295c0046eb9ef9d1dc1c750c58f561c859dd9bfecf64096420ecd0bf",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "audio/common/sounds/weapons/shuriken_throw_01.wav",
+    "sha256": "c23493d91e4a767b5755ed81a1b87420c005e27e2489eaf5e5516f45d15ab65d",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "audio/common/sounds/weapons/shuriken_throw_02.wav",
+    "sha256": "cad7bd279696ac4c442c1c8433f5453dfd74270d62809d60df0890255536de17",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "audio/common/sounds/weapons/weapon_ready.wav",
+    "sha256": "432dbc73bffddcf8e7d0e6cbafcb2befa7adb7bbc11aa6389b99ad17b686a77c",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/NarutoShippuden/sounds/combat/block.wav",
+    "sha256": "a9c6059617ea0f9232cbe79f8d42922e9a910a3f2e61634a2acf182c4de552b4",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/NarutoShippuden/sounds/combat/heavy_hit.wav",
+    "sha256": "9615599356a2e44564ad4493b9c1b78fddf547ae734881db498549ecec59435f",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/NarutoShippuden/sounds/combat/hit_body_01.wav",
+    "sha256": "a78edee0fb1b9ef0e967e6d757c49bbf8f4dd0112a091a019855172e562fbf36",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/NarutoShippuden/sounds/combat/hit_body_02.wav",
+    "sha256": "701d17fbda5de9e6306c3af70c01ba232db4503326fc6c247792f7514574d30b",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/NarutoShippuden/sounds/combat/kick_01.wav",
+    "sha256": "629e502281ed48549d209af8b630067df7f4593ce4ab66e39a45c1cd2c061515",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/NarutoShippuden/sounds/combat/kick_02.wav",
+    "sha256": "6e35a2c2a4fcc22fbf6f28067a80552c0d804b20bd992c096b214c3db09fe662",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/NarutoShippuden/sounds/combat/knockback.wav",
+    "sha256": "780b75550293ab6a4cc171021f2a6fbe6c927c5a386b4204c7e122e4f3112edb",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/NarutoShippuden/sounds/combat/KO.wav",
+    "sha256": "0e4ca1c98f60f98d06050d2b4a1811417e2462ef9da18dfe087427e7d9d0d7b8",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/NarutoShippuden/sounds/combat/melee_ready.wav",
+    "sha256": "c2c09d098339c2e61241e68afe5b349ae82cc09ee22595fa489111c6520a3c5b",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/NarutoShippuden/sounds/combat/parry.wav",
+    "sha256": "057f0534cdd0642b557dcaa56b507f2415622783cd94ad557751d90ab8c97671",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/NarutoShippuden/sounds/combat/punch_light_01.wav",
+    "sha256": "78db6725658a24c9e0014081c1524febae2eca2e226fa827db0ffa00893438f8",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/NarutoShippuden/sounds/combat/punch_light_02.wav",
+    "sha256": "b16a519750109512458869b38201818f5cf7eb21e23e3d0e21709d3f14ba0ac6",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/NarutoShippuden/sounds/combat/victory.wav",
+    "sha256": "5be36bcace8253631063e74c12739bed7b9eaf2f2331bd5da69ea3c2e9882149",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/NarutoShippuden/sounds/movement/air_whoosh.wav",
+    "sha256": "eb21215bfe94e18a078527e88094d6894106ee404a0ffd7c2e7ddd400159797c",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/NarutoShippuden/sounds/movement/dodge_whoosh_01.wav",
+    "sha256": "ed22011f7fe4723ea2b3dffdc17a49f2182d1621806d6e2dfaa39fcf5803640f",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/NarutoShippuden/sounds/movement/dodge_whoosh_02.wav",
+    "sha256": "361cfda65b646161a9d382a74e3246f9a5195e7593c2bb6d78b69054de0acf14",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/NarutoShippuden/sounds/movement/drag_release.wav",
+    "sha256": "fb1d3add076e6dc5af9cdcf80825725f2399ce76d96e244b57a41469cc6c92af",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/NarutoShippuden/sounds/movement/drag_start.wav",
+    "sha256": "0d605ccf0ddd9e0c377660e2fe1ad2113e9a414589e3a2d08f474ab5eace3aae",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/NarutoShippuden/sounds/movement/footstep_01.wav",
+    "sha256": "0b813a8f76c6de08f0b0b8e73bd049e15d32d0c6f2ff065ea737cca937b245fe",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/NarutoShippuden/sounds/movement/footstep_02.wav",
+    "sha256": "4479f5b3129b59c21b55834adf293305989a6ad83de515e352c2a6bc28a25ca6",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/NarutoShippuden/sounds/movement/footstep_03.wav",
+    "sha256": "ecb7d0833f294864fb3a2097b1c7d2158c4bd743aea8a80e8d438e076a41de27",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/NarutoShippuden/sounds/movement/footstep_04.wav",
+    "sha256": "14c6d7e64030cb52c190a0e59c25311375215f64d281ac4909bfa3798ba90e8b",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/NarutoShippuden/sounds/movement/jump_whoosh.wav",
+    "sha256": "e003d49c912d00ce2891b89ea65f28296dc435a6fe06615d7a2ce92c851b35df",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/NarutoShippuden/sounds/movement/landing.wav",
+    "sha256": "0d0db4625e7c4ee041e7c01a0bf352873aeae04456dd3c2bca28062039e002d2",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/NarutoShippuden/sounds/movement/landing_heavy.wav",
+    "sha256": "6df899d38d01d88255f2462f24a56178cf4582faa88b15cca33b5074e2613993",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/NarutoShippuden/sounds/movement/run_01.wav",
+    "sha256": "78d4971a67cc8e252548ee5bcae7813d7c9b08b394dd2155a5094b919e925dba",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/NarutoShippuden/sounds/movement/run_02.wav",
+    "sha256": "5771df9d0304b0cef50ff4d0e6220f80253e30f1b059e183047f8a97fb7d6429",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/NarutoShippuden/sounds/movement/run_03.wav",
+    "sha256": "af07c02e57222b4fd71aa287c6108c994a0ea447e6f0584fa39f2f2244855f07",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/NarutoShippuden/sounds/movement/run_04.wav",
+    "sha256": "c485e81cd24aefd0fbb169d011e384a5b1afc60ac4166ed5927171ad16e24e25",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/NarutoShippuden/sounds/signature/chakra_charge.wav",
+    "sha256": "2954af31c2008871e16a40921a7ecf0726eb15c1f700f2f651328965205398db",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/NarutoShippuden/sounds/signature/clone_poof.wav",
+    "sha256": "55c1403f41b93837cb19ee199f0803babd3d7783c4e21c92b873d056e19d804f",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/NarutoShippuden/sounds/signature/clone_poof_out.wav",
+    "sha256": "33c40a0874a5f676ef5883a679b8d5d75426722afe9b47f97481bcb7c7b8263b",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/NarutoShippuden/sounds/signature/energy_release.wav",
+    "sha256": "ed681afb4c46baedee9bd7d9e504dfc9ad2ef4c45703eba4c7377216436f6261",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/NarutoShippuden/sounds/signature/rasengan_dash.wav",
+    "sha256": "b48104bf0f43e4e58aa1c7e180b6bf124075f48a8dca64f63a074482cfd166e4",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/NarutoShippuden/sounds/signature/rasengan_energy.wav",
+    "sha256": "41cbc5bb289feaf2ec2e2e48e831a1710a6a4b18c793a1e6dd6cf59c55f48e61",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/NarutoShippuden/sounds/signature/rasengan_impact.wav",
+    "sha256": "3769ed9bf9d3eb4c6d56b51d273b15d53f0d4f716cb84d2aeb464bb32684e446",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/NarutoShippuden/sounds/weapons/kunai_impact_01.wav",
+    "sha256": "b8ba93daf7694acf50fc5a6e467e362176665dee5aa263c999b6b0f390f6f839",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/NarutoShippuden/sounds/weapons/kunai_impact_02.wav",
+    "sha256": "a64c04cddf3ac5afc85f427e16d47cf54c16f37eb30f20d6c60a6a8b7a2e2992",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/NarutoShippuden/sounds/weapons/kunai_throw_01.wav",
+    "sha256": "d3a7b55e71a1a4ff80a02cbfeffff3e3ee0f5ed9f26a7b11b92b569b8ed81728",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/NarutoShippuden/sounds/weapons/kunai_throw_02.wav",
+    "sha256": "3ccb96d86adac99e216f76e936d64ec7d7972d2c66b47619f85b0c027d234361",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/NarutoShippuden/sounds/weapons/shuriken_impact_01.wav",
+    "sha256": "fcc9dea69f3122f478e885c32783e989ed633a539522be76cb34b6c5c5aa54f6",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/NarutoShippuden/sounds/weapons/shuriken_impact_02.wav",
+    "sha256": "57f9ea77e7c0070e00594d8e26ebcf4f804b996d0524898c19cf488bc7da0b34",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/NarutoShippuden/sounds/weapons/shuriken_spin_01.wav",
+    "sha256": "b4cd4643d8350bddd9b467e3d7172053a54e41c3c32ff323831fa3d4030189e9",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/NarutoShippuden/sounds/weapons/shuriken_spin_02.wav",
+    "sha256": "ac6a584568e905c17d8ebd102841e060fd461ee15bdfec579e932e4ab3905359",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/NarutoShippuden/sounds/weapons/weapon_ready.wav",
+    "sha256": "02c2b09d6a30efe31b832754919dc6d7bb47c284c86906cf7a0714cff66a429d",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/SasukeShippuden/sounds/combat/block.wav",
+    "sha256": "cfd2ec5b3c1517c9ed60db527a2023957333d5b1b0233e0cb7e1f706fe6a4b26",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/SasukeShippuden/sounds/combat/heavy_hit.wav",
+    "sha256": "21f676274037fa6c4ec6bf23286e7117bb9e14181668932705e5c393ff2163eb",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/SasukeShippuden/sounds/combat/hit_body_01.wav",
+    "sha256": "9733839863d5719b1a10acd6349b5790220031ecb9a3cc6726b0c02589af1386",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/SasukeShippuden/sounds/combat/hit_body_02.wav",
+    "sha256": "073e40c50a6f987f4f147c92e0e6d19a1050caacfeccf5e12431c67faa261b58",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/SasukeShippuden/sounds/combat/kick_01.wav",
+    "sha256": "26832ec5178566911bbf2c8bf766deaafa6d581a6cc27f361fcfacb24e79c9e8",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/SasukeShippuden/sounds/combat/kick_02.wav",
+    "sha256": "b216fb5a24325bf30021517225f2c2c851494f7fe1dcd83cf2fa34d377d9b80e",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/SasukeShippuden/sounds/combat/knockback.wav",
+    "sha256": "57527361064aff4dce945f94fe0e3e0410de131cd4abeed191ea01256676c103",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/SasukeShippuden/sounds/combat/KO.wav",
+    "sha256": "b4b049434b5538414f5474bfc865dafa8a7cf2b20f671128edf86596107483f6",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/SasukeShippuden/sounds/combat/melee_ready.wav",
+    "sha256": "8eb76206ba98cb980c1b929a7761d66514e8f9a9eec3c017026c5b585eeeaac9",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/SasukeShippuden/sounds/combat/parry.wav",
+    "sha256": "d533d5bc57066e4b1bef261e509b88dfb370557875f180c17dff7aaa5ea5eb8a",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/SasukeShippuden/sounds/combat/punch_light_01.wav",
+    "sha256": "b442ab2d92866eb7e280ef318831ba3296a95657de373d50a541c8c7e70d2d93",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/SasukeShippuden/sounds/combat/punch_light_02.wav",
+    "sha256": "4d41af40a7bdb7268961d0063a155428f976e3cc9fca637ee8835a094a98380b",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/SasukeShippuden/sounds/combat/victory.wav",
+    "sha256": "b71059b15dd5a9fd5e2137798a242188e1565464648a8dd6fdb9b65057c2ad7f",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/SasukeShippuden/sounds/movement/air_whoosh.wav",
+    "sha256": "56898a1ba5f548d7864bd8958416a5f4d93fd23d8ed2a21e198448194391c5e3",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/SasukeShippuden/sounds/movement/dodge_whoosh_01.wav",
+    "sha256": "d418e4a0379194baf79c2247076fe5e4ee42d01926d625199fac2b3f0c33bd43",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/SasukeShippuden/sounds/movement/dodge_whoosh_02.wav",
+    "sha256": "b17ff7ae6865034225174590fb3b05cd9c1b6f4ceccd9ed18138e673a24df6e8",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/SasukeShippuden/sounds/movement/drag_release.wav",
+    "sha256": "330b114f0d09db982b7c361acae4360b33b6c484fa9840b7fb6bad25b0e87084",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/SasukeShippuden/sounds/movement/drag_start.wav",
+    "sha256": "625dcdb2c40686a48eb37a6600951f0160bf04d18f6aec035bcc4f4c908cf23d",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/SasukeShippuden/sounds/movement/footstep_01.wav",
+    "sha256": "43c61c37c010b5aeb690cc0be7bcc336a2b7c90bd24c87b24c4b89099ea31ca1",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/SasukeShippuden/sounds/movement/footstep_02.wav",
+    "sha256": "58e15982d8b7ff77844d9e18110228b3793bb7526fa33042d4c754a209097428",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/SasukeShippuden/sounds/movement/footstep_03.wav",
+    "sha256": "73a278bcc3e545f7c7e5f8c18020f2108c6f5bd94536ed3676bd6a1b706f6797",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/SasukeShippuden/sounds/movement/footstep_04.wav",
+    "sha256": "d72c68f80c13f2c02c259313c429b338996e5d9eb24933d6082b43069011f8d3",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/SasukeShippuden/sounds/movement/jump_whoosh.wav",
+    "sha256": "df21fb0797dc013929ad98a5c86c0a6449607aad89617121f142243ce5c5f664",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/SasukeShippuden/sounds/movement/landing.wav",
+    "sha256": "1884eb1d9ba37bd6455f14ca25cf3b11867bb89a738a1e4150779231529324f0",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/SasukeShippuden/sounds/movement/landing_heavy.wav",
+    "sha256": "2416b8af7f9287e84ba3bf84a7a9c9c4aa54c729f437ef15be7c078d8cc05e97",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/SasukeShippuden/sounds/movement/run_01.wav",
+    "sha256": "b49e9446b888cdcca213826c7ca758cbc01f8756fbab2ef6ac0a9b4dbbac0867",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/SasukeShippuden/sounds/movement/run_02.wav",
+    "sha256": "78e4bddc88b6b27828811741416c1c4384f7a2154605c35d472468eaa111b08b",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/SasukeShippuden/sounds/movement/run_03.wav",
+    "sha256": "9a85e4e528bb89f65383482c9ba8007d70539b33d356d0b92723163d3d98421b",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/SasukeShippuden/sounds/movement/run_04.wav",
+    "sha256": "61811590310ae9b1ee9157e51f0114d5740634b36559abc0c47676c48c26c111",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/SasukeShippuden/sounds/signature/chidori_charge.wav",
+    "sha256": "dfcda59c1ca0308cebb3dff5a227c9e9b3e715d75418b905a56701ce06834764",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/SasukeShippuden/sounds/signature/chidori_dash.wav",
+    "sha256": "97957c2b3cfe93361e7f937ff7c9ae26f9d6f56cfebc4f9f93d09a50601ed1ee",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/SasukeShippuden/sounds/signature/chidori_electric_loop.wav",
+    "sha256": "5fefaad35b560d9243b0dba887c55302a1911e88c81b1352def676a54e7c1f2a",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/SasukeShippuden/sounds/signature/chidori_impact.wav",
+    "sha256": "53176be89f75fdd54c9d0ba6007c837859e3391d11703dc03080996fbc4bad5f",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/SasukeShippuden/sounds/signature/electric_decay.wav",
+    "sha256": "c763f2db3d44c71eebc4888d4a7c26e80d83679372a7f93bc1f32352986d0bca",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/SasukeShippuden/sounds/signature/fire_charge.wav",
+    "sha256": "a8597d642051b887d97d7fc8f032e8010f9c8b30cdae45bbb7d7d5932dbb4a67",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/SasukeShippuden/sounds/signature/fire_impact.wav",
+    "sha256": "8152b1b3da5edc0867db7cc9f3e78a003dd7f888f1bba8378501917095ed2fb7",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/SasukeShippuden/sounds/signature/fire_release.wav",
+    "sha256": "b9b72285fbdb3e562a95dc345be72397feec0e7e2bae75438f6976a24b49f952",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/SasukeShippuden/sounds/weapons/kunai_impact_01.wav",
+    "sha256": "44bac87f83076c660154e315e9002b948f2d0cf66d6e3ff9f8b1420e6da80141",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/SasukeShippuden/sounds/weapons/kunai_impact_02.wav",
+    "sha256": "e20a3f2cffd873b037680dca68567c8c14980a694235b5ceb84e80a9046e817e",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/SasukeShippuden/sounds/weapons/kunai_throw_01.wav",
+    "sha256": "6bb2cadb59a5be0b0dd2134c77297827d64afeeb580998968b4fa9531927b5d6",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/SasukeShippuden/sounds/weapons/kunai_throw_02.wav",
+    "sha256": "947b73d6ea4078ff5b62cf0244e80d7f7465b91853c0bb3964e3436330c02b3a",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/SasukeShippuden/sounds/weapons/shuriken_impact_01.wav",
+    "sha256": "f750ddee2f2323c7f61c0ee59a92f55038559246fe3d61c84841a7b05c684099",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/SasukeShippuden/sounds/weapons/shuriken_impact_02.wav",
+    "sha256": "0d85e253e1087a36b1c266b5a86c1e69bf9901d831c55497c459859ba48f08c7",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/SasukeShippuden/sounds/weapons/shuriken_throw_01.wav",
+    "sha256": "ca9bf70eaa95e272943758403e80da1a099ecf6a6b3ad408968053f7d6d3434d",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/SasukeShippuden/sounds/weapons/shuriken_throw_02.wav",
+    "sha256": "5b55db20bf18da5bebbaeb6426ab5c3f370af0ede216ea3ccfe7978c15aa4726",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/SasukeShippuden/sounds/weapons/sword_draw.wav",
+    "sha256": "ebbc06b3e570e1f67c4449afd9269c74f7d77bf399ab8dd74e878297ceba4e3b",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/SasukeShippuden/sounds/weapons/sword_impact_01.wav",
+    "sha256": "81a8de560ab52914b3051d43fee225197f1ce528d3946098baaac1ee5e80be43",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/SasukeShippuden/sounds/weapons/sword_impact_02.wav",
+    "sha256": "70ed1d7bf14aee70dc1a977b7ec0b7e0cdced927fdb2df4fbea9c59070179a81",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/SasukeShippuden/sounds/weapons/sword_swing_01.wav",
+    "sha256": "f44019f2a58096040b204e6f1ebd53ec0e777fc22de95e6ff7c6f3d0cc4bf65f",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/SasukeShippuden/sounds/weapons/sword_swing_02.wav",
+    "sha256": "b0bc107f6bf0416f67bd938b4f2f4b71a96f5cccdf3181aeb745f5f98994771a",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/SasukeShippuden/sounds/weapons/sword_swing_03.wav",
+    "sha256": "669d434a97f9a18a28137148d7a3c3c42cb262d64e736561a5a1ebcce4bcec8a",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  },
+  {
+    "path": "img/SasukeShippuden/sounds/weapons/weapon_ready.wav",
+    "sha256": "311669b2965f2298bdc5ca9027b60febcd9a4fdc4e376fd18a8ce0ae6e01b08f",
+    "source": "Original procedural ShinobiMate synthesis; tools/build-audio-phase1.py",
+    "external": false
+  }
+]

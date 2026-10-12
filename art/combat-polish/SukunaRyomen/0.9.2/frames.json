@@ -1,0 +1,194 @@
+﻿[
+    {
+        "scale":  0.35057471264367818,
+        "name":  "punch-start",
+        "baseline":  128,
+        "crop":  [
+                     37,
+                     31,
+                     267,
+                     244
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.35057471264367818,
+        "name":  "punch-contact",
+        "baseline":  128,
+        "crop":  [
+                     385,
+                     31,
+                     269,
+                     245
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.35057471264367818,
+        "name":  "slash-start",
+        "baseline":  128,
+        "crop":  [
+                     750,
+                     27,
+                     227,
+                     248
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.35057471264367818,
+        "name":  "slash-contact",
+        "baseline":  128,
+        "crop":  [
+                     1058,
+                     32,
+                     301,
+                     243
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.35057471264367818,
+        "name":  "heavy-start",
+        "baseline":  128,
+        "crop":  [
+                     56,
+                     330,
+                     239,
+                     228
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.35057471264367818,
+        "name":  "heavy-contact",
+        "baseline":  128,
+        "crop":  [
+                     379,
+                     324,
+                     299,
+                     230
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.35057471264367818,
+        "name":  "heavy-recover",
+        "baseline":  128,
+        "crop":  [
+                     754,
+                     311,
+                     244,
+                     243
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.35057471264367818,
+        "name":  "dash-contact",
+        "baseline":  128,
+        "crop":  [
+                     1062,
+                     323,
+                     299,
+                     226
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.35057471264367818,
+        "name":  "curse-start",
+        "baseline":  128,
+        "crop":  [
+                     61,
+                     591,
+                     226,
+                     254
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.35057471264367818,
+        "name":  "curse-contact",
+        "baseline":  128,
+        "crop":  [
+                     372,
+                     595,
+                     312,
+                     250
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.35057471264367818,
+        "name":  "multi-start",
+        "baseline":  128,
+        "crop":  [
+                     756,
+                     591,
+                     254,
+                     254
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.35057471264367818,
+        "name":  "multi-contact",
+        "baseline":  128,
+        "crop":  [
+                     1050,
+                     597,
+                     305,
+                     248
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.35057471264367818,
+        "name":  "fire-start",
+        "baseline":  128,
+        "crop":  [
+                     57,
+                     887,
+                     233,
+                     235
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.35057471264367818,
+        "name":  "fire-charge",
+        "baseline":  128,
+        "crop":  [
+                     408,
+                     879,
+                     230,
+                     251
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.35057471264367818,
+        "name":  "fire-contact",
+        "baseline":  128,
+        "crop":  [
+                     707,
+                     876,
+                     348,
+                     254
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.35057471264367818,
+        "name":  "new-victory",
+        "baseline":  128,
+        "crop":  [
+                     1123,
+                     864,
+                     203,
+                     267
+                 ],
+        "canvas":  128
+    }
+]

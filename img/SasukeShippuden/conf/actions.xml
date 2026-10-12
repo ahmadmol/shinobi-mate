@@ -1,0 +1,698 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Mascot xmlns="http://www.group-finity.com/Mascot" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.group-finity.com/Mascot Mascot.xsd">
+	<ActionList>
+		<Action Name="Look" Type="Embedded" Class="com.group_finity.mascot.action.Look" />
+		<Action Name="Offset" Type="Embedded" Class="com.group_finity.mascot.action.Offset" />
+		<Action Name="Stand" Type="Stay" BorderType="Floor">
+			<Animation Condition="#{(mascot.environment.floor.isOn(mascot.anchor) || mascot.environment.activeIE.topBorder.isOn(mascot.anchor)) &amp;&amp; (Math.pow(mascot.environment.cursor.x-mascot.anchor.x,2)+Math.pow(mascot.environment.cursor.y-(mascot.anchor.y-68),2) &lt; 120*120)}">
+				<Pose Image="/MouseSurprise.png" ImageAnchor="64,128" Velocity="0,0" Duration="10" />
+				<Pose Image="/Blink.png" ImageAnchor="64,128" Velocity="0,0" Duration="3" />
+				<Pose Image="/Smile.png" ImageAnchor="64,128" Velocity="0,0" Duration="25" />
+				<Pose Image="/Blink.png" ImageAnchor="64,128" Velocity="0,0" Duration="3" />
+			</Animation>
+			<Animation>
+				<Pose Image="/Stand.png" ImageAnchor="64,128" Velocity="0,0" Duration="250" />
+			</Animation>
+		</Action>
+		<Action Name="Walk" Type="Move" BorderType="Floor" Condition="#{!((mascot.environment.floor.isOn(mascot.anchor) || mascot.environment.activeIE.topBorder.isOn(mascot.anchor)) &amp;&amp; (Math.pow(mascot.environment.cursor.x-mascot.anchor.x,2)+Math.pow(mascot.environment.cursor.y-(mascot.anchor.y-68),2) &lt; 120*120))}">
+			<Animation>
+				<Pose Image="/WalkLeft.png" ImageAnchor="64,128" Velocity="-2,0" Duration="6" SoundEvent="movement.footstep" />
+				<Pose Image="/WalkPass1.png" ImageAnchor="64,128" Velocity="-2,0" Duration="6" />
+				<Pose Image="/WalkRight.png" ImageAnchor="64,128" Velocity="-2,0" Duration="6" SoundEvent="movement.footstep" />
+				<Pose Image="/WalkPass2.png" ImageAnchor="64,128" Velocity="-2,0" Duration="6" />
+			</Animation>
+		</Action>
+		<Action Name="Run" Type="Move" BorderType="Floor" Condition="#{!((mascot.environment.floor.isOn(mascot.anchor) || mascot.environment.activeIE.topBorder.isOn(mascot.anchor)) &amp;&amp; (Math.pow(mascot.environment.cursor.x-mascot.anchor.x,2)+Math.pow(mascot.environment.cursor.y-(mascot.anchor.y-68),2) &lt; 120*120))}">
+			<Animation>
+				<Pose Image="/WalkLeft.png" ImageAnchor="64,128" Velocity="-3,0" Duration="4" SoundEvent="movement.run" />
+				<Pose Image="/WalkPass1.png" ImageAnchor="64,128" Velocity="-3,0" Duration="4" />
+				<Pose Image="/WalkRight.png" ImageAnchor="64,128" Velocity="-3,0" Duration="4" SoundEvent="movement.run" />
+				<Pose Image="/WalkPass2.png" ImageAnchor="64,128" Velocity="-3,0" Duration="4" />
+			</Animation>
+		</Action>
+		<Action Name="Dash" Type="Move" BorderType="Floor" Condition="#{!((mascot.environment.floor.isOn(mascot.anchor) || mascot.environment.activeIE.topBorder.isOn(mascot.anchor)) &amp;&amp; (Math.pow(mascot.environment.cursor.x-mascot.anchor.x,2)+Math.pow(mascot.environment.cursor.y-(mascot.anchor.y-68),2) &lt; 120*120))}">
+			<Animation>
+				<Pose Image="/WalkLeft.png" ImageAnchor="64,128" Velocity="-4,0" Duration="4" SoundEvent="movement.run" />
+				<Pose Image="/WalkPass1.png" ImageAnchor="64,128" Velocity="-4,0" Duration="4" />
+				<Pose Image="/WalkRight.png" ImageAnchor="64,128" Velocity="-4,0" Duration="4" SoundEvent="movement.run" />
+				<Pose Image="/WalkPass2.png" ImageAnchor="64,128" Velocity="-4,0" Duration="4" />
+			</Animation>
+		</Action>
+		<Action Name="Sit" Type="Stay" BorderType="Floor">
+			<Animation Condition="#{(mascot.environment.floor.isOn(mascot.anchor) || mascot.environment.activeIE.topBorder.isOn(mascot.anchor)) &amp;&amp; (Math.pow(mascot.environment.cursor.x-mascot.anchor.x,2)+Math.pow(mascot.environment.cursor.y-(mascot.anchor.y-68),2) &lt; 120*120)}">
+				<Pose Image="/MouseSurprise.png" ImageAnchor="64,128" Velocity="0,0" Duration="10" />
+				<Pose Image="/Blink.png" ImageAnchor="64,128" Velocity="0,0" Duration="3" />
+				<Pose Image="/Smile.png" ImageAnchor="64,128" Velocity="0,0" Duration="25" />
+				<Pose Image="/Blink.png" ImageAnchor="64,128" Velocity="0,0" Duration="3" />
+			</Animation>
+			<Animation>
+				<Pose Image="/Sit.png" ImageAnchor="64,128" Velocity="0,0" Duration="250" />
+			</Animation>
+		</Action>
+		<Action Name="SitAndLookUp" Type="Stay" BorderType="Floor">
+			<Animation>
+				<Pose Image="/SitLookUp.png" ImageAnchor="64,128" Velocity="0,0" Duration="250" />
+			</Animation>
+		</Action>
+		<Action Name="SitAndLookAtMouse" Type="Stay" BorderType="Floor">
+			<Animation Condition="#{(mascot.environment.floor.isOn(mascot.anchor) || mascot.environment.activeIE.topBorder.isOn(mascot.anchor)) &amp;&amp; (Math.pow(mascot.environment.cursor.x-mascot.anchor.x,2)+Math.pow(mascot.environment.cursor.y-(mascot.anchor.y-68),2) &lt; 120*120)}">
+				<Pose Image="/MouseSurprise.png" ImageAnchor="64,128" Velocity="0,0" Duration="10" />
+				<Pose Image="/Blink.png" ImageAnchor="64,128" Velocity="0,0" Duration="3" />
+				<Pose Image="/Smile.png" ImageAnchor="64,128" Velocity="0,0" Duration="25" />
+				<Pose Image="/Blink.png" ImageAnchor="64,128" Velocity="0,0" Duration="3" />
+			</Animation>
+			<Animation Condition="#{mascot.environment.cursor.y &lt; mascot.environment.screen.height/2}">
+				<Pose Image="/SitLookUp.png" ImageAnchor="64,128" Velocity="0,0" Duration="250" />
+			</Animation>
+			<Animation>
+				<Pose Image="/Sit.png" ImageAnchor="64,128" Velocity="0,0" Duration="250" />
+			</Animation>
+		</Action>
+		<Action Name="SitAndSpinHeadAction" Type="Animate" BorderType="Floor">
+			<Animation>
+				<Pose Image="/SitLookUp.png" ImageAnchor="64,128" Velocity="0,0" Duration="5" />
+				<Pose Image="/SitHeadTurn1.png" ImageAnchor="64,128" Velocity="0,0" Duration="5" />
+				<Pose Image="/SitHeadTurn4.png" ImageAnchor="64,128" Velocity="0,0" Duration="5" />
+				<Pose Image="/SitHeadTurn2.png" ImageAnchor="64,128" Velocity="0,0" Duration="5" />
+				<Pose Image="/SitHeadTurn5.png" ImageAnchor="64,128" Velocity="0,0" Duration="5" />
+				<Pose Image="/SitHeadTurn3.png" ImageAnchor="64,128" Velocity="0,0" Duration="5" />
+				<Pose Image="/SitHeadTurn6.png" ImageAnchor="64,128" Velocity="0,0" Duration="5" />
+				<Pose Image="/Sit.png" ImageAnchor="64,128" Velocity="0,0" Duration="5" />
+			</Animation>
+		</Action>
+		<Action Name="SitWithLegsUp" Type="Stay" BorderType="Floor">
+			<Animation>
+				<Pose Image="/SitLegsUp.png" ImageAnchor="64,112" Velocity="0,0" Duration="250" />
+			</Animation>
+		</Action>
+		<Action Name="SitWithLegsDown" Type="Stay" BorderType="Floor">
+			<Animation>
+				<Pose Image="/SitLegsDown.png" ImageAnchor="64,112" Velocity="0,0" Duration="250" />
+			</Animation>
+		</Action>
+		<Action Name="SitAndDangleLegs" Type="Stay" BorderType="Floor">
+			<Animation>
+				<Pose Image="/SitLegsDown.png" ImageAnchor="64,112" Velocity="0,0" Duration="5" />
+				<Pose Image="/SitDangle1.png" ImageAnchor="64,112" Velocity="0,0" Duration="15" />
+				<Pose Image="/SitLegsDown.png" ImageAnchor="64,112" Velocity="0,0" Duration="5" />
+				<Pose Image="/SitDangle2.png" ImageAnchor="64,112" Velocity="0,0" Duration="15" />
+			</Animation>
+		</Action>
+		<Action Name="Sprawl" Type="Stay" BorderType="Floor">
+			<Animation>
+				<Pose Image="/CreepExtend.png" ImageAnchor="64,128" Velocity="0,0" Duration="250" />
+			</Animation>
+		</Action>
+		<Action Name="Creep" Type="Move" BorderType="Floor" Condition="#{!((mascot.environment.floor.isOn(mascot.anchor) || mascot.environment.activeIE.topBorder.isOn(mascot.anchor)) &amp;&amp; (Math.pow(mascot.environment.cursor.x-mascot.anchor.x,2)+Math.pow(mascot.environment.cursor.y-(mascot.anchor.y-68),2) &lt; 120*120))}">
+			<Animation>
+				<Pose Image="/CreepContract.png" ImageAnchor="64,128" Velocity="0,0" Duration="28" />
+				<Pose Image="/CreepContract.png" ImageAnchor="64,128" Velocity="-2,0" Duration="4" />
+				<Pose Image="/CreepExtend.png" ImageAnchor="64,128" Velocity="-2,0" Duration="4" />
+				<Pose Image="/CreepExtend.png" ImageAnchor="64,128" Velocity="-1,0" Duration="4" />
+				<Pose Image="/CreepExtend.png" ImageAnchor="64,128" Velocity="0,0" Duration="24" />
+			</Animation>
+		</Action>
+		<Action Name="GrabCeiling" Type="Stay" BorderType="Ceiling">
+			<Animation>
+				<Pose Image="/GrabCeiling.png" ImageAnchor="64,0" Velocity="0,0" Duration="250" />
+			</Animation>
+		</Action>
+		<Action Name="ClimbCeiling" Type="Move" BorderType="Ceiling">
+			<Animation>
+				<Pose Image="/ClimbCeiling2.png" ImageAnchor="64,0" Velocity="0,0" Duration="16" />
+				<Pose Image="/ClimbCeiling2.png" ImageAnchor="64,0" Velocity="-1,0" Duration="4" />
+				<Pose Image="/GrabCeiling.png" ImageAnchor="64,0" Velocity="-1,0" Duration="4" />
+				<Pose Image="/ClimbCeiling1.png" ImageAnchor="64,0" Velocity="-1,0" Duration="4" />
+				<Pose Image="/ClimbCeiling1.png" ImageAnchor="64,0" Velocity="0,0" Duration="16" />
+				<Pose Image="/ClimbCeiling1.png" ImageAnchor="64,0" Velocity="-2,0" Duration="4" />
+				<Pose Image="/GrabCeiling.png" ImageAnchor="64,0" Velocity="-2,0" Duration="4" />
+				<Pose Image="/ClimbCeiling2.png" ImageAnchor="64,0" Velocity="-2,0" Duration="4" />
+			</Animation>
+		</Action>
+		<Action Name="GrabWall" Type="Stay" BorderType="Wall">
+			<Animation>
+				<Pose Image="/GrabWall.png" ImageAnchor="16,128" Velocity="0,0" Duration="250" />
+			</Animation>
+		</Action>
+		<Action Name="ClimbWall" Type="Move" BorderType="Wall">
+			<Animation Condition="#{TargetY &lt; mascot.anchor.y}">
+				<Pose Image="/ClimbWallContract.png" ImageAnchor="16,128" Velocity="0,0" Duration="16" />
+				<Pose Image="/ClimbWallContract.png" ImageAnchor="16,128" Velocity="0,-1" Duration="4" />
+				<Pose Image="/ClimbWallExtend.png" ImageAnchor="16,128" Velocity="0,-1" Duration="4" />
+				<Pose Image="/GrabWall.png" ImageAnchor="16,128" Velocity="0,-1" Duration="4" />
+				<Pose Image="/GrabWall.png" ImageAnchor="16,128" Velocity="0,0" Duration="16" />
+				<Pose Image="/GrabWall.png" ImageAnchor="16,128" Velocity="0,-2" Duration="4" />
+				<Pose Image="/ClimbWallExtend.png" ImageAnchor="16,128" Velocity="0,-2" Duration="4" />
+				<Pose Image="/ClimbWallContract.png" ImageAnchor="16,128" Velocity="0,-2" Duration="4" />
+			</Animation>
+			<Animation Condition="#{TargetY &gt;= mascot.anchor.y}">
+				<Pose Image="/ClimbWallContract.png" ImageAnchor="16,128" Velocity="0,0" Duration="16" />
+				<Pose Image="/ClimbWallContract.png" ImageAnchor="16,128" Velocity="0,2" Duration="4" />
+				<Pose Image="/ClimbWallExtend.png" ImageAnchor="16,128" Velocity="0,2" Duration="4" />
+				<Pose Image="/GrabWall.png" ImageAnchor="16,128" Velocity="0,2" Duration="4" />
+				<Pose Image="/GrabWall.png" ImageAnchor="16,128" Velocity="0,0" Duration="16" />
+				<Pose Image="/GrabWall.png" ImageAnchor="16,128" Velocity="0,1" Duration="4" />
+				<Pose Image="/ClimbWallExtend.png" ImageAnchor="16,128" Velocity="0,1" Duration="4" />
+				<Pose Image="/ClimbWallContract.png" ImageAnchor="16,128" Velocity="0,1" Duration="4" />
+			</Animation>
+		</Action>
+		<Action Name="FallWithIe" Type="Embedded" Class="com.group_finity.mascot.action.FallWithIE" IeOffsetX="0" IeOffsetY="-64">
+			<Animation>
+				<Pose Image="/StandWithWindow.png" ImageAnchor="64,128" Velocity="0,0" Duration="250" />
+			</Animation>
+		</Action>
+		<Action Name="WalkWithIe" BorderType="Floor" Type="Embedded" Class="com.group_finity.mascot.action.WalkWithIE" IeOffsetX="0" IeOffsetY="-64">
+			<Animation>
+				<Pose Image="/WalkLeft.png" ImageAnchor="64,128" Velocity="-3,0" Duration="4" />
+				<Pose Image="/WalkPass1.png" ImageAnchor="64,128" Velocity="-3,0" Duration="4" />
+				<Pose Image="/WalkRight.png" ImageAnchor="64,128" Velocity="-3,0" Duration="4" />
+				<Pose Image="/WalkPass2.png" ImageAnchor="64,128" Velocity="-3,0" Duration="4" />
+			</Animation>
+		</Action>
+		<Action Name="RunWithIe" BorderType="Floor" Type="Embedded" Class="com.group_finity.mascot.action.WalkWithIE" IeOffsetX="0" IeOffsetY="-64">
+			<Animation>
+				<Pose Image="/WalkLeft.png" ImageAnchor="64,128" Velocity="-4,0" Duration="4" />
+				<Pose Image="/WalkPass1.png" ImageAnchor="64,128" Velocity="-4,0" Duration="4" />
+				<Pose Image="/WalkRight.png" ImageAnchor="64,128" Velocity="-4,0" Duration="4" />
+				<Pose Image="/WalkPass2.png" ImageAnchor="64,128" Velocity="-4,0" Duration="4" />
+			</Animation>
+		</Action>
+		<Action Name="ThrowIe" BorderType="Floor" Type="Embedded" Class="com.group_finity.mascot.action.ThrowIE" InitialVX="${mascot.anchor.x &lt; mascot.environment.workArea.left+96 || mascot.anchor.x &gt; mascot.environment.workArea.right-96 ? 0 : Math.max(-2,Math.min(2,(32)))}" InitialVY="${mascot.anchor.y &lt; mascot.environment.workArea.top+152 ? 0 : Math.max(-6,Math.min(12,(-10)))}" Gravity="0.5">
+			<Animation>
+				<Pose Image="/ThrowWindow.png" ImageAnchor="64,128" Velocity="0,0" Duration="40" />
+			</Animation>
+		</Action>
+		<Action Name="Jumping" Type="Embedded" Class="com.group_finity.mascot.action.Jump" VelocityParam="8">
+			<Animation>
+				<Pose Image="/JumpStart.png" ImageAnchor="64,128" Velocity="0,0" Duration="250" />
+			</Animation>
+		</Action>
+		<Action Name="Falling" Type="Embedded" Class="com.group_finity.mascot.action.Fall" RegistanceX="0.05" RegistanceY="0.1" Gravity="2">
+			<Animation>
+				<Pose Image="/Falling.png" ImageAnchor="64,128" Velocity="0,0" Duration="250" />
+			</Animation>
+		</Action>
+		<Action Name="Bouncing" Type="Animate" BorderType="Floor">
+			<Animation>
+				<Pose Image="/BounceExtend.png" ImageAnchor="64,128" Velocity="0,0" Duration="4" />
+				<Pose Image="/BounceCompress.png" ImageAnchor="64,128" Velocity="0,0" Duration="4" />
+			</Animation>
+		</Action>
+		<Action Name="Tripping" Type="Animate" BorderType="Floor">
+			<Animation>
+				<Pose Image="/BounceCompress.png" ImageAnchor="64,128" Velocity="-8,0" Duration="8" />
+				<Pose Image="/BounceExtend.png" ImageAnchor="64,128" Velocity="-4,0" Duration="4" />
+				<Pose Image="/CreepContract.png" ImageAnchor="64,128" Velocity="-2,0" Duration="4" />
+				<Pose Image="/CreepContract.png" ImageAnchor="64,128" Velocity="0,0" Duration="10" />
+				<Pose Image="/BounceCompress.png" ImageAnchor="64,104" Velocity="-4,0" Duration="4" />
+			</Animation>
+		</Action>
+		<Action Name="Pinched" Type="Embedded" Class="com.group_finity.mascot.action.Dragged">
+			<Animation Condition="#{FootX &lt; mascot.environment.cursor.x-50}">
+				<Pose Image="/DragWince.png" ImageAnchor="64,128" Velocity="0,0" Duration="5" />
+			</Animation>
+			<Animation Condition="#{FootX &lt; mascot.environment.cursor.x-30}">
+				<Pose Image="/DragWince.png" ImageAnchor="64,128" Velocity="0,0" Duration="5" />
+			</Animation>
+			<Animation Condition="#{FootX &lt; mascot.environment.cursor.x}">
+				<Pose Image="/DragWince.png" ImageAnchor="64,128" Velocity="0,0" Duration="5" />
+			</Animation>
+			<Animation Condition="#{FootX &gt; mascot.environment.cursor.x-10 &amp;&amp; FootX &lt; mascot.environment.cursor.x+10}">
+				<Pose Image="/MouseSurprise.png" ImageAnchor="64,128" Velocity="0,0" Duration="5" />
+			</Animation>
+			<Animation Condition="#{FootX &lt; mascot.environment.cursor.x+30}">
+				<Pose Image="/DragWince.png" ImageAnchor="64,128" Velocity="0,0" Duration="5" />
+			</Animation>
+			<Animation Condition="#{FootX &lt; mascot.environment.cursor.x+50}">
+				<Pose Image="/DragWince.png" ImageAnchor="64,128" Velocity="0,0" Duration="5" />
+			</Animation>
+			<Animation Condition="#{FootX &gt;= mascot.environment.cursor.x+30}">
+				<Pose Image="/DragWince.png" ImageAnchor="64,128" Velocity="0,0" Duration="5" />
+			</Animation>
+		</Action>
+		<Action Name="Resisting" Type="Embedded" Class="com.group_finity.mascot.action.Regist">
+			<Animation>
+				<Pose Image="/DragWince.png" ImageAnchor="64,128" Velocity="0,0" Duration="5" />
+				<Pose Image="/DragWince.png" ImageAnchor="64,128" Velocity="0,0" Duration="5" />
+				<Pose Image="/DragWince.png" ImageAnchor="64,128" Velocity="0,0" Duration="5" />
+				<Pose Image="/DragWince.png" ImageAnchor="64,128" Velocity="0,0" Duration="5" />
+				<Pose Image="/MouseSurprise.png" ImageAnchor="64,128" Velocity="0,0" Duration="50" />
+				<Pose Image="/DragWince.png" ImageAnchor="64,128" Velocity="0,0" Duration="5" />
+				<Pose Image="/DragWince.png" ImageAnchor="64,128" Velocity="0,0" Duration="5" />
+				<Pose Image="/DragWince.png" ImageAnchor="64,128" Velocity="0,0" Duration="5" />
+				<Pose Image="/DragWince.png" ImageAnchor="64,128" Velocity="0,0" Duration="5" />
+				<Pose Image="/DragWince.png" ImageAnchor="64,128" Velocity="0,0" Duration="5" />
+				<Pose Image="/DragWince.png" ImageAnchor="64,128" Velocity="0,0" Duration="5" />
+				<Pose Image="/DragWince.png" ImageAnchor="64,128" Velocity="0,0" Duration="5" />
+				<Pose Image="/DragWince.png" ImageAnchor="64,128" Velocity="0,0" Duration="5" />
+				<Pose Image="/MouseSurprise.png" ImageAnchor="64,128" Velocity="0,0" Duration="100" />
+				<Pose Image="/DragWince.png" ImageAnchor="64,128" Velocity="0,0" Duration="5" />
+				<Pose Image="/DragWince.png" ImageAnchor="64,128" Velocity="0,0" Duration="5" />
+				<Pose Image="/DragWince.png" ImageAnchor="64,128" Velocity="0,0" Duration="5" />
+				<Pose Image="/DragWince.png" ImageAnchor="64,128" Velocity="0,0" Duration="5" />
+				<Pose Image="/DragWince.png" ImageAnchor="64,128" Velocity="0,0" Duration="5" />
+				<Pose Image="/DragWince.png" ImageAnchor="64,128" Velocity="0,0" Duration="5" />
+				<Pose Image="/DragWince.png" ImageAnchor="64,128" Velocity="0,0" Duration="5" />
+				<Pose Image="/DragWince.png" ImageAnchor="64,128" Velocity="0,0" Duration="5" />
+				<Pose Image="/DragWince.png" ImageAnchor="64,128" Velocity="0,0" Duration="2" />
+				<Pose Image="/DragWince.png" ImageAnchor="64,128" Velocity="0,0" Duration="2" />
+				<Pose Image="/DragWince.png" ImageAnchor="64,128" Velocity="0,0" Duration="2" />
+				<Pose Image="/DragWince.png" ImageAnchor="64,128" Velocity="0,0" Duration="2" />
+				<Pose Image="/DragWince.png" ImageAnchor="64,128" Velocity="0,0" Duration="2" />
+				<Pose Image="/DragWince.png" ImageAnchor="64,128" Velocity="0,0" Duration="2" />
+				<Pose Image="/DragWince.png" ImageAnchor="64,128" Velocity="0,0" Duration="2" />
+				<Pose Image="/DragWince.png" ImageAnchor="64,128" Velocity="0,0" Duration="2" />
+			</Animation>
+		</Action>
+	</ActionList>
+	<ActionList>
+		<Action Name="Fall" Type="Sequence" Loop="false">
+			<ActionReference Name="VisibleReset" />
+			<ActionReference Name="Falling" />
+			<Action Type="Select">
+				<Action Type="Sequence" Condition="${mascot.environment.floor.isOn(mascot.anchor) ||      mascot.environment.activeIE.topBorder.isOn(mascot.anchor) }">
+					<ActionReference Name="Bouncing" />
+					<ActionReference Name="Stand" Duration="${100+Math.random()*100}" />
+				</Action>
+				<ActionReference Name="GrabWall" Duration="100" />
+			</Action>
+		</Action>
+		<Action Name="Dragged" Type="Sequence" Loop="true">
+			<ActionReference Name="Pinched" />
+			<ActionReference Name="Resisting" />
+		</Action>
+		<Action Name="Thrown" Type="Sequence" Loop="false">
+			<ActionReference Name="VisibleReset" />
+			<ActionReference Name="Falling" InitialVX="${mascot.anchor.x &lt; mascot.environment.workArea.left+96 || mascot.anchor.x &gt; mascot.environment.workArea.right-96 ? 0 : Math.max(-2,Math.min(2,(mascot.environment.cursor.dx)))}" InitialVY="${mascot.anchor.y &lt; mascot.environment.workArea.top+152 ? 0 : Math.max(-6,Math.min(12,(mascot.environment.cursor.dy)))}" />
+			<Action Type="Select">
+				<Action Type="Sequence" Condition="${mascot.environment.floor.isOn(mascot.anchor) || mascot.environment.activeIE.topBorder.isOn(mascot.anchor) }">
+					<ActionReference Name="Bouncing" />
+					<ActionReference Name="Stand" Duration="${100+Math.random()*100}" />
+				</Action>
+				<ActionReference Name="GrabWall" Duration="100" />
+			</Action>
+		</Action>
+		<Action Name="StandUp" Type="Sequence" Loop="false">
+			<ActionReference Name="Stand" Duration="${60+Math.random()*60}" />
+		</Action>
+		<Action Name="SitDown" Type="Sequence" Loop="false">
+			<ActionReference Name="Sit" Duration="${60+Math.random()*60}" />
+		</Action>
+		<Action Name="LieDown" Type="Sequence" Loop="false">
+			<ActionReference Name="Sprawl" Duration="${60+Math.random()*60}" />
+		</Action>
+		<Action Name="SitWhileDanglingLegs" Type="Sequence" Loop="false">
+			<ActionReference Name="SitWithLegsUp" Duration="${60+Math.random()*60}" />
+			<ActionReference Name="SitWithLegsDown" Duration="${60+Math.random()*60}" />
+			<ActionReference Name="SitAndDangleLegs" Duration="${60+Math.random()*60}" />
+			<ActionReference Name="SitWithLegsDown" Duration="${60+Math.random()*60}" />
+			<ActionReference Name="SitWithLegsUp" Duration="${60+Math.random()*60}" />
+		</Action>
+		<Action Name="HoldOntoWall" Type="Sequence" Loop="false">
+			<ActionReference Name="GrabWall" Duration="${60+Math.random()*60}" />
+		</Action>
+		<Action Name="FallFromWall" Type="Sequence" Loop="false">
+			<ActionReference Name="VisibleReset" />
+			<ActionReference Name="Falling" />
+			<ActionReference Name="Bouncing" Condition="#{(mascot.environment.floor.isOn(mascot.anchor) || mascot.environment.activeIE.topBorder.isOn(mascot.anchor))}" />
+		</Action>
+		<Action Name="HoldOntoCeiling" Type="Sequence" Loop="false">
+			<ActionReference Name="GrabCeiling" Duration="${60+Math.random()*60}" />
+		</Action>
+		<Action Name="FallFromCeiling" Type="Sequence" Loop="false">
+			<ActionReference Name="VisibleReset" />
+			<ActionReference Name="Falling" />
+			<ActionReference Name="Bouncing" Condition="#{(mascot.environment.floor.isOn(mascot.anchor) || mascot.environment.activeIE.topBorder.isOn(mascot.anchor))}" />
+		</Action>
+		<Action Name="WalkAlongWorkAreaFloor" Type="Sequence" Loop="false">
+			<ActionReference Name="Walk" TargetX="${Math.max(mascot.environment.workArea.left+64,Math.min(mascot.environment.workArea.right-64,(mascot.environment.workArea.left+64+Math.random()*(mascot.environment.workArea.width-128))))}" />
+		</Action>
+		<Action Name="RunAlongWorkAreaFloor" Type="Sequence" Loop="false">
+			<ActionReference Name="Run" TargetX="${Math.max(mascot.environment.workArea.left+64,Math.min(mascot.environment.workArea.right-64,(mascot.environment.workArea.left+64+Math.random()*(mascot.environment.workArea.width-128))))}" />
+		</Action>
+		<Action Name="CrawlAlongWorkAreaFloor" Type="Sequence" Loop="false">
+			<ActionReference Name="Creep" TargetX="${Math.max(mascot.environment.workArea.left+64,Math.min(mascot.environment.workArea.right-64,(mascot.environment.workArea.left+64+Math.random()*(mascot.environment.workArea.width-128))))}" />
+		</Action>
+		<Action Name="WalkLeftAlongFloorAndSit" Type="Sequence" Loop="false">
+			<ActionReference Name="Walk" TargetX="${Math.max(mascot.environment.workArea.left+64,Math.min(mascot.environment.workArea.right-64,(mascot.environment.workArea.left+100+Math.random()*300)))}" />
+			<ActionReference Name="Stand" Duration="${20+Math.random()*20}" />
+			<ActionReference Name="Look" LookRight="true" />
+			<ActionReference Name="Stand" Duration="${20+Math.random()*20}" />
+			<ActionReference Name="Sit" Duration="${500+Math.random()*1000}" />
+		</Action>
+		<Action Name="WalkRightAlongFloorAndSit" Type="Sequence" Loop="false">
+			<ActionReference Name="Walk" TargetX="${Math.max(mascot.environment.workArea.left+64,Math.min(mascot.environment.workArea.right-64,(mascot.environment.workArea.right-100-Math.random()*300)))}" />
+			<ActionReference Name="Stand" Duration="${20+Math.random()*20}" />
+			<ActionReference Name="Look" LookRight="false" />
+			<ActionReference Name="Stand" Duration="${20+Math.random()*20}" />
+			<ActionReference Name="Sit" Duration="${500+Math.random()*1000}" />
+		</Action>
+		<Action Name="GrabWorkAreaBottomLeftWall" Type="Sequence" Loop="false">
+			<ActionReference Name="Walk" TargetX="#{mascot.environment.workArea.left}" />
+			<ActionReference Name="ClimbWall" TargetY="#{mascot.environment.workArea.bottom-64}" />
+		</Action>
+		<Action Name="GrabWorkAreaBottomRightWall" Type="Sequence" Loop="false">
+			<ActionReference Name="Walk" TargetX="#{mascot.environment.workArea.right}" />
+			<ActionReference Name="ClimbWall" TargetY="#{mascot.environment.workArea.bottom-64}" />
+		</Action>
+		<Action Name="WalkLeftAndSit" Type="Sequence" Loop="false">
+			<ActionReference Name="Run" TargetX="${Math.max(mascot.environment.workArea.left+64,Math.min(mascot.environment.workArea.right-64,(mascot.environment.workArea.left+100+Math.random()*300)))}" />
+			<ActionReference Name="Stand" Duration="${20+Math.random()*20}" />
+			<ActionReference Name="Look" LookRight="true" />
+			<ActionReference Name="Stand" Duration="${20+Math.random()*20}" />
+			<ActionReference Name="Sit" Duration="${500+Math.random()*1000}" />
+		</Action>
+		<Action Name="WalkRightAndSit" Type="Sequence" Loop="false">
+			<ActionReference Name="Run" TargetX="${Math.max(mascot.environment.workArea.left+64,Math.min(mascot.environment.workArea.right-64,(mascot.environment.workArea.right-100-Math.random()*300)))}" />
+			<ActionReference Name="Stand" Duration="${20+Math.random()*20}" />
+			<ActionReference Name="Look" LookRight="false" />
+			<ActionReference Name="Stand" Duration="${20+Math.random()*20}" />
+			<ActionReference Name="Sit" Duration="${500+Math.random()*1000}" />
+		</Action>
+		<Action Name="WalkAndGrabBottomLeftWall" Type="Sequence" Loop="false">
+			<ActionReference Name="Run" TargetX="#{mascot.environment.workArea.left}" />
+			<ActionReference Name="ClimbWall" TargetY="#{mascot.environment.workArea.bottom-64}" />
+		</Action>
+		<Action Name="WalkAndGrabBottomRightWall" Type="Sequence" Loop="false">
+			<ActionReference Name="Run" TargetX="#{mascot.environment.workArea.right}" />
+			<ActionReference Name="ClimbWall" TargetY="#{mascot.environment.workArea.bottom-64}" />
+		</Action>
+		<Action Name="JumpFromBottomOfIE" Type="Sequence" Loop="false">
+			<ActionReference Name="NinjaJump" Condition="${(mascot.environment.floor.isOn(mascot.anchor) || mascot.environment.activeIE.topBorder.isOn(mascot.anchor)) &amp;&amp; mascot.anchor.x &gt;= mascot.environment.workArea.left+64 &amp;&amp; mascot.anchor.x &lt;= mascot.environment.workArea.right-64 &amp;&amp; mascot.anchor.y &gt;= mascot.environment.workArea.top+152}" />
+			<ActionReference Name="VisibleReset" />
+			<ActionReference Name="Falling" />
+			<ActionReference Name="Bouncing" Condition="#{(mascot.environment.floor.isOn(mascot.anchor) || mascot.environment.activeIE.topBorder.isOn(mascot.anchor))}" />
+		</Action>
+		<Action Name="ClimbHalfwayAlongWall" Type="Sequence" Loop="false">
+			<ActionReference Name="ClimbWall" TargetY="${mascot.environment.workArea.top+64 + Math.random()*(mascot.environment.workArea.height-128)}" />
+		</Action>
+		<Action Name="ClimbAlongWall" Type="Sequence" Loop="false">
+			<ActionReference Name="ClimbWall" TargetY="#{mascot.environment.workArea.top+128}" />
+			<ActionReference Name="Offset" X="${mascot.lookRight ? -64 : 64}" Y="-128" />
+			<ActionReference Name="GrabCeiling" Duration="12" />
+			<ActionReference Name="ClimbCeiling" TargetX="${mascot.environment.workArea.left+64+Math.random()*Math.max(0,mascot.environment.workArea.width-128)}" />
+		</Action>
+		<Action Name="ClimbAlongCeiling" Type="Sequence" Loop="false">
+			<ActionReference Name="ClimbCeiling" TargetX="${Math.max(mascot.environment.workArea.left+64,Math.min(mascot.environment.workArea.right-64,(mascot.environment.workArea.left+64+Math.random()*(mascot.environment.workArea.width-128))))}" />
+		</Action>
+		<Action Name="WalkAlongIECeiling" Type="Sequence" Loop="false">
+			<ActionReference Name="Walk" TargetX="${Math.max(mascot.environment.workArea.left+64,Math.min(mascot.environment.workArea.right-64,(mascot.environment.activeIE.left+64+Math.random()*(mascot.environment.activeIE.width-128))))}" />
+		</Action>
+		<Action Name="RunAlongIECeiling" Type="Sequence" Loop="false">
+			<ActionReference Name="Run" TargetX="${Math.max(mascot.environment.workArea.left+64,Math.min(mascot.environment.workArea.right-64,(mascot.environment.activeIE.left+64+Math.random()*(mascot.environment.activeIE.width-128))))}" />
+		</Action>
+		<Action Name="CrawlAlongIECeiling" Type="Sequence" Loop="false">
+			<ActionReference Name="Creep" TargetX="${Math.max(mascot.environment.workArea.left+64,Math.min(mascot.environment.workArea.right-64,(mascot.environment.activeIE.left+64+Math.random()*(mascot.environment.activeIE.width-128))))}" />
+		</Action>
+		<Action Name="SitOnTheLeftEdgeOfIE" Type="Sequence" Loop="false">
+			<ActionReference Name="Walk" TargetX="${Math.max(mascot.environment.workArea.left+64,Math.min(mascot.environment.workArea.right-64,(mascot.environment.activeIE.left+100+Math.random()*300)))}" />
+			<ActionReference Name="Stand" Duration="${100+Math.random()*100}" />
+			<ActionReference Name="Sit" Duration="${500+Math.random()*1000}" />
+		</Action>
+		<Action Name="SitOnTheRightEdgeOfIE" Type="Sequence" Loop="false">
+			<ActionReference Name="Walk" TargetX="${Math.max(mascot.environment.workArea.left+64,Math.min(mascot.environment.workArea.right-64,(mascot.environment.activeIE.right-100-Math.random()*300)))}" />
+			<ActionReference Name="Stand" Duration="${100+Math.random()*100}" />
+			<ActionReference Name="Sit" Duration="${500+Math.random()*1000}" />
+		</Action>
+		<Action Name="JumpFromLeftEdgeOfIE" Type="Sequence" Loop="false">
+			<ActionReference Name="NinjaJump" Condition="${(mascot.environment.floor.isOn(mascot.anchor) || mascot.environment.activeIE.topBorder.isOn(mascot.anchor)) &amp;&amp; mascot.anchor.x &gt;= mascot.environment.workArea.left+64 &amp;&amp; mascot.anchor.x &lt;= mascot.environment.workArea.right-64 &amp;&amp; mascot.anchor.y &gt;= mascot.environment.workArea.top+152}" />
+			<ActionReference Name="VisibleReset" />
+			<ActionReference Name="Falling" />
+			<ActionReference Name="Bouncing" Condition="#{(mascot.environment.floor.isOn(mascot.anchor) || mascot.environment.activeIE.topBorder.isOn(mascot.anchor))}" />
+		</Action>
+		<Action Name="JumpFromRightEdgeOfIE" Type="Sequence" Loop="false">
+			<ActionReference Name="NinjaJump" Condition="${(mascot.environment.floor.isOn(mascot.anchor) || mascot.environment.activeIE.topBorder.isOn(mascot.anchor)) &amp;&amp; mascot.anchor.x &gt;= mascot.environment.workArea.left+64 &amp;&amp; mascot.anchor.x &lt;= mascot.environment.workArea.right-64 &amp;&amp; mascot.anchor.y &gt;= mascot.environment.workArea.top+152}" />
+			<ActionReference Name="VisibleReset" />
+			<ActionReference Name="Falling" />
+			<ActionReference Name="Bouncing" Condition="#{(mascot.environment.floor.isOn(mascot.anchor) || mascot.environment.activeIE.topBorder.isOn(mascot.anchor))}" />
+		</Action>
+		<Action Name="WalkLeftAlongIEAndSit" Type="Sequence" Loop="false">
+			<ActionReference Name="Run" TargetX="${Math.max(mascot.environment.workArea.left+64,Math.min(mascot.environment.workArea.right-64,(mascot.environment.activeIE.left+100+Math.random()*300)))}" />
+			<ActionReference Name="Stand" Duration="${100+Math.random()*100}" />
+			<ActionReference Name="Sit" Duration="${500+Math.random()*1000}" />
+		</Action>
+		<Action Name="WalkRightAlongIEAndSit" Type="Sequence" Loop="false">
+			<ActionReference Name="Run" TargetX="${Math.max(mascot.environment.workArea.left+64,Math.min(mascot.environment.workArea.right-64,(mascot.environment.activeIE.right-100-Math.random()*300)))}" />
+			<ActionReference Name="Stand" Duration="${100+Math.random()*100}" />
+			<ActionReference Name="Sit" Duration="${500+Math.random()*1000}" />
+		</Action>
+		<Action Name="WalkLeftAlongIEAndJump" Type="Sequence" Loop="false">
+			<ActionReference Name="NinjaJump" Condition="${(mascot.environment.floor.isOn(mascot.anchor) || mascot.environment.activeIE.topBorder.isOn(mascot.anchor)) &amp;&amp; mascot.anchor.x &gt;= mascot.environment.workArea.left+64 &amp;&amp; mascot.anchor.x &lt;= mascot.environment.workArea.right-64 &amp;&amp; mascot.anchor.y &gt;= mascot.environment.workArea.top+152}" />
+			<ActionReference Name="VisibleReset" />
+			<ActionReference Name="Falling" />
+			<ActionReference Name="Bouncing" Condition="#{(mascot.environment.floor.isOn(mascot.anchor) || mascot.environment.activeIE.topBorder.isOn(mascot.anchor))}" />
+		</Action>
+		<Action Name="WalkRightAlongIEAndJump" Type="Sequence" Loop="false">
+			<ActionReference Name="NinjaJump" Condition="${(mascot.environment.floor.isOn(mascot.anchor) || mascot.environment.activeIE.topBorder.isOn(mascot.anchor)) &amp;&amp; mascot.anchor.x &gt;= mascot.environment.workArea.left+64 &amp;&amp; mascot.anchor.x &lt;= mascot.environment.workArea.right-64 &amp;&amp; mascot.anchor.y &gt;= mascot.environment.workArea.top+152}" />
+			<ActionReference Name="VisibleReset" />
+			<ActionReference Name="Falling" />
+			<ActionReference Name="Bouncing" Condition="#{(mascot.environment.floor.isOn(mascot.anchor) || mascot.environment.activeIE.topBorder.isOn(mascot.anchor))}" />
+		</Action>
+		<Action Name="DashIeCeilingLeftEdgeFromJump" Type="Sequence" Loop="false">
+			<ActionReference Name="NinjaJump" Condition="${(mascot.environment.floor.isOn(mascot.anchor) || mascot.environment.activeIE.topBorder.isOn(mascot.anchor)) &amp;&amp; mascot.anchor.x &gt;= mascot.environment.workArea.left+64 &amp;&amp; mascot.anchor.x &lt;= mascot.environment.workArea.right-64 &amp;&amp; mascot.anchor.y &gt;= mascot.environment.workArea.top+152}" />
+			<ActionReference Name="VisibleReset" />
+			<ActionReference Name="Falling" />
+			<ActionReference Name="Bouncing" Condition="#{(mascot.environment.floor.isOn(mascot.anchor) || mascot.environment.activeIE.topBorder.isOn(mascot.anchor))}" />
+		</Action>
+		<Action Name="DashIeCeilingRightEdgeFromJump" Type="Sequence" Loop="false">
+			<ActionReference Name="NinjaJump" Condition="${(mascot.environment.floor.isOn(mascot.anchor) || mascot.environment.activeIE.topBorder.isOn(mascot.anchor)) &amp;&amp; mascot.anchor.x &gt;= mascot.environment.workArea.left+64 &amp;&amp; mascot.anchor.x &lt;= mascot.environment.workArea.right-64 &amp;&amp; mascot.anchor.y &gt;= mascot.environment.workArea.top+152}" />
+			<ActionReference Name="VisibleReset" />
+			<ActionReference Name="Falling" />
+			<ActionReference Name="Bouncing" Condition="#{(mascot.environment.floor.isOn(mascot.anchor) || mascot.environment.activeIE.topBorder.isOn(mascot.anchor))}" />
+		</Action>
+		<Action Name="HoldOntoIEWall" Type="Sequence" Loop="false">
+			<ActionReference Name="ClimbWall" TargetY="${mascot.environment.activeIE.top+64 + Math.random()*(mascot.environment.activeIE.height-128)}" />
+		</Action>
+		<Action Name="ClimbIEWall" Type="Sequence" Loop="false">
+			<ActionReference Name="ClimbWall" TargetY="#{mascot.environment.activeIE.top+64}" />
+			<ActionReference Name="Offset" Y="-64" />
+			<ActionReference Name="Sit" Duration="5" />
+			<ActionReference Name="Stand" Duration="${10+Math.random()*10}" />
+			<ActionReference Name="Walk" TargetX="${Math.max(mascot.environment.workArea.left+64,Math.min(mascot.environment.workArea.right-64,(mascot.lookRight ? mascot.environment.activeIE.left+Math.random()*100 : mascot.environment.activeIE.right-Math.random()*100)))}" />
+		</Action>
+		<Action Name="ClimbIEBottom" Type="Sequence" Loop="false">
+			<ActionReference Name="ClimbCeiling" TargetX="${Math.max(mascot.environment.workArea.left+64,Math.min(mascot.environment.workArea.right-64,(mascot.environment.activeIE.left+64+(Math.random()*Math.max(0,mascot.environment.activeIE.width-128)))))}" />
+		</Action>
+		<Action Name="GrabIEBottomLeftWall" Type="Sequence" Loop="false">
+			<ActionReference Name="ClimbCeiling" TargetX="${Math.max(mascot.environment.workArea.left+64,Math.min(mascot.environment.workArea.right-64,(mascot.environment.activeIE.left)))}" />
+			<ActionReference Name="Look" />
+			<ActionReference Name="ClimbWall" TargetY="#{mascot.environment.activeIE.bottom-64}" />
+		</Action>
+		<Action Name="GrabIEBottomRightWall" Type="Sequence" Loop="false">
+			<ActionReference Name="ClimbCeiling" TargetX="${Math.max(mascot.environment.workArea.left+64,Math.min(mascot.environment.workArea.right-64,(mascot.environment.activeIE.right)))}" />
+			<ActionReference Name="Look" />
+			<ActionReference Name="ClimbWall" TargetY="#{mascot.environment.activeIE.bottom-64}" />
+		</Action>
+		<Action Name="JumpFromLeftWall" Type="Sequence" Loop="false">
+			<ActionReference Name="NinjaJump" Condition="${(mascot.environment.floor.isOn(mascot.anchor) || mascot.environment.activeIE.topBorder.isOn(mascot.anchor)) &amp;&amp; mascot.anchor.x &gt;= mascot.environment.workArea.left+64 &amp;&amp; mascot.anchor.x &lt;= mascot.environment.workArea.right-64 &amp;&amp; mascot.anchor.y &gt;= mascot.environment.workArea.top+152}" />
+			<ActionReference Name="VisibleReset" />
+			<ActionReference Name="Falling" />
+			<ActionReference Name="Bouncing" Condition="#{(mascot.environment.floor.isOn(mascot.anchor) || mascot.environment.activeIE.topBorder.isOn(mascot.anchor))}" />
+		</Action>
+		<Action Name="JumpFromRightWall" Type="Sequence" Loop="false">
+			<ActionReference Name="NinjaJump" Condition="${(mascot.environment.floor.isOn(mascot.anchor) || mascot.environment.activeIE.topBorder.isOn(mascot.anchor)) &amp;&amp; mascot.anchor.x &gt;= mascot.environment.workArea.left+64 &amp;&amp; mascot.anchor.x &lt;= mascot.environment.workArea.right-64 &amp;&amp; mascot.anchor.y &gt;= mascot.environment.workArea.top+152}" />
+			<ActionReference Name="VisibleReset" />
+			<ActionReference Name="Falling" />
+			<ActionReference Name="Bouncing" Condition="#{(mascot.environment.floor.isOn(mascot.anchor) || mascot.environment.activeIE.topBorder.isOn(mascot.anchor))}" />
+		</Action>
+		<Action Name="JumpOnIELeftWall" Type="Sequence" Loop="false">
+			<ActionReference Name="NinjaJump" Condition="${(mascot.environment.floor.isOn(mascot.anchor) || mascot.environment.activeIE.topBorder.isOn(mascot.anchor)) &amp;&amp; mascot.anchor.x &gt;= mascot.environment.workArea.left+64 &amp;&amp; mascot.anchor.x &lt;= mascot.environment.workArea.right-64 &amp;&amp; mascot.anchor.y &gt;= mascot.environment.workArea.top+152}" />
+			<ActionReference Name="VisibleReset" />
+			<ActionReference Name="Falling" />
+			<ActionReference Name="Bouncing" Condition="#{(mascot.environment.floor.isOn(mascot.anchor) || mascot.environment.activeIE.topBorder.isOn(mascot.anchor))}" />
+		</Action>
+		<Action Name="JumpOnIERightWall" Type="Sequence" Loop="false">
+			<ActionReference Name="NinjaJump" Condition="${(mascot.environment.floor.isOn(mascot.anchor) || mascot.environment.activeIE.topBorder.isOn(mascot.anchor)) &amp;&amp; mascot.anchor.x &gt;= mascot.environment.workArea.left+64 &amp;&amp; mascot.anchor.x &lt;= mascot.environment.workArea.right-64 &amp;&amp; mascot.anchor.y &gt;= mascot.environment.workArea.top+152}" />
+			<ActionReference Name="VisibleReset" />
+			<ActionReference Name="Falling" />
+			<ActionReference Name="Bouncing" Condition="#{(mascot.environment.floor.isOn(mascot.anchor) || mascot.environment.activeIE.topBorder.isOn(mascot.anchor))}" />
+		</Action>
+		<Action Name="ThrowIEFromLeft" Type="Sequence" Loop="false">
+			<ActionReference Name="NinjaJump" Condition="${(mascot.environment.floor.isOn(mascot.anchor) || mascot.environment.activeIE.topBorder.isOn(mascot.anchor)) &amp;&amp; mascot.anchor.x &gt;= mascot.environment.workArea.left+64 &amp;&amp; mascot.anchor.x &lt;= mascot.environment.workArea.right-64 &amp;&amp; mascot.anchor.y &gt;= mascot.environment.workArea.top+152}" />
+			<ActionReference Name="VisibleReset" />
+			<ActionReference Name="Falling" />
+		</Action>
+		<Action Name="ThrowIEFromRight" Type="Sequence" Loop="false">
+			<ActionReference Name="NinjaJump" Condition="${(mascot.environment.floor.isOn(mascot.anchor) || mascot.environment.activeIE.topBorder.isOn(mascot.anchor)) &amp;&amp; mascot.anchor.x &gt;= mascot.environment.workArea.left+64 &amp;&amp; mascot.anchor.x &lt;= mascot.environment.workArea.right-64 &amp;&amp; mascot.anchor.y &gt;= mascot.environment.workArea.top+152}" />
+			<ActionReference Name="VisibleReset" />
+			<ActionReference Name="Falling" />
+		</Action>
+		<Action Name="WalkAndThrowIEFromRight" Type="Sequence" Loop="false">
+			<ActionReference Name="NinjaJump" Condition="${(mascot.environment.floor.isOn(mascot.anchor) || mascot.environment.activeIE.topBorder.isOn(mascot.anchor)) &amp;&amp; mascot.anchor.x &gt;= mascot.environment.workArea.left+64 &amp;&amp; mascot.anchor.x &lt;= mascot.environment.workArea.right-64 &amp;&amp; mascot.anchor.y &gt;= mascot.environment.workArea.top+152}" />
+			<ActionReference Name="VisibleReset" />
+			<ActionReference Name="Falling" />
+		</Action>
+		<Action Name="WalkAndThrowIEFromLeft" Type="Sequence" Loop="false">
+			<ActionReference Name="NinjaJump" Condition="${(mascot.environment.floor.isOn(mascot.anchor) || mascot.environment.activeIE.topBorder.isOn(mascot.anchor)) &amp;&amp; mascot.anchor.x &gt;= mascot.environment.workArea.left+64 &amp;&amp; mascot.anchor.x &lt;= mascot.environment.workArea.right-64 &amp;&amp; mascot.anchor.y &gt;= mascot.environment.workArea.top+152}" />
+			<ActionReference Name="VisibleReset" />
+			<ActionReference Name="Falling" />
+		</Action>
+		<Action Name="ChaseMouse" Type="Sequence" Loop="false">
+			<ActionReference Name="VisibleReset" />
+			<ActionReference Name="Falling" />
+			<ActionReference Name="Walk" TargetX="${Math.max(mascot.environment.workArea.left+64,Math.min(mascot.environment.workArea.right-64,(mascot.environment.cursor.x)))}" />
+			<ActionReference Name="MouseReaction" Condition="#{(mascot.environment.floor.isOn(mascot.anchor) || mascot.environment.activeIE.topBorder.isOn(mascot.anchor)) &amp;&amp; (Math.pow(mascot.environment.cursor.x-mascot.anchor.x,2)+Math.pow(mascot.environment.cursor.y-(mascot.anchor.y-68),2) &lt; 120*120)}" />
+		</Action>
+		<Action Name="SitAndFaceMouse" Type="Sequence" Loop="false">
+			<ActionReference Name="SitAndLookAtMouse" Duration="${10+Math.random()*10}" />
+			<ActionReference Name="Look" LookRight="${mascot.anchor.x &lt; mascot.environment.cursor.x}" />
+			<ActionReference Name="SitAndLookAtMouse" Duration="${10+Math.random()*10}" />
+			<ActionReference Name="Look" LookRight="${mascot.anchor.x &lt; mascot.environment.cursor.x}" />
+			<ActionReference Name="SitAndLookAtMouse" Duration="${10+Math.random()*10}" />
+			<ActionReference Name="Look" LookRight="${mascot.anchor.x &lt; mascot.environment.cursor.x}" />
+			<ActionReference Name="SitAndLookAtMouse" Duration="${10+Math.random()*10}" />
+			<ActionReference Name="Look" LookRight="${mascot.anchor.x &lt; mascot.environment.cursor.x}" />
+			<ActionReference Name="SitAndLookAtMouse" Duration="${10+Math.random()*10}" />
+			<ActionReference Name="Look" LookRight="${mascot.anchor.x &lt; mascot.environment.cursor.x}" />
+			<ActionReference Name="SitAndLookAtMouse" Duration="${10+Math.random()*10}" />
+			<ActionReference Name="Look" LookRight="${mascot.anchor.x &lt; mascot.environment.cursor.x}" />
+			<ActionReference Name="SitAndLookAtMouse" Duration="${10+Math.random()*10}" />
+			<ActionReference Name="Look" LookRight="${mascot.anchor.x &lt; mascot.environment.cursor.x}" />
+			<ActionReference Name="SitAndLookAtMouse" Duration="${10+Math.random()*10}" />
+			<ActionReference Name="Look" LookRight="${mascot.anchor.x &lt; mascot.environment.cursor.x}" />
+			<ActionReference Name="SitAndLookAtMouse" Duration="${10+Math.random()*10}" />
+			<ActionReference Name="Look" LookRight="${mascot.anchor.x &lt; mascot.environment.cursor.x}" />
+			<ActionReference Name="SitAndLookAtMouse" Duration="${10+Math.random()*10}" />
+			<ActionReference Name="Look" LookRight="${mascot.anchor.x &lt; mascot.environment.cursor.x}" />
+		</Action>
+		<Action Name="SitAndSpinHead" Type="Sequence" Loop="false">
+			<ActionReference Name="SitAndSpinHeadAction" />
+		</Action>
+		<Action Name="PullUpShimeji1" Type="Embedded" Class="com.group_finity.mascot.action.Breed" BornX="-32" BornY="96" BornBehavior="PullUp">
+			<Animation>
+				<Pose Image="/Stand.png" ImageAnchor="64,128" Velocity="0,0" Duration="16" />
+				<Pose Image="/PullUpPrepare.png" ImageAnchor="96,128" Velocity="0,0" Duration="4" />
+				<Pose Image="/PullUpEffort.png" ImageAnchor="96,128" Velocity="0,0" Duration="40" />
+				<Pose Image="/PullUpHalf.png" ImageAnchor="96,128" Velocity="0,0" Duration="40" />
+				<Pose Image="/PullUpComplete.png" ImageAnchor="96,128" Velocity="0,0" Duration="40" />
+			</Animation>
+		</Action>
+		<Action Name="PullUpShimeji2" Type="Animate">
+			<Animation>
+				<Pose Image="/StruggleHard3.png" ImageAnchor="32,128" Velocity="20,-20" Duration="1" />
+				<Pose Image="/StruggleHard3.png" ImageAnchor="32,128" Velocity="20,-10" Duration="1" />
+				<Pose Image="/StruggleHard3.png" ImageAnchor="32,128" Velocity="20,-5" Duration="1" />
+			</Animation>
+		</Action>
+		<Action Name="PullUpShimeji" Type="Sequence" Loop="false">
+			<ActionReference Name="NinjaJump" Condition="${(mascot.environment.floor.isOn(mascot.anchor) || mascot.environment.activeIE.topBorder.isOn(mascot.anchor)) &amp;&amp; mascot.anchor.x &gt;= mascot.environment.workArea.left+64 &amp;&amp; mascot.anchor.x &lt;= mascot.environment.workArea.right-64 &amp;&amp; mascot.anchor.y &gt;= mascot.environment.workArea.top+152}" />
+			<ActionReference Name="VisibleReset" />
+			<ActionReference Name="Falling" />
+			<ActionReference Name="Bouncing" Condition="#{(mascot.environment.floor.isOn(mascot.anchor) || mascot.environment.activeIE.topBorder.isOn(mascot.anchor))}" />
+		</Action>
+		<Action Name="PullUp" Type="Sequence" Loop="false">
+			<ActionReference Name="NinjaJump" Condition="${(mascot.environment.floor.isOn(mascot.anchor) || mascot.environment.activeIE.topBorder.isOn(mascot.anchor)) &amp;&amp; mascot.anchor.x &gt;= mascot.environment.workArea.left+64 &amp;&amp; mascot.anchor.x &lt;= mascot.environment.workArea.right-64 &amp;&amp; mascot.anchor.y &gt;= mascot.environment.workArea.top+152}" />
+			<ActionReference Name="VisibleReset" />
+			<ActionReference Name="Falling" />
+			<ActionReference Name="Bouncing" Condition="#{(mascot.environment.floor.isOn(mascot.anchor) || mascot.environment.activeIE.topBorder.isOn(mascot.anchor))}" />
+		</Action>
+		<Action Name="Divide1" Type="Embedded" Class="com.group_finity.mascot.action.Breed" BornX="-16" BornY="0" BornBehavior="Divided">
+			<Animation>
+				<Pose Image="/DivideTwist1.png" ImageAnchor="64,128" Velocity="0,0" Duration="5" />
+				<Pose Image="/DivideTwist2.png" ImageAnchor="64,128" Velocity="0,0" Duration="2" />
+				<Pose Image="/DivideTwist3.png" ImageAnchor="64,128" Velocity="0,0" Duration="2" />
+				<Pose Image="/DivideSplit.png" ImageAnchor="64,128" Velocity="0,0" Duration="5" />
+				<Pose Image="/DivideComplete.png" ImageAnchor="64,128" Velocity="0,0" Duration="20" />
+			</Animation>
+		</Action>
+		<Action Name="SplitIntoTwo" Type="Sequence">
+			<ActionReference Name="Divide1" />
+			<ActionReference Name="Offset" X="16" />
+			<ActionReference Name="Look" />
+			<ActionReference Name="Divided" />
+		</Action>
+		<Action Name="Divided" Type="Sequence" Loop="false">
+			<ActionReference Name="NinjaJump" Condition="${(mascot.environment.floor.isOn(mascot.anchor) || mascot.environment.activeIE.topBorder.isOn(mascot.anchor)) &amp;&amp; mascot.anchor.x &gt;= mascot.environment.workArea.left+64 &amp;&amp; mascot.anchor.x &lt;= mascot.environment.workArea.right-64 &amp;&amp; mascot.anchor.y &gt;= mascot.environment.workArea.top+152}" />
+			<ActionReference Name="VisibleReset" />
+			<ActionReference Name="Falling" />
+			<ActionReference Name="Bouncing" Condition="#{(mascot.environment.floor.isOn(mascot.anchor) || mascot.environment.activeIE.topBorder.isOn(mascot.anchor))}" />
+		</Action>
+		<Action Name="BroadcastHug" Type="Embedded" Class="com.group_finity.mascot.action.Broadcast" Affordance="Hug" BorderType="Floor">
+			<Animation>
+				<Pose Image="/Sit.png" ImageAnchor="64,128" Velocity="0,0" Duration="250" />
+			</Animation>
+		</Action>
+		<Action Name="FindAndHug" Type="Embedded" Class="com.group_finity.mascot.action.ScanMove" Affordance="Hug" Behavior="IHugYou" TargetBehavior="IAmHugged" BorderType="Floor">
+			<Animation>
+				<Pose Image="/WalkLeft.png" ImageAnchor="64,128" Velocity="-3,0" Duration="4" />
+				<Pose Image="/WalkPass1.png" ImageAnchor="64,128" Velocity="-3,0" Duration="4" />
+				<Pose Image="/WalkRight.png" ImageAnchor="64,128" Velocity="-3,0" Duration="4" />
+				<Pose Image="/WalkPass2.png" ImageAnchor="64,128" Velocity="-3,0" Duration="4" />
+			</Animation>
+		</Action>
+		<Action Name="HugAction" Type="Embedded" Class="com.group_finity.mascot.action.Interact" BorderType="Floor">
+			<Animation>
+				<Pose Image="/Hug1.png" ImageAnchor="64,128" Velocity="0,0" Duration="8" />
+				<Pose Image="/Hug2.png" ImageAnchor="64,128" Velocity="0,0" Duration="8" />
+				<Pose Image="/Hug3.png" ImageAnchor="64,128" Velocity="0,0" Duration="8" />
+				<Pose Image="/Hug4.png" ImageAnchor="64,128" Velocity="0,0" Duration="50" />
+				<Pose Image="/Hug3.png" ImageAnchor="64,128" Velocity="0,0" Duration="8" />
+				<Pose Image="/Hug2.png" ImageAnchor="64,128" Velocity="0,0" Duration="8" />
+				<Pose Image="/Hug1.png" ImageAnchor="64,128" Velocity="0,0" Duration="8" />
+			</Animation>
+		</Action>
+		<Action Name="HuggedAction" Type="Embedded" Class="com.group_finity.mascot.action.Interact" BorderType="Floor">
+			<Animation>
+				<Pose Image="/Hug4.png" ImageAnchor="64,128" Velocity="0,0" Duration="98" />
+			</Animation>
+		</Action>
+		<Action Name="BroadcastHugBehavior" Type="Sequence">
+			<ActionReference Name="BroadcastHug" />
+		</Action>
+		<Action Name="FindHugBehavior" Type="Sequence">
+			<ActionReference Name="Stand" Duration="${20+Math.random()*20}" />
+			<ActionReference Name="FindAndHug" />
+		</Action>
+		<Action Name="IHugYou" Type="Sequence">
+			<ActionReference Name="HugAction" />
+		</Action>
+		<Action Name="IAmHugged" Type="Sequence">
+			<ActionReference Name="HuggedAction" />
+		</Action>
+		<Action Name="VisibleReset" Type="Embedded" Class="com.group_finity.mascot.action.Offset" X="${Math.max(mascot.environment.workArea.left+64,Math.min(mascot.environment.workArea.right-64,(mascot.anchor.x)))-mascot.anchor.x}" Y="${Math.max(mascot.environment.workArea.top+128,Math.min(mascot.environment.workArea.bottom,(mascot.anchor.y)))-mascot.anchor.y}" />
+		<Action Name="MouseEmote" Type="Stay" BorderType="Floor" Duration="48" Condition="#{(Math.pow(mascot.environment.cursor.x-mascot.anchor.x,2)+Math.pow(mascot.environment.cursor.y-(mascot.anchor.y-68),2) &lt; 120*120)}">
+			<Animation Condition="#{Math.abs(mascot.environment.cursor.dx)+Math.abs(mascot.environment.cursor.dy)&gt;18}">
+				<Pose Image="/DragWince.png" ImageAnchor="64,128" Velocity="0,0" Duration="12" />
+				<Pose Image="/Blink.png" ImageAnchor="64,128" Velocity="0,0" Duration="3" />
+				<Pose Image="/MouseSurprise.png" ImageAnchor="64,128" Velocity="0,0" Duration="12" />
+			</Animation>
+			<Animation>
+				<Pose Image="/MouseSurprise.png" ImageAnchor="64,128" Velocity="0,0" Duration="8" />
+				<Pose Image="/Blink.png" ImageAnchor="64,128" Velocity="0,0" Duration="3" />
+				<Pose Image="/Smile.png" ImageAnchor="64,128" Velocity="0,0" Duration="28" />
+				<Pose Image="/Blink.png" ImageAnchor="64,128" Velocity="0,0" Duration="3" />
+			</Animation>
+		</Action>
+		<Action Name="MouseReaction" Type="Sequence" Loop="false" Condition="#{(mascot.environment.floor.isOn(mascot.anchor) || mascot.environment.activeIE.topBorder.isOn(mascot.anchor)) &amp;&amp; (Math.pow(mascot.environment.cursor.x-mascot.anchor.x,2)+Math.pow(mascot.environment.cursor.y-(mascot.anchor.y-68),2) &lt; 120*120)}">
+			<ActionReference Name="Look" LookRight="${mascot.anchor.x &lt; mascot.environment.cursor.x}" />
+			<ActionReference Name="MouseEmote" />
+		</Action>
+		<Action Name="CuteIdle" Type="Animate" BorderType="Floor">
+			<Animation>
+				<Pose Image="/Smile.png" ImageAnchor="64,128" Velocity="0,0" Duration="25" />
+				<Pose Image="/Blink.png" ImageAnchor="64,128" Velocity="0,0" Duration="3" />
+				<Pose Image="/Smile.png" ImageAnchor="64,128" Velocity="0,0" Duration="25" />
+				<Pose Image="/HandSign.png" ImageAnchor="64,128" Velocity="0,0" Duration="25" />
+				<Pose Image="/Blink.png" ImageAnchor="64,128" Velocity="0,0" Duration="3" />
+			</Animation>
+		</Action>
+		<Action Name="NinjaHop" Type="Animate">
+			<Animation>
+				<Pose Image="/JumpStart.png" ImageAnchor="64,128" Velocity="0,0" Duration="4" />
+				<Pose Image="/NinjaJump.png" ImageAnchor="64,128" Velocity="0,-3" Duration="3" SoundEvent="movement.jump" />
+				<Pose Image="/NinjaJump.png" ImageAnchor="64,128" Velocity="0,-2" Duration="3" />
+				<Pose Image="/NinjaJump.png" ImageAnchor="64,128" Velocity="0,-1" Duration="3" />
+				<Pose Image="/NinjaJump.png" ImageAnchor="64,128" Velocity="0,0" Duration="3" SoundEvent="movement.air" />
+				<Pose Image="/NinjaJump.png" ImageAnchor="64,128" Velocity="0,1" Duration="3" />
+				<Pose Image="/NinjaJump.png" ImageAnchor="64,128" Velocity="0,2" Duration="3" />
+				<Pose Image="/NinjaJump.png" ImageAnchor="64,128" Velocity="0,3" Duration="3" />
+				<Pose Image="/BounceCompress.png" ImageAnchor="64,128" Velocity="0,0" Duration="4" SoundEvent="movement.landing" />
+				<Pose Image="/Smile.png" ImageAnchor="64,128" Velocity="0,0" Duration="12" />
+			</Animation>
+		</Action>
+		<Action Name="NinjaJump" Type="Sequence" Loop="false" Condition="${(mascot.environment.floor.isOn(mascot.anchor) || mascot.environment.activeIE.topBorder.isOn(mascot.anchor)) &amp;&amp; mascot.anchor.x &gt;= mascot.environment.workArea.left+64 &amp;&amp; mascot.anchor.x &lt;= mascot.environment.workArea.right-64 &amp;&amp; mascot.anchor.y &gt;= mascot.environment.workArea.top+152}">
+			<ActionReference Name="NinjaHop" />
+			<ActionReference Name="Stand" Duration="20" />
+		</Action>
+	</ActionList>
+</Mascot>

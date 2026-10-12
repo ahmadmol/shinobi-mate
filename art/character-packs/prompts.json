@@ -1,0 +1,31 @@
+{
+  "generator": "Built-in image_gen tool; no CLI or custom raster drawing",
+  "core_common": "Use case: stylized-concept. Production ShinobiMate desktop pet atlas. Cute professional anime chibi, expressive eyes, squat body about 2.3 heads tall, dark crisp outlines, clean cel shading. Same exact model, costume, head size and line weight across all poses. True alpha background. Full character inside own cell, separated, no text/grid/particles/background. 6 columns x 6 rows. Generally faces slightly LEFT; engine mirrors for right.\nRow 1: confident stand; excited smile; blink; mouse surprise; special pose; selection Preview.\nRow 2: walk left contact; walk passing; opposite contact; opposite passing; jump crouch; airborne short hop.\nRow 3: fall; landing compression; landing rise; drag wince suspended by clothing; resist left; resist right.\nRow 4: cross-legged sit; sit look up; sit head left; sit head right; edge sit legs down; leaning sit legs up.\nRow 5: left foot dangle; right foot dangle; contracted crawl; extended crawl; grab left wall; wall climb extended.\nRow 6: wall climb contracted; ceiling hang hands above head; ceiling climb left grip; ceiling climb alternate grip; arms wide hug; arms folded hug.\nStanding heights about 80% of cell. Sitting/crawling shorter with same head size. Genuine limb articulation, never rotate a standing pose.",
+  "characters": {
+    "AstaBlackClover": {
+      "reference_images": [
+        "D:/programm/images (23).jpg",
+        "D:/programm/images (27).jpg"
+      ],
+      "identity": "Normal Asta; silver-grey deeply spiked hair, dark headband with red motif and gold emblem, green eyes, cropped black Black Bulls cape with gold trim, dark trousers, brown belt and boots. No demon transformation. Special pose carries broad battered black sword across shoulder, Preview sword upright. Same sword fully visible and inside frame."
+    },
+    "NarutoShippuden": {
+      "reference_images": [
+        "D:/programm/images.png",
+        "existing NarutoShippuden/Preview.png (pre-refresh)"
+      ],
+      "identity": "Blond spiky hair; dark forehead protector with silver Leaf Village plate; blue eyes; three whisker strokes per cheek; black upper jacket, orange lower jacket and pants, shinobi sandals. Special pose small hand seal; Preview crossed arms."
+    },
+    "SasukeShippuden": {
+      "reference_images": [
+        "existing SasukeShippuden/Preview.png (pre-refresh)",
+        "AstaBlackClover-core.png as style reference"
+      ],
+      "identity": "Blue-black side-swept fringe and spiky back hair; dark eyes; pale skin; light grey-lavender open high-collar short sleeve shirt; navy pants; thick purple rope belt with knot and tails; shinobi sandals; no forehead protector. Small hand seal; crossed-arm preview."
+    }
+  },
+  "utility_common": "Use case: stylized-concept. Production desktop pet transparent sprite atlas. Use the attached atlas as EXACT character model and style reference: preserve identical face, outfit, big head size, cute 2.3-head chibi proportions, dark crisp contours and clean cel shading. Produce SAME SINGLE character in EXACTLY 24 isolated different poses, 6 columns x 4 rows. True alpha transparent. No text, labels, shadows, other characters or scenery. Generous spacing, no touching sprites. All feet and hair visible, complete whole body in every pose. Head size constant. Intended final 128x128 sprites.\nRow 1: 1 cross-legged sitting head looking far left; 2 cross-legged sitting head looking far right; 3 cross-legged sitting head tilting left upward; 4 cross-legged sitting head tilting right downward; 5 suspended squirming left knee raised arms out; 6 suspended squirming right knee raised arms out.\nRow 2: 7 suspended flailing left arm up right leg forward; 8 suspended flailing right arm up left leg forward; 9 leaning forward hugging cheek turned left; 10 leaning forward hugging cheek turned right; 11 cute balancing twist torso left both feet planted; 12 cute balancing twist torso right both feet planted.\nRow 3: 13 strong twist facing 3/4 back looking over shoulder; 14 playful low side lunge arms extended as if splitting into two; 15 arms raised celebrating after split feet planted; 16 crouched reaching both hands LEFT as if helping someone up; 17 half crouched pulling LEFT with effort expression; 18 standing leaning back pulling both hands LEFT.\nRow 4: 19 cheering successful pull hands raised; 20 standing holding invisible window with hands forward, NO rendered window; 21 walking LEFT carrying invisible window left foot forward; 22 walking LEFT carrying invisible window opposite step right foot forward; 23 leaning forward throwing invisible window arms thrust LEFT; 24 calm standing looking left.\nEnsure sitting head directions and limb articulation really differ; do not copy same sprite. Empty alpha between all sprites, each sprite inside its own cell.",
+  "utility_reference": "Each utility atlas uses the matching final core atlas as character model/style reference.",
+  "alpha_edit_prompt": "Remove entire mottled grey/brown background and shadows. Preserve all 24 exact characters, 6x4 layout, pose/color/costume/full limbs. True transparent PNG, alpha=0 outside characters; no drawn checkerboard.",
+  "export": "Inspected real alpha bounds rather than uniform cell assumptions. System.Drawing extraction, antialiasing, family scale, 128x128 RGBA. Floor baseline 128; wall contact at x=16; ceiling contact at y=0."
+}

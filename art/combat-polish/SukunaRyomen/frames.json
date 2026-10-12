@@ -1,0 +1,210 @@
+﻿[
+    {
+        "name":  "stance",
+        "column":  0,
+        "row":  0,
+        "crop":  [
+                     57,
+                     38,
+                     201,
+                     270
+                 ],
+        "flipped":  false,
+        "scale":  0.38977635782747605
+    },
+    {
+        "name":  "melee-start",
+        "column":  1,
+        "row":  0,
+        "crop":  [
+                     355,
+                     46,
+                     244,
+                     264
+                 ],
+        "flipped":  false,
+        "scale":  0.38977635782747605
+    },
+    {
+        "name":  "melee-active",
+        "column":  2,
+        "row":  0,
+        "crop":  [
+                     655,
+                     66,
+                     277,
+                     250
+                 ],
+        "flipped":  false,
+        "scale":  0.38977635782747605
+    },
+    {
+        "name":  "melee-recovery",
+        "column":  3,
+        "row":  0,
+        "crop":  [
+                     1001,
+                     35,
+                     192,
+                     274
+                 ],
+        "flipped":  false,
+        "scale":  0.38977635782747605
+    },
+    {
+        "name":  "ranged-start",
+        "column":  0,
+        "row":  1,
+        "crop":  [
+                     82,
+                     344,
+                     170,
+                     284
+                 ],
+        "flipped":  false,
+        "scale":  0.38977635782747605
+    },
+    {
+        "name":  "ranged-active",
+        "column":  1,
+        "row":  1,
+        "crop":  [
+                     352,
+                     353,
+                     257,
+                     273
+                 ],
+        "flipped":  false,
+        "scale":  0.38977635782747605
+    },
+    {
+        "name":  "special-start",
+        "column":  2,
+        "row":  1,
+        "crop":  [
+                     718,
+                     347,
+                     175,
+                     281
+                 ],
+        "flipped":  false,
+        "scale":  0.38977635782747605
+    },
+    {
+        "name":  "special-active",
+        "column":  3,
+        "row":  1,
+        "crop":  [
+                     969,
+                     351,
+                     254,
+                     277
+                 ],
+        "flipped":  false,
+        "scale":  0.38977635782747605
+    },
+    {
+        "name":  "special-recovery",
+        "column":  0,
+        "row":  2,
+        "crop":  [
+                     57,
+                     661,
+                     238,
+                     268
+                 ],
+        "flipped":  false,
+        "scale":  0.38977635782747605
+    },
+    {
+        "name":  "dodge-start",
+        "column":  1,
+        "row":  2,
+        "crop":  [
+                     381,
+                     707,
+                     234,
+                     224
+                 ],
+        "flipped":  false,
+        "scale":  0.38977635782747605
+    },
+    {
+        "name":  "dodge-active",
+        "column":  2,
+        "row":  2,
+        "crop":  [
+                     674,
+                     647,
+                     288,
+                     288
+                 ],
+        "flipped":  true,
+        "scale":  0.38977635782747605
+    },
+    {
+        "name":  "block",
+        "column":  3,
+        "row":  2,
+        "crop":  [
+                     1030,
+                     663,
+                     188,
+                     266
+                 ],
+        "flipped":  false,
+        "scale":  0.38977635782747605
+    },
+    {
+        "name":  "hit",
+        "column":  0,
+        "row":  3,
+        "crop":  [
+                     63,
+                     953,
+                     207,
+                     258
+                 ],
+        "flipped":  false,
+        "scale":  0.38977635782747605
+    },
+    {
+        "name":  "knockback",
+        "column":  1,
+        "row":  3,
+        "crop":  [
+                     352,
+                     973,
+                     285,
+                     209
+                 ],
+        "flipped":  false,
+        "scale":  0.38977635782747605
+    },
+    {
+        "name":  "ko",
+        "column":  2,
+        "row":  3,
+        "crop":  [
+                     652,
+                     1060,
+                     313,
+                     148
+                 ],
+        "flipped":  false,
+        "scale":  0.38977635782747605
+    },
+    {
+        "name":  "victory",
+        "column":  3,
+        "row":  3,
+        "crop":  [
+                     1014,
+                     944,
+                     187,
+                     289
+                 ],
+        "flipped":  false,
+        "scale":  0.38977635782747605
+    }
+]

@@ -1,0 +1,391 @@
+{
+  "version": 1,
+  "events": {
+    "movement.footstep": {
+      "category": "MOVEMENT",
+      "variations": [
+        "sounds/movement/footstep_01.wav",
+        "sounds/movement/footstep_02.wav",
+        "sounds/movement/footstep_03.wav",
+        "sounds/movement/footstep_04.wav"
+      ],
+      "volume": 0.4,
+      "cooldown": 240,
+      "maxConcurrent": 2,
+      "loop": false,
+      "priority": 10,
+      "maxDurationMs": 3000
+    },
+    "movement.run": {
+      "category": "MOVEMENT",
+      "variations": [
+        "sounds/movement/run_01.wav",
+        "sounds/movement/run_02.wav",
+        "sounds/movement/run_03.wav",
+        "sounds/movement/run_04.wav"
+      ],
+      "volume": 0.45,
+      "cooldown": 170,
+      "maxConcurrent": 2,
+      "loop": false,
+      "priority": 12,
+      "maxDurationMs": 3000
+    },
+    "movement.jump": {
+      "category": "MOVEMENT",
+      "variations": [
+        "sounds/movement/jump_whoosh.wav"
+      ],
+      "volume": 0.4,
+      "cooldown": 240,
+      "maxConcurrent": 2,
+      "loop": false,
+      "priority": 15,
+      "maxDurationMs": 3000
+    },
+    "movement.air": {
+      "category": "MOVEMENT",
+      "variations": [
+        "sounds/movement/air_whoosh.wav"
+      ],
+      "volume": 0.4,
+      "cooldown": 240,
+      "maxConcurrent": 2,
+      "loop": false,
+      "priority": 15,
+      "maxDurationMs": 3000
+    },
+    "movement.landing": {
+      "category": "MOVEMENT",
+      "variations": [
+        "sounds/movement/landing.wav"
+      ],
+      "volume": 0.4,
+      "cooldown": 240,
+      "maxConcurrent": 2,
+      "loop": false,
+      "priority": 15,
+      "maxDurationMs": 3000
+    },
+    "movement.landingHeavy": {
+      "category": "MOVEMENT",
+      "variations": [
+        "sounds/movement/landing_heavy.wav"
+      ],
+      "volume": 0.4,
+      "cooldown": 240,
+      "maxConcurrent": 2,
+      "loop": false,
+      "priority": 25,
+      "maxDurationMs": 3000
+    },
+    "movement.drag.start": {
+      "category": "MOVEMENT",
+      "variations": [
+        "sounds/movement/drag_start.wav"
+      ],
+      "volume": 0.4,
+      "cooldown": 240,
+      "maxConcurrent": 2,
+      "loop": false,
+      "priority": 15,
+      "maxDurationMs": 3000
+    },
+    "movement.drag.release": {
+      "category": "MOVEMENT",
+      "variations": [
+        "sounds/movement/drag_release.wav"
+      ],
+      "volume": 0.4,
+      "cooldown": 240,
+      "maxConcurrent": 2,
+      "loop": false,
+      "priority": 15,
+      "maxDurationMs": 3000
+    },
+    "dodge": {
+      "category": "MOVEMENT",
+      "variations": [
+        "sounds/movement/dodge_whoosh_01.wav",
+        "sounds/movement/dodge_whoosh_02.wav"
+      ],
+      "volume": 0.55,
+      "cooldown": 220,
+      "maxConcurrent": 2,
+      "loop": false,
+      "priority": 35,
+      "maxDurationMs": 3000
+    },
+    "combat.punch": {
+      "category": "COMBAT",
+      "variations": [
+        "sounds/combat/punch_light_01.wav",
+        "sounds/combat/punch_light_02.wav"
+      ],
+      "volume": 0.7,
+      "cooldown": 140,
+      "maxConcurrent": 2,
+      "loop": false,
+      "priority": 55,
+      "maxDurationMs": 3000
+    },
+    "combat.kick": {
+      "category": "COMBAT",
+      "variations": [
+        "sounds/combat/kick_01.wav",
+        "sounds/combat/kick_02.wav"
+      ],
+      "volume": 0.7,
+      "cooldown": 140,
+      "maxConcurrent": 2,
+      "loop": false,
+      "priority": 55,
+      "maxDurationMs": 3000
+    },
+    "combat.body.light": {
+      "category": "COMBAT",
+      "variations": [
+        "sounds/combat/hit_body_01.wav",
+        "sounds/combat/hit_body_02.wav"
+      ],
+      "volume": 0.7,
+      "cooldown": 140,
+      "maxConcurrent": 2,
+      "loop": false,
+      "priority": 55,
+      "maxDurationMs": 3000
+    },
+    "combat.body.heavy": {
+      "category": "COMBAT",
+      "variations": [
+        "sounds/combat/heavy_hit.wav"
+      ],
+      "volume": 0.7,
+      "cooldown": 140,
+      "maxConcurrent": 2,
+      "loop": false,
+      "priority": 85,
+      "maxDurationMs": 3000
+    },
+    "combat.start": {
+      "category": "COMBAT",
+      "variations": [
+        "sounds/combat/melee_ready.wav"
+      ],
+      "volume": 0.7,
+      "cooldown": 140,
+      "maxConcurrent": 2,
+      "loop": false,
+      "priority": 55,
+      "maxDurationMs": 3000
+    },
+    "block": {
+      "category": "COMBAT",
+      "variations": [
+        "sounds/combat/block.wav"
+      ],
+      "volume": 0.7,
+      "cooldown": 140,
+      "maxConcurrent": 2,
+      "loop": false,
+      "priority": 55,
+      "maxDurationMs": 3000
+    },
+    "parry": {
+      "category": "COMBAT",
+      "variations": [
+        "sounds/combat/parry.wav"
+      ],
+      "volume": 0.7,
+      "cooldown": 140,
+      "maxConcurrent": 2,
+      "loop": false,
+      "priority": 55,
+      "maxDurationMs": 3000
+    },
+    "combat.knockback": {
+      "category": "COMBAT",
+      "variations": [
+        "sounds/combat/knockback.wav"
+      ],
+      "volume": 0.7,
+      "cooldown": 140,
+      "maxConcurrent": 2,
+      "loop": false,
+      "priority": 55,
+      "maxDurationMs": 3000
+    },
+    "ko": {
+      "category": "CHARACTER",
+      "variations": [
+        "sounds/combat/KO.wav"
+      ],
+      "volume": 0.7,
+      "cooldown": 600,
+      "maxConcurrent": 2,
+      "loop": false,
+      "priority": 85,
+      "maxDurationMs": 3000
+    },
+    "victory": {
+      "category": "CHARACTER",
+      "variations": [
+        "sounds/combat/victory.wav"
+      ],
+      "volume": 0.7,
+      "cooldown": 600,
+      "maxConcurrent": 2,
+      "loop": false,
+      "priority": 55,
+      "maxDurationMs": 3000
+    },
+    "weapon.ready": {
+      "category": "WEAPON",
+      "variations": [
+        "sounds/weapons/weapon_ready.wav"
+      ],
+      "volume": 0.5,
+      "cooldown": 160,
+      "maxConcurrent": 2,
+      "loop": false,
+      "priority": 50,
+      "maxDurationMs": 3000
+    },
+    "weapon.kunai.throw": {
+      "category": "WEAPON",
+      "variations": [
+        "sounds/weapons/kunai_throw_01.wav",
+        "sounds/weapons/kunai_throw_02.wav"
+      ],
+      "volume": 0.65,
+      "cooldown": 110,
+      "maxConcurrent": 2,
+      "loop": false,
+      "priority": 50,
+      "maxDurationMs": 3000
+    },
+    "weapon.kunai.impact": {
+      "category": "WEAPON",
+      "variations": [
+        "sounds/weapons/kunai_impact_01.wav",
+        "sounds/weapons/kunai_impact_02.wav"
+      ],
+      "volume": 0.65,
+      "cooldown": 110,
+      "maxConcurrent": 2,
+      "loop": false,
+      "priority": 65,
+      "maxDurationMs": 3000
+    },
+    "weapon.shuriken.throw": {
+      "category": "WEAPON",
+      "variations": [
+        "sounds/weapons/shuriken_spin_01.wav",
+        "sounds/weapons/shuriken_spin_02.wav"
+      ],
+      "volume": 0.65,
+      "cooldown": 110,
+      "maxConcurrent": 2,
+      "loop": false,
+      "priority": 50,
+      "maxDurationMs": 3000
+    },
+    "weapon.shuriken.impact": {
+      "category": "WEAPON",
+      "variations": [
+        "sounds/weapons/shuriken_impact_01.wav",
+        "sounds/weapons/shuriken_impact_02.wav"
+      ],
+      "volume": 0.65,
+      "cooldown": 110,
+      "maxConcurrent": 2,
+      "loop": false,
+      "priority": 65,
+      "maxDurationMs": 3000
+    },
+    "vfx.clone.in": {
+      "category": "VFX",
+      "variations": [
+        "sounds/signature/clone_poof.wav"
+      ],
+      "volume": 0.6,
+      "cooldown": 250,
+      "maxConcurrent": 1,
+      "loop": false,
+      "priority": 50,
+      "maxDurationMs": 3000
+    },
+    "vfx.clone.out": {
+      "category": "VFX",
+      "variations": [
+        "sounds/signature/clone_poof_out.wav"
+      ],
+      "volume": 0.4,
+      "cooldown": 250,
+      "maxConcurrent": 1,
+      "loop": false,
+      "priority": 50,
+      "maxDurationMs": 3000
+    },
+    "signature.rasengan.charge": {
+      "category": "VFX",
+      "variations": [
+        "sounds/signature/chakra_charge.wav"
+      ],
+      "volume": 0.7,
+      "cooldown": 220,
+      "maxConcurrent": 2,
+      "loop": false,
+      "priority": 95,
+      "maxDurationMs": 3000
+    },
+    "signature.rasengan.ready": {
+      "category": "VFX",
+      "variations": [
+        "sounds/signature/rasengan_energy.wav"
+      ],
+      "volume": 0.7,
+      "cooldown": 220,
+      "maxConcurrent": 2,
+      "loop": false,
+      "priority": 95,
+      "maxDurationMs": 3000
+    },
+    "signature.rasengan.dash": {
+      "category": "VFX",
+      "variations": [
+        "sounds/signature/rasengan_dash.wav"
+      ],
+      "volume": 0.7,
+      "cooldown": 220,
+      "maxConcurrent": 2,
+      "loop": false,
+      "priority": 95,
+      "maxDurationMs": 3000
+    },
+    "signature.rasengan.impact": {
+      "category": "VFX",
+      "variations": [
+        "sounds/signature/rasengan_impact.wav"
+      ],
+      "volume": 0.9,
+      "cooldown": 220,
+      "maxConcurrent": 2,
+      "loop": false,
+      "priority": 95,
+      "maxDurationMs": 3000
+    },
+    "signature.rasengan.after": {
+      "category": "VFX",
+      "variations": [
+        "sounds/signature/energy_release.wav"
+      ],
+      "volume": 0.7,
+      "cooldown": 220,
+      "maxConcurrent": 2,
+      "loop": false,
+      "priority": 95,
+      "maxDurationMs": 3000
+    }
+  }
+}

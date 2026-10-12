@@ -1,0 +1,194 @@
+﻿[
+    {
+        "scale":  0.40666666666666668,
+        "name":  "punch-start",
+        "baseline":  128,
+        "crop":  [
+                     120,
+                     29,
+                     190,
+                     247
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.40666666666666668,
+        "name":  "punch-contact",
+        "baseline":  128,
+        "crop":  [
+                     421,
+                     37,
+                     237,
+                     239
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.40666666666666668,
+        "name":  "punch-recover",
+        "baseline":  128,
+        "crop":  [
+                     797,
+                     29,
+                     210,
+                     247
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.40666666666666668,
+        "name":  "kick-start",
+        "baseline":  128,
+        "crop":  [
+                     1140,
+                     9,
+                     192,
+                     267
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.40666666666666668,
+        "name":  "kick-contact",
+        "baseline":  128,
+        "crop":  [
+                     79,
+                     297,
+                     282,
+                     257
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.40666666666666668,
+        "name":  "kick-recover",
+        "baseline":  128,
+        "crop":  [
+                     452,
+                     291,
+                     198,
+                     264
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.40666666666666668,
+        "name":  "jump-start",
+        "baseline":  128,
+        "crop":  [
+                     775,
+                     362,
+                     238,
+                     193
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.40666666666666668,
+        "name":  "jump-contact",
+        "baseline":  128,
+        "crop":  [
+                     1087,
+                     293,
+                     272,
+                     246
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.40666666666666668,
+        "name":  "rasengan-low",
+        "baseline":  128,
+        "crop":  [
+                     97,
+                     595,
+                     217,
+                     215
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.40666666666666668,
+        "name":  "rasengan-charge",
+        "baseline":  128,
+        "crop":  [
+                     428,
+                     559,
+                     233,
+                     252
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.40666666666666668,
+        "name":  "rasengan-contact",
+        "baseline":  128,
+        "crop":  [
+                     725,
+                     586,
+                     300,
+                     224
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.40666666666666668,
+        "name":  "rasengan-recover",
+        "baseline":  128,
+        "crop":  [
+                     1137,
+                     576,
+                     208,
+                     235
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.40666666666666668,
+        "name":  "kunai-start",
+        "baseline":  128,
+        "crop":  [
+                     105,
+                     842,
+                     247,
+                     243
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.40666666666666668,
+        "name":  "kunai-contact",
+        "baseline":  128,
+        "crop":  [
+                     424,
+                     845,
+                     268,
+                     240
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.40666666666666668,
+        "name":  "clone-sign",
+        "baseline":  128,
+        "crop":  [
+                     828,
+                     834,
+                     192,
+                     251
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.40666666666666668,
+        "name":  "new-victory",
+        "baseline":  128,
+        "crop":  [
+                     1176,
+                     829,
+                     168,
+                     256
+                 ],
+        "canvas":  128
+    }
+]

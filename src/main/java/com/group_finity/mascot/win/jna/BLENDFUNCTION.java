@@ -1,0 +1,18 @@
+package com.group_finity.mascot.win.jna;
+
+import com.sun.jna.Structure;
+import java.util.Arrays;
+import java.util.List;
+
+public class BLENDFUNCTION extends Structure {
+   public static final byte AC_SRC_OVER = 0;
+   public static final byte AC_SRC_ALPHA = 1;
+   public byte BlendOp;
+   public byte BlendFlags;
+   public byte SourceConstantAlpha;
+   public byte AlphaFormat;
+
+   protected List getFieldOrder() {
+      return Arrays.asList("BlendOp", "BlendFlags", "SourceConstantAlpha", "AlphaFormat");
+   }
+}

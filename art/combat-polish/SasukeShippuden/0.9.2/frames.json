@@ -1,0 +1,194 @@
+﻿[
+    {
+        "scale":  0.34957020057306593,
+        "name":  "sword-start",
+        "baseline":  128,
+        "crop":  [
+                     68,
+                     23,
+                     197,
+                     237
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.34957020057306593,
+        "name":  "sword-contact",
+        "baseline":  128,
+        "crop":  [
+                     384,
+                     32,
+                     349,
+                     228
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.34957020057306593,
+        "name":  "sword-recover",
+        "baseline":  128,
+        "crop":  [
+                     845,
+                     24,
+                     254,
+                     236
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.34957020057306593,
+        "name":  "backswing-start",
+        "baseline":  128,
+        "crop":  [
+                     1260,
+                     27,
+                     230,
+                     234
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.34957020057306593,
+        "name":  "backswing-contact",
+        "baseline":  128,
+        "crop":  [
+                     36,
+                     282,
+                     317,
+                     231
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.34957020057306593,
+        "name":  "kick-start",
+        "baseline":  128,
+        "crop":  [
+                     536,
+                     266,
+                     163,
+                     250
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.34957020057306593,
+        "name":  "kick-contact",
+        "baseline":  128,
+        "crop":  [
+                     865,
+                     276,
+                     240,
+                     241
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.34957020057306593,
+        "name":  "kick-recover",
+        "baseline":  128,
+        "crop":  [
+                     1278,
+                     266,
+                     181,
+                     250
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.34957020057306593,
+        "name":  "chidori-low",
+        "baseline":  128,
+        "crop":  [
+                     76,
+                     549,
+                     238,
+                     197
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.34957020057306593,
+        "name":  "chidori-charge",
+        "baseline":  128,
+        "crop":  [
+                     482,
+                     540,
+                     232,
+                     206
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.34957020057306593,
+        "name":  "chidori-contact",
+        "baseline":  128,
+        "crop":  [
+                     804,
+                     537,
+                     338,
+                     209
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.34957020057306593,
+        "name":  "chidori-recover",
+        "baseline":  128,
+        "crop":  [
+                     1271,
+                     532,
+                     217,
+                     218
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.34957020057306593,
+        "name":  "shuriken-start",
+        "baseline":  128,
+        "crop":  [
+                     79,
+                     764,
+                     208,
+                     235
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.34957020057306593,
+        "name":  "shuriken-contact",
+        "baseline":  128,
+        "crop":  [
+                     448,
+                     761,
+                     271,
+                     237
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.34957020057306593,
+        "name":  "fire-start",
+        "baseline":  128,
+        "crop":  [
+                     889,
+                     759,
+                     197,
+                     240
+                 ],
+        "canvas":  128
+    },
+    {
+        "scale":  0.34957020057306593,
+        "name":  "fire-contact",
+        "baseline":  128,
+        "crop":  [
+                     1150,
+                     780,
+                     345,
+                     220
+                 ],
+        "canvas":  128
+    }
+]
