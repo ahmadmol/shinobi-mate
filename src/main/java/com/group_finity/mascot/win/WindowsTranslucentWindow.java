@@ -16,14 +16,16 @@ import javax.swing.JWindow;
 
 class WindowsTranslucentWindow extends JWindow implements TranslucentWindow {
    private static final long serialVersionUID = 1L;
-   private WindowsNativeImage image;
-   private int alpha = 255;
+   private volatile WindowsNativeImage image;
+   private volatile int alpha = 255;
+   private record Painted(WindowsNativeImage image,int alpha,int width,int height,java.awt.GraphicsConfiguration configuration) { }
+   private volatile Painted painted;
 
    public Component asComponent() {
       return this;
    }
 
-   private void paint(WindowsNativeImage source, int alpha) {
+   private boolean paint(WindowsNativeImage source, int alpha) {
       Pointer hWnd = Native.getComponentPointer(this);
       if (User32.INSTANCE.IsWindow(hWnd) != 0) {
          int exStyle = User32.INSTANCE.GetWindowLongW(hWnd, -20);
@@ -33,7 +35,7 @@ class WindowsTranslucentWindow extends JWindow implements TranslucentWindow {
 
          RECT windowRect = new RECT();
          User32.INSTANCE.GetWindowRect(hWnd, windowRect);
-         if (windowRect.Width() <= 0 || windowRect.Height() <= 0) return;
+         if (windowRect.Width() <= 0 || windowRect.Height() <= 0) return false;
          WindowsNativeImage physicalImage = source.forSize(windowRect.Width(), windowRect.Height());
          Pointer imageHandle = physicalImage.getHandle();
          Pointer clientDC = User32.INSTANCE.GetDC(hWnd);
@@ -52,12 +54,13 @@ class WindowsTranslucentWindow extends JWindow implements TranslucentWindow {
          size.cx = windowRect.Width();
          size.cy = windowRect.Height();
          POINT zero = new POINT();
-         User32.INSTANCE.UpdateLayeredWindow(hWnd, Pointer.NULL, lt, size, memDC, zero, 0, bf, 2);
+         boolean updated=User32.INSTANCE.UpdateLayeredWindow(hWnd, Pointer.NULL, lt, size, memDC, zero, 0, bf, 2)!=0;
          Gdi32.INSTANCE.SelectObject(memDC, oldBmp);
          Gdi32.INSTANCE.DeleteDC(memDC);
          java.lang.ref.Reference.reachabilityFence(physicalImage);
+         return updated;
       }
-
+      return false;
    }
 
    public String toString() {
@@ -66,8 +69,10 @@ class WindowsTranslucentWindow extends JWindow implements TranslucentWindow {
    }
 
    public void paint(Graphics g) {
-      if (this.getImage() != null) {
-         this.paint(this.getImage(), this.getAlpha());
+      WindowsNativeImage source=this.getImage();int opacity=this.getAlpha();
+      int width=getWidth(),height=getHeight();var configuration=getGraphicsConfiguration();
+      if (source != null&&this.paint(source,opacity)) {
+         painted=new Painted(source,opacity,width,height,configuration);
       }
 
    }
@@ -89,6 +94,10 @@ class WindowsTranslucentWindow extends JWindow implements TranslucentWindow {
    }
 
    public void updateImage() {
-      this.repaint();
+      Painted last=painted;
+      // Moving a layered HWND preserves its bitmap. AWT still paints on expose
+      // and resize; only repeated identical engine repaint requests are omitted.
+      if(last==null||last.image()!=image||last.alpha()!=alpha||last.width()!=getWidth()||
+            last.height()!=getHeight()||last.configuration()!=getGraphicsConfiguration())this.repaint();
    }
 }

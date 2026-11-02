@@ -109,7 +109,9 @@ public class AnimationBuilder {
          }
       }
 
-      Pose pose = new Pose(imageText, imageRightText, move.x, move.y, duration, soundText,frameNode.getAttribute("SoundEvent"));
+      Point poseAnchor=null;
+      if(imageText!=null){String[] coordinates=anchorText.split(",");poseAnchor=new Point((int)Math.round(Integer.parseInt(coordinates[0])*scaling),(int)Math.round(Integer.parseInt(coordinates[1])*scaling));}
+      Pose pose = new Pose(imageText, imageRightText, move.x, move.y, duration, soundText,frameNode.getAttribute("SoundEvent"),poseAnchor);
       log.log(Level.INFO, "ReadPosition({0})", pose);
       return pose;
    }

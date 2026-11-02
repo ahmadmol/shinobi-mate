@@ -24,6 +24,10 @@ class WindowsEnvironment extends Environment {
    private static String[] windowTitlesBlacklist = null;
 
    private static boolean isIE(Pointer ie) {
+      // Never use our own companion/UI windows as climbable obstacles.
+      var process=new com.sun.jna.ptr.IntByReference();
+      User32.INSTANCE.GetWindowThreadProcessId(ie,process);
+      if(Integer.toUnsignedLong(process.getValue())==ProcessHandle.current().pid())return false;
       Boolean cachedValue = (Boolean)ieCache.get(ie);
       if (cachedValue != null) {
          return cachedValue;
@@ -62,7 +66,7 @@ class WindowsEnvironment extends Environment {
                }
             }
 
-            if (!whitelistInUse && blacklistInUse) {
+            if (!whitelistInUse) {
                ieCache.put(ie, true);
                return true;
             } else {
@@ -125,6 +129,7 @@ class WindowsEnvironment extends Environment {
    }
 
    private static Rectangle getIERect(Pointer ie) {
+      if(ie==null)return new Rectangle();
       RECT out = new RECT();
       User32.INSTANCE.GetWindowRect(ie, out);
       RECT in = new RECT();
@@ -135,7 +140,20 @@ class WindowsEnvironment extends Environment {
          in.bottom = out.bottom - out.top;
       }
 
-      return new Rectangle(out.left + in.left, out.top + in.top, in.Width(), in.Height());
+      Rectangle physical=new Rectangle(out.left + in.left, out.top + in.top, in.Width(), in.Height());
+      var api=com.sun.jna.platform.win32.User32.INSTANCE;
+      var info=new com.sun.jna.platform.win32.WinUser.MONITORINFO();
+      if(!api.GetMonitorInfo(api.MonitorFromWindow(new com.sun.jna.platform.win32.WinDef.HWND(ie),2),info).booleanValue())return physical;
+      for(var device:java.awt.GraphicsEnvironment.getLocalGraphicsEnvironment().getScreenDevices()){
+         var gc=device.getDefaultConfiguration();Rectangle bounds=gc.getBounds();
+         // Windows AWT keeps monitor origins in desktop coordinates and scales local offsets.
+         if(bounds.x==info.rcMonitor.left&&bounds.y==info.rcMonitor.top){
+            double sx=(double)(info.rcMonitor.right-info.rcMonitor.left)/bounds.width,sy=(double)(info.rcMonitor.bottom-info.rcMonitor.top)/bounds.height;
+            return new Rectangle(bounds.x+(int)Math.round((physical.x-info.rcMonitor.left)/sx),bounds.y+(int)Math.round((physical.y-info.rcMonitor.top)/sy),
+               (int)Math.round(physical.width/sx),(int)Math.round(physical.height/sy));
+         }
+      }
+      return physical;
    }
 
    private static int getWindowRgnBox(Pointer window, RECT rect) {
@@ -159,6 +177,17 @@ class WindowsEnvironment extends Environment {
 
    private static void moveIE(Pointer ie, Rectangle rect) {
       if (ie != null) {
+         rect=new Rectangle(rect);
+         for(var device:java.awt.GraphicsEnvironment.getLocalGraphicsEnvironment().getScreenDevices()){
+            var gc=device.getDefaultConfiguration();Rectangle bounds=gc.getBounds();
+            if(bounds.contains(rect.x+rect.width/2,rect.y+rect.height/2)){
+               var api=com.sun.jna.platform.win32.User32.INSTANCE;var info=new com.sun.jna.platform.win32.WinUser.MONITORINFO();
+               var p=new com.sun.jna.platform.win32.WinDef.POINT.ByValue();p.x=bounds.x+1;p.y=bounds.y+1;
+               if(!api.GetMonitorInfo(api.MonitorFromPoint(p,2),info).booleanValue())break;
+               double sx=(double)(info.rcMonitor.right-info.rcMonitor.left)/bounds.width,sy=(double)(info.rcMonitor.bottom-info.rcMonitor.top)/bounds.height;
+               rect=new Rectangle(bounds.x+(int)Math.round((rect.x-bounds.x)*sx),bounds.y+(int)Math.round((rect.y-bounds.y)*sy),(int)Math.round(rect.width*sx),(int)Math.round(rect.height*sy));break;
+            }
+         }
          RECT out = new RECT();
          User32.INSTANCE.GetWindowRect(ie, out);
          RECT in = new RECT();
@@ -196,6 +225,7 @@ class WindowsEnvironment extends Environment {
    }
 
    public void tick() {
+      com.group_finity.mascot.environment.DesktopWorkArea.refresh();
       super.tick();
       workArea.set(getWorkAreaRect());
       Rectangle ieRect = getIERect(findActiveIE());
@@ -238,6 +268,7 @@ class WindowsEnvironment extends Environment {
    public void refreshCache() {
       ieCache.clear();
       windowTitles = null;
+      windowTitlesBlacklist = null;
    }
 
    public long getActiveWindowId() {

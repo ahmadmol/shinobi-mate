@@ -105,6 +105,8 @@ public final class AudioManager implements AutoCloseable {
             if(cacheBytes<MAX_CACHE_BYTES/2)sample(p);});
     }
     private void playNow(SoundEvent e,Scope scope,Handle handle,double pan) {
+        // Footsteps are intentionally silent for every pack; other sounds remain.
+        if(e!=null&&e.id().equals("movement.footstep"))return;
         reap();if(e==null||gain(e.category())==0)return;
         long now=System.nanoTime();if(now<retryAt){dropped++;return;}
         String key=e.variations().getFirst().getParent()+":"+e.id();
@@ -179,10 +181,11 @@ public final class AudioManager implements AutoCloseable {
     public void refresh() {
         if(refreshPending.compareAndSet(false,true))control(()->{try{reap();for(var v:voices)v.voice.volume((float)(gain(v.event.category())*v.event.volume()));publish();}finally{refreshPending.set(false);}});
     }
-    private void control(Runnable task){if(!closed.get())try{worker.execute(task);}catch(RejectedExecutionException ignored){ }}
+    private boolean control(Runnable task){if(!closed.get())try{worker.execute(task);return true;}catch(RejectedExecutionException ignored){ }return false;}
     public CompletableFuture<Snapshot> flush() {
         var done=new CompletableFuture<Snapshot>();if(closed.get()){done.complete(snapshot);return done;}
-        control(()->{reap();publish();done.complete(snapshot);});return done;
+        if(!control(()->{try{reap();publish();done.complete(snapshot);}catch(RuntimeException ex){done.completeExceptionally(ex);}}))done.complete(snapshot);
+        return done;
     }
     private void publish(){snapshot=new Snapshot(voices.size(),(int)voices.stream().filter(v->v.event.loop()).count(),cache.size(),cacheBytes,MAX_PENDING-pending.availablePermits(),played,dropped,evicted,failures,peakVoices,peakPending,Thread.currentThread().getName(),backend.lineCount(),backend.deviceFailures());}
     private void warn(String key,String message){if(warned.add(key)){LOG.warning(message);if(warned.size()>256)warned.remove(warned.iterator().next());}}
@@ -198,7 +201,14 @@ public final class AudioManager implements AutoCloseable {
     @Override public void close() {
         if(!closed.compareAndSet(false,true))return;
         CompletableFuture<Void> done=new CompletableFuture<>();
-        worker.execute(()->{for(var v:voices){v.handle.cancelled.set(true);v.voice.close();}voices.clear();cache.clear();packs.clear();cooldowns.clear();lastVariants.clear();failedFiles.clear();cacheBytes=0;backend.close();publish();done.complete(null);});
+        worker.execute(()->{
+            try {
+                for(var v:voices){v.handle.cancelled.set(true);try{v.voice.close();}catch(RuntimeException ex){failures++;warn("close","Optional audio voice cleanup failed");}}
+                voices.clear();cache.clear();packs.clear();cooldowns.clear();lastVariants.clear();failedFiles.clear();cacheBytes=0;
+                try{backend.close();}finally{publish();}
+                done.complete(null);
+            }catch(RuntimeException ex){done.completeExceptionally(ex);}
+        });
         worker.shutdown();
         if(!javax.swing.SwingUtilities.isEventDispatchThread())try{done.get(3,TimeUnit.SECONDS);}catch(Exception ex){LOG.warning("Audio shutdown still pending");}
     }

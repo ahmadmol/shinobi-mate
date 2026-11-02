@@ -25,6 +25,9 @@ public final class SingleInstance implements AutoCloseable {
  }
  /** Only a local authenticated OPEN request is accepted; no paths or executable commands. */
  public void listen(Runnable activate)throws IOException {
+  listen(activate,()->{});
+ }
+ public void listen(Runnable activate,Runnable shutdown)throws IOException {
   String token=UUID.randomUUID().toString();
   server=new ServerSocket(0,8,InetAddress.getByName("127.0.0.1"));
   Files.writeString(endpoint,server.getLocalPort()+"\n"+token,StandardCharsets.UTF_8);
@@ -35,9 +38,11 @@ public final class SingleInstance implements AutoCloseable {
     // Fixed-length request prevents unbounded allocation by another local process.
     char[] request=new char[token.length()+5];int count=0,n;
     while(count<request.length&&(n=input.read(request,count,request.length-count))>0)count+=n;
-    if(count==request.length&&new String(request).equals(token+" OPEN")) {
+    String command=new String(request);
+    if(count==request.length&&(command.equals(token+" OPEN")||command.equals(token+" STOP"))) {
      RuntimeDiagnostics.event("ACTIVATION_RECEIVED");
-     activate.run();client.getOutputStream().write(1);client.getOutputStream().flush();
+     client.getOutputStream().write(1);client.getOutputStream().flush();
+     if(command.endsWith(" STOP"))shutdown.run();else activate.run();
     }
    }catch(IOException ignored){/* stale/invalid local clients cannot stop activation */}
   },"ShinobiMate activation");listener.setDaemon(true);listener.start();

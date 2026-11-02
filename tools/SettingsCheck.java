@@ -49,8 +49,8 @@ public class SettingsCheck extends CombatCheck {
      var image=new BufferedImage(dialog.getWidth(),dialog.getHeight(),BufferedImage.TYPE_INT_RGB);var g=image.createGraphics();dialog.paint(g);g.dispose();
      Files.createDirectories(Path.of("art/product-roadmap/screenshots"));
      ImageIO.write(image,"png",Path.of("art/product-roadmap/screenshots/settings-"+language+".png").toFile());dialog.dispose();
-     SettingsDialog expanded=new SettingsDialog(null);expanded.setVisible(true);JTabbedPane tabs=findTabs(expanded);require(tabs.getTabCount()==9,"settings/audio section missing");
-     for(int tab=0;tab<tabs.getTabCount();tab++){tabs.setSelectedIndex(tab);expanded.validate();var shot=new BufferedImage(expanded.getWidth(),expanded.getHeight(),BufferedImage.TYPE_INT_RGB);var graphics=shot.createGraphics();expanded.paint(graphics);graphics.dispose();ImageIO.write(shot,"png",Path.of("art/product-roadmap/screenshots/settings-"+language+"-"+tab+".png").toFile());}
+     SettingsDialog expanded=new SettingsDialog(null);expanded.setVisible(true);JList<?> tabs=findNavigation(expanded);require(tabs.getModel().getSize()==10,"settings/audio section missing");
+     for(int tab=0;tab<tabs.getModel().getSize();tab++){tabs.setSelectedIndex(tab);expanded.validate();var shot=new BufferedImage(expanded.getWidth(),expanded.getHeight(),BufferedImage.TYPE_INT_RGB);var graphics=shot.createGraphics();expanded.paint(graphics);graphics.dispose();ImageIO.write(shot,"png",Path.of("art/product-roadmap/screenshots/settings-"+language+"-"+tab+".png").toFile());}
      var restore=findCheck(expanded,CharacterSession.RESTORE);require(restore!=null&&!restore.isSelected(),"restore missing or enabled by default");restore.doClick();require(RuntimeSettings.flag(CharacterSession.RESTORE,false),"restore setting not connected");restore.doClick();require(!RuntimeSettings.flag(CharacterSession.RESTORE,true),"restore setting failed to disable");
      var input=findCheck(expanded,"AlwaysOnTop");boolean selected=input.isSelected();input.doClick();require(RuntimeSettings.flag("AlwaysOnTop",selected)!=selected,"settings UI toggle not connected");input.doClick();expanded.dispose();
     }
@@ -59,6 +59,6 @@ public class SettingsCheck extends CombatCheck {
   });
   Files.delete(destination);Files.delete(temp);
  }
- static JTabbedPane findTabs(Container parent){for(Component c:parent.getComponents()){if(c instanceof JTabbedPane tabs)return tabs;if(c instanceof Container child){var found=findTabs(child);if(found!=null)return found;}}return null;}
+ static JList<?> findNavigation(Container parent){for(Component c:parent.getComponents()){if(c instanceof JList<?> list&&"SettingsNavigation".equals(c.getName()))return list;if(c instanceof Container child){var found=findNavigation(child);if(found!=null)return found;}}return null;}
  static JCheckBox findCheck(Container parent,String name){for(Component c:parent.getComponents()){if(c instanceof JCheckBox input&&name.equals(c.getName()))return input;if(c instanceof Container child){var found=findCheck(child,name);if(found!=null)return found;}}return null;}
 }

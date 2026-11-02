@@ -33,10 +33,14 @@ public class ProfessionalAudioCheck extends CombatPolishCheck {
   List<AudioManager.Playback> history=Collections.synchronizedList(new ArrayList<>());m.observe(history::add);
   try {
    // Actual call from Swing. File decoding, line operations and callbacks must run on the worker.
-   SwingUtilities.invokeAndWait(()->m.playCharacter("NarutoShippuden","movement.footstep",new AudioManager.Scope(),-.3));drain(m);
+   for(String character:List.of("NarutoShippuden","SasukeShippuden","GojoSatoru","SukunaRyomen","AstaBlackClover","Tom","Jerry","ErenYeager"))
+    m.playCharacter(character,"movement.footstep",new AudioManager.Scope(),0);
+   m.play(event("movement.footstep",SoundEvent.Category.MOVEMENT,10),null,0);drain(m);
+   require(m.snapshot().played()==0&&history.isEmpty(),"walking footsteps must be silent in every pack and direct playback");
+   SwingUtilities.invokeAndWait(()->m.playCharacter("NarutoShippuden","movement.run",new AudioManager.Scope(),-.3));drain(m);
    require(m.snapshot().played()==1,"EDT enqueue did not play");require(history.getFirst().thread().equals("ShinobiMate audio"),"wrong worker");
-   for(int i=0;i<500;i++)m.playCharacter("NarutoShippuden","movement.footstep",null,0);drain(m);
-   require(m.snapshot().played()==1,"footstep cooldown spam");require(m.snapshot().peakPending()<=AudioManager.MAX_PENDING,"pending overflow");
+   for(int i=0;i<500;i++)m.playCharacter("NarutoShippuden","movement.run",null,0);drain(m);
+   require(m.snapshot().played()==1,"running cooldown spam");require(m.snapshot().peakPending()<=AudioManager.MAX_PENDING,"pending overflow");
    m.stopAll();drain(m);require(m.snapshot().voices()==0,"stopAll leaked");
    for(int i=0;i<3;i++)m.play(event("move"+i,SoundEvent.Category.MOVEMENT,10),null,0);
    for(int i=0;i<8;i++)m.play(event("vfx"+i,SoundEvent.Category.VFX,i==0?95:40),null,0);
@@ -92,7 +96,7 @@ public class ProfessionalAudioCheck extends CombatPolishCheck {
    for(var slider:sliders)require(slider.getMinimum()==0&&slider.getMaximum()==100,"percent slider range");dialog.dispose();});
   System.out.println("PASS five accessible percent sliders, mute and volume settings persistence/validation");
  }
- static void findSliders(java.awt.Container c,List<JSlider> result){for(var child:c.getComponents()){if(child instanceof JSlider s)result.add(s);if(child instanceof java.awt.Container inner)findSliders(inner,result);}}
+ static void findSliders(java.awt.Container c,List<JSlider> result){for(var child:c.getComponents()){if(child instanceof JSlider s&&List.of("MasterVolume","MovementVolume","CombatVolume","CharacterVolume","UIVolume").contains(s.getName()))result.add(s);if(child instanceof java.awt.Container inner)findSliders(inner,result);}}
  static class RecordingMascot extends Mascot {
   final List<String> emitted=new ArrayList<>();
   RecordingMascot(String name){super(name);}
@@ -103,8 +107,7 @@ public class ProfessionalAudioCheck extends CombatPolishCheck {
   time=Mascot.class.getDeclaredField("time");time.setAccessible(true);cursor(-1000,-1000,0,0);
   for(String name:phase1){var c=config(name,"behaviors.xml");var pet=new RecordingMascot(name);pet.setAnchor(new java.awt.Point(300,500));pet.getEnvironment().refreshWorkArea();
    int n=run(c,pet,"Walk",Map.of("TargetX","400"),100,false);
-   require(pet.emitted.stream().allMatch("movement.footstep"::equals),"walk emitted unrelated events");
-   require(pet.emitted.size()<n/3&&pet.emitted.size()>=3,"footsteps emitted per tick / absent "+name+" "+pet.emitted);
+    require(pet.emitted.isEmpty(),"walking must not emit footsteps: "+name+" "+pet.emitted);
    pet.emitted.clear();pet.setAnchor(new java.awt.Point(300,500));run(c,pet,"NinjaHop",Map.of(),100,false);
    require(pet.emitted.equals(List.of("movement.jump","movement.air","movement.landing")),"hop markers out of order/repeated "+pet.emitted);
    require(pet.getAnchor().y==500,"landing marker not at contact");pet.emitted.clear();pet.setDragging(true);pet.setDragging(true);pet.setDragging(false);pet.setDragging(false);
@@ -122,16 +125,19 @@ public class ProfessionalAudioCheck extends CombatPolishCheck {
  static void synchronization()throws Exception {
   for(String name:phase1){var p=profile(name);
    for(var at:p.attacks())for(boolean hit:List.of(false,true)) {
-    var area=new Rectangle(0,0,1200,700);var a=new RecordingBody(200,area);var b=new RecordingBody(hit?270:850,area);
+    var area=new Rectangle(0,0,1200,700);var a=new RecordingBody(200,area);var b=new RecordingBody(270,area);
     var selected=new CombatProfile.Attack(at.id().equals("counter")?"audio-test":at.id(),at.kind(),0,1000,at.hitbox(),at.damage(),1000,at.startup(),at.active(),at.recovery(),0,
       at.projectileSpeed(),at.knockback(),at.jumpHeight(),0,1,at.animation(),at.chargeAnimation(),at.effect(),at.cloneEffect(),at.recoveryAnimation(),at.chargeEffect(),at.polish());
     // Targets are beyond projectile range on a miss, with all movement frozen.
     if(!hit&&at.projectile())selected=new CombatProfile.Attack(selected.id(),selected.kind(),0,300,selected.hitbox(),selected.damage(),1000,selected.startup(),selected.active(),selected.recovery(),0,selected.projectileSpeed(),selected.knockback(),selected.jumpHeight(),0,1,selected.animation(),selected.chargeAnimation(),selected.effect(),selected.cloneEffect(),selected.recoveryAnimation(),selected.chargeEffect(),selected.polish());
     if(!hit&&at.projectile())b.x=270;
-    var match=new CombatMatch(a,fixture(p,List.of(selected)),b,idle(p),new Random(1));boolean attack=false,impact=false,start=false;
+    var match=new CombatMatch(a,fixture(p,List.of(selected)),b,idle(p),new Random(1));boolean attack=false,impact=false,start=false,departed=false;
     for(int t=0;t<110;t++) {
+     if(departed){match.a.x=200;a.x=200;match.b.x=1050;b.x=1050;}
      int previousHP=match.b.hp;int size=a.sounds.size();match.tick();
-     if(!hit&&at.projectile()&&match.a.attack!=null&&match.a.attackAge()==1){match.b.x=850;b.x=850;}
+     // A miss is a target leaving an already committed attack, not an AI allowed
+     // to approach a distant target until it can eventually hit it.
+     if(!hit&&match.a.attack!=null&&match.a.attackAge()==1){departed=true;match.b.x=1050;b.x=1050;}
      for(int i=size;i<a.sounds.size();i++){
       String event=a.sounds.get(i);
       if(event.equals(at.polish().startupSound())&&!event.isBlank()){start=true;require(match.a.attackAge()<=1,"startup outside first charge frame "+at.id());}

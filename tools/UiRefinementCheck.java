@@ -18,6 +18,7 @@ public class UiRefinementCheck extends CharacterCheck {
   factory=new Factory();var nativeField=NativeFactory.class.getDeclaredField("instance");nativeField.setAccessible(true);nativeField.set(null,factory);
   var app=Main.getInstance();var manager=app.getManager();manager.setExitOnLastRemoved(false);var props=app.getProperties();var configurations=Main.class.getDeclaredField("configurations");configurations.setAccessible(true);var configs=(Map<String,com.group_finity.mascot.config.Configuration>)configurations.get(app);
   var packs=new CharacterService().installed();for(var p:packs)configs.put(p.id(),config(p.id(),"behaviors.xml"));
+  var ready=Main.class.getDeclaredField("characterLoadingReady");ready.setAccessible(true);ready.setBoolean(app,true);
   var arabic=new CharacterDescriptor("Test","نَـارُوتُو","شينوبي","1","",Path.of("."),"Preview.png",true,false,false,false);
   require(CharacterFilter.matches(arabic,"ناروتو",CharacterFilter.Scope.ALL,0),"Arabic diacritics/tatweel search");require(!CharacterFilter.matches(arabic,"",CharacterFilter.Scope.ACTIVE,0),"inactive filter");require(!CharacterFilter.matches(arabic,"",CharacterFilter.Scope.CLOUD,1),"cloud capability filter");
   Path temp=Files.createTempDirectory("shinobi-preview-"),image=temp.resolve("Preview.png");var source=new java.awt.image.BufferedImage(200,100,java.awt.image.BufferedImage.TYPE_INT_ARGB);var g=source.createGraphics();g.setColor(Color.RED);g.fillRect(0,0,200,100);g.dispose();javax.imageio.ImageIO.write(source,"png",image.toFile());

@@ -7,6 +7,7 @@ import static com.group_finity.mascot.combat.CombatState.*;
 
 /** One explicit 1v1 pair. No registry lookup, window manipulation, timers or automatic starts. */
 public final class CombatMatch {
+    public enum Form { HUMAN, TRANSFORMING, TITAN }
     public interface Body {
         double x(); double y(); double scale(); Rectangle workArea();
         void pose(double x, double y, boolean right, String image);
@@ -18,7 +19,10 @@ public final class CombatMatch {
     }
     public static final class Fighter {
         public final Body body;
-        public final CombatProfile profile;
+        public CombatProfile profile;
+        public final CombatProfile baseProfile;
+        public Form form=Form.HUMAN;
+        public int transformations;
         public CombatState state = IDLE;
         public int hp = 100;
         public double energy = 100;
@@ -37,9 +41,9 @@ public final class CombatMatch {
         private String lastPose;
         private String lastAudioAnimation="";
         private int lastAudioAge=-1;
-        private boolean airborne;
-        Fighter(Body body, CombatProfile profile,Rectangle arena) { this.body=body; this.profile=profile; this.arena=arena; x=body.x(); y=body.y(); }
-        public Rectangle hurtbox() { return box(profile.hurtbox(),x,renderY(),right,body.scale()); }
+        private boolean airborne, moved;
+        Fighter(Body body, CombatProfile profile,Rectangle arena) { this.body=body; this.profile=profile; this.baseProfile=profile; this.arena=arena; x=body.x(); y=body.y(); }
+        public Rectangle hurtbox() { return state==TRANSFORMING?new Rectangle():box(profile.hurtbox(),x,renderY(),right,body.scale()); }
         public double renderY() {
             int jump = state == DODGE ? profile.personality().jumpHeight() :
                 attack != null && attackAge >= attack.startup() ? attack.jumpHeight() : 0;
@@ -94,8 +98,9 @@ public final class CombatMatch {
         arena=new Rectangle(a.workArea());
         if(!arena.equals(b.workArea()))throw new IllegalArgumentException("Fighters must share one monitor work area");
         this.a=new Fighter(a,pa,arena);this.b=new Fighter(b,pb,arena);this.random=random;
-        if (arena.width < Math.max(pa.width()*a.scale(),pb.width()*b.scale()) * 2 ||
-                arena.height < Math.max(pa.height()*a.scale(),pb.height()*b.scale()))
+        double maxWidth=Math.max(pa.forms().stream().mapToDouble(p->p.width()*a.scale()).max().orElseThrow(),pb.forms().stream().mapToDouble(p->p.width()*b.scale()).max().orElseThrow());
+        double maxHeight=Math.max(pa.forms().stream().mapToDouble(p->p.height()*a.scale()).max().orElseThrow(),pb.forms().stream().mapToDouble(p->p.height()*b.scale()).max().orElseThrow());
+        if (arena.width < maxWidth * 2 || arena.height < maxHeight)
             throw new IllegalArgumentException("Work area too small for two fighters");
         clamp(this.a);clamp(this.b);face();
     }
@@ -107,7 +112,7 @@ public final class CombatMatch {
     public Rectangle arena() { return new Rectangle(arena); }
     public void stop() {
         stopped=true;projectiles.clear();visuals.clear();
-        for(Fighter f:List.of(a,b)) {f.body.stopSounds();f.hp=100;f.energy=100;f.attack=null;f.state=IDLE; }
+        for(Fighter f:List.of(a,b)) {f.body.stopSounds();f.hp=100;f.energy=100;f.attack=null;f.state=IDLE;f.profile=f.baseProfile;f.form=Form.HUMAN;f.transformations=0;f.age=0;clamp(f);render(f); }
     }
 
     public void tick() {
@@ -134,6 +139,7 @@ public final class CombatMatch {
         }
         face();
         for(Fighter f:List.of(a,b)) {
+            f.moved=false;
             f.age++;f.energy=Math.min(100,f.energy+0.45);
             // Walk down to the desktop floor without moving any external window.
             move(f,0,Math.min(8*f.body.scale(),arena.getMaxY()-f.y));
@@ -142,6 +148,7 @@ public final class CombatMatch {
                 - b.y-(b.profile.height()-b.profile.anchorY())*b.body.scale())>18*Math.max(a.body.scale(),b.body.scale())) {
             state(a,SEEK_TARGET);state(b,SEEK_TARGET);separate();render(a);render(b);return;
         }
+        beginTransformation(a);beginTransformation(b);
         decide(a,b);decide(b,a);
         incoming(a,b);incoming(b,a);
         update(a,b);
@@ -156,7 +163,7 @@ public final class CombatMatch {
         List<CombatProfile.Attack> candidates=f.profile.attacks().stream().filter(at ->
             tick>=f.cooldowns.getOrDefault(at.id(),0) && f.energy>=at.cost() &&
             (!at.id().contains("counter")||f.counterReady) &&
-            distance>=at.minRange() && distance<=at.range()).toList();
+            distance>=at.minRange() && distance<=at.range() && canReach(f,target,at)).toList();
         if(candidates.size()>1 && f.recentAttackHistory.size()>=2) {
             var history=f.recentAttacks();String last=history.getLast();
             if(last.equals(history.get(history.size()-2)))candidates=candidates.stream().filter(at->!at.id().equals(last)).toList();
@@ -182,6 +189,11 @@ public final class CombatMatch {
             state(f,APPROACH);
             f.decisionAt=tick+2;
         }
+    }
+    private boolean canReach(Fighter f,Fighter target,CombatProfile.Attack at) {
+        if(at.projectile()||at.speed()>0||at.jumpHeight()>0)return true;
+        // Range is an AI envelope; a stationary swing still needs physical contact.
+        return box(at.hitbox(),f.x,f.y,f.right,f.body.scale()).intersects(target.hurtbox());
     }
     private double weight(Fighter f,CombatProfile.Attack at,double distance) {
         var p=f.profile.personality();
@@ -218,9 +230,10 @@ public final class CombatMatch {
     }
     private void update(Fighter f,Fighter target) {
         switch(f.state) {
+            case TRANSFORMING -> updateTransformation(f);
             case DODGE -> {
                 if(f.age<7) move(f,(f.x<target.x?-1:1)*f.profile.personality().dodgeSpeed()*f.body.scale(),0);
-                if(f.age>=10) recover(f,f.counterReady?1:5);
+                if(f.age>=10) {f.counterReady=true;recover(f,1);}
             }
             case BLOCK -> { if(f.age>=14) recover(f,f.counterReady?1:5); }
             case TAUNT -> { if(f.age>=14)recover(f,3); }
@@ -244,10 +257,15 @@ public final class CombatMatch {
         if(age==at.startup()+at.active()){f.body.stopChargeSounds();sound(f,at.polish().afterSound());}
         if(age>=at.startup() && age<at.startup()+at.active()) {
             if(at.speed()>0) {
+                // Retreat attacks spend their first half escaping, then re-enter.
+                if(at.kind().equals("retreat") && age-at.startup()<at.active()/2) {
+                    move(f,(f.right?-1:1)*at.speed()*f.body.scale(),0);
+                } else {
                 // A locked facing must not carry a dash through its opponent.
                 double forward=(target.x-f.x)*(f.right?1:-1);
                 double step=Math.min(at.speed()*f.body.scale(),Math.max(0,forward-personalDistance()));
                 move(f,(f.right?1:-1)*step,0);
+                }
             }
             separate();
             if(age==at.startup()) {
@@ -257,7 +275,7 @@ public final class CombatMatch {
                 if(at.projectile()&&at.polish().strikes().isEmpty()) {
                     f.hitUsed=true;
                     launch(f,target,at,at.damage(),at.knockback());
-                } else if(at.polish().strikes().isEmpty())attached(f,at.effect(),at.polish().effectX(),at.polish().effectY(),at.active());
+                } else if(at.polish().strikes().isEmpty()&&!at.effect().equals(at.polish().impactEffect()))attached(f,at.effect(),at.polish().effectX(),at.polish().effectY(),at.active());
             }
             if(!at.polish().strikes().isEmpty()) {
                 int phase=age-at.startup();
@@ -267,14 +285,14 @@ public final class CombatMatch {
                         if(phase==strike.at()&&f.strikesUsed.add(i)){sound(f,strike.attackSound().isBlank()?at.polish().attackSound():strike.attackSound());launch(f,target,at,strike.damage(),strike.knockback());}
                         continue;
                     }
-                    if(phase==strike.at()) {sound(f,strike.attackSound().isBlank()?at.polish().attackSound():strike.attackSound());attached(f,at.effect(),at.polish().effectX(),at.polish().effectY(),strike.duration()+2);}
+                    if(phase==strike.at()) {sound(f,strike.attackSound().isBlank()?at.polish().attackSound():strike.attackSound());if(!at.effect().equals(at.polish().impactEffect()))attached(f,at.effect(),at.polish().effectX(),at.polish().effectY(),strike.duration()+2);}
                     if(phase>=strike.at()&&phase<strike.at()+strike.duration()&&!f.strikesUsed.contains(i)&&
                             box(at.hitbox(),f.x,f.renderY(),f.right,f.body.scale()).intersects(target.hurtbox())) {
                         f.strikesUsed.add(i);damage(f,target,at,strike.damage(),strike.knockback(),strike.impactSound());
                         if(finished)return;
                     }
                 }
-            } else if(!f.hitUsed && box(at.hitbox(),f.x,f.renderY(),f.right,f.body.scale()).intersects(target.hurtbox())) {
+            } else if(!f.hitUsed && (!at.kind().equals("retreat")||age-at.startup()>=at.active()/2) && box(at.hitbox(),f.x,f.renderY(),f.right,f.body.scale()).intersects(target.hurtbox())) {
                 f.hitUsed=true;damage(f,target,at,at.damage(),at.knockback());
                 if(!at.projectile()&&at.jumpHeight()==0)f.attackAge=at.startup()+at.active();
                 if(finished)return;
@@ -308,7 +326,11 @@ public final class CombatMatch {
         damage(source,target,at,damage,knockback,"");
     }
     private void damage(Fighter source,Fighter target,CombatProfile.Attack at,int damage,int knockback,String strikeSound) {
-        if(finished || target.hp<=0 || (target.state==DODGE&&target.age>=1&&target.age<=7)) return;
+        if(finished || target.hp<=0 || target.state==TRANSFORMING || source.state==TRANSFORMING) return;
+        // Startup locks the attack facing. A wide hitbox must not hit a target that
+        // has crossed behind the attacker; projectiles keep their launch trajectory.
+        if(!at.projectile()&&(target.x-source.x)*(source.right?1:-1)<0)return;
+        if(target.state==DODGE&&target.age>=1&&target.age<=7){target.counterReady=true;return;}
         boolean blocked=target.state==BLOCK;
         double chance=at.projectile()?target.profile.personality().projectileParry():target.profile.personality().counter();
         if(blocked && target.age<=3 && random.nextDouble()<chance) {
@@ -318,6 +340,7 @@ public final class CombatMatch {
             return;
         }
         int amount=blocked?Math.max(1,(int)Math.round(damage*(1-target.profile.personality().blockReduction()))):damage;
+        if(target.form==Form.TITAN)amount=Math.max(1,(int)Math.round(amount*.55));
         target.hp=Math.max(0,target.hp-amount);
         effect(source,blocked?"spark":at.polish().impactEffect(),target.x,target.renderY()+at.polish().effectY()*target.body.scale(),10,false);
         if(blocked)sound(target,"block");
@@ -327,12 +350,19 @@ public final class CombatMatch {
         }
         if(!blocked)sound(target,"grunt");
         if(!blocked && (damage>=18||at.special())) {impactPause=2;effect(target,"dust",target.x,target.y-8*target.body.scale(),8,false);}
-        if(!blocked && at.special())effect(target,at.effect(),target.x,target.y-60*target.body.scale(),8,false);
+        // Signature art belongs to the attacker; victims need not define that effect ID.
+        if(!blocked && at.special())effect(source,at.effect(),target.x,target.y-60*target.body.scale(),8,false);
         if(!blocked && at.special()&&target.profile.effects().containsKey("shockwave"))effect(target,"shockwave",target.x,target.y-60*target.body.scale(),8,false);
         if(!blocked && target.profile.effects().containsKey("hitflash"))
             effect(target,"hitflash",target.x,target.y-60*target.body.scale(),4,false);
         if(blocked && target.hp>0) return;
-        target.body.stopChargeSounds();target.attack=null;target.knockTicks=0;
+        // Committed Titan swings resist light hit-stun during startup and contact.
+        // HP damage still applies, heavy hits and recovery remain punishable.
+        if(target.hp>0 && target.form==Form.TITAN && target.attack!=null &&
+                target.attackAge<=target.attack.startup()+target.attack.active() && damage<18 && !at.special()) {
+            return;
+        }
+        target.body.stopChargeSounds();target.attack=null;target.counterReady=false;target.knockTicks=0;
         target.knockSpeed=(source.x<target.x?1:-1)*knockback*target.body.scale()*.22/(1-Math.pow(.78,7));
         state(target,HIT);
         if(target.hp==0) {
@@ -343,6 +373,29 @@ public final class CombatMatch {
         }
     }
     private void recover(Fighter f,int delay) { state(f,RECOVER);f.decisionAt=tick+delay; }
+    private void beginTransformation(Fighter f) {
+        var t=f.baseProfile.transformation();
+        if(t==null||f.form!=Form.HUMAN||f.hp<=0||f.hp>100*t.hpThreshold()||
+                (t.oncePerBattle()&&f.transformations>0))return;
+        f.body.stopChargeSounds();f.attack=null;f.counterReady=false;f.knockSpeed=0;f.knockTicks=0;
+        f.transformations++;f.form=Form.TRANSFORMING;state(f,TRANSFORMING);
+        projectiles.removeIf(p->{if(p.owner!=f)return false;p.visual.age=p.visual.lifetime;return true;});
+        chargeSound(f,"transform.charge");
+    }
+    private void updateTransformation(Fighter f) {
+        var t=f.baseProfile.transformation();
+        if(f.age==t.prepareTicks()) {
+            f.body.stopChargeSounds();sound(f,"transform.burst");
+            effect(f,"transform-burst",f.x,f.y-70*f.body.scale(),10,false);
+            effect(f,"transform-smoke",f.x,f.y-60*f.body.scale(),t.duration()-f.age,false);
+            effect(f,"transform-lightning",f.x,f.y-90*f.body.scale(),t.revealTick()-f.age,false);
+        }
+        if(f.age==t.revealTick()) {f.profile=t.target();f.cooldowns.clear();f.recentAttackHistory.clear();clamp(f);}
+        if(f.age==t.landingTick()) {
+            effect(f,"dust",f.x,f.y-12*f.body.scale(),14,false);sound(f,"movement.landingHeavy");sound(f,"titan.roar");
+        }
+        if(f.age>=t.duration()) {f.form=Form.TITAN;recover(f,5);}
+    }
     private void sound(Fighter f,String event) {
         if(event!=null&&!event.isBlank())f.body.sound(event,f.profile.root().getFileName().toString(),pan(f));
     }
@@ -364,7 +417,7 @@ public final class CombatMatch {
         if(a.attack==null) a.right=a.x<=b.x;
         if(b.attack==null) b.right=b.x<=a.x;
     }
-    private void move(Fighter f,double dx,double dy) {f.x+=dx;f.y+=dy;clamp(f);}
+    private void move(Fighter f,double dx,double dy) {double old=f.x;f.x+=dx;f.y+=dy;clamp(f);f.moved|=Math.abs(f.x-old)>.1;}
     private void clamp(Fighter f) {
         var p=f.profile;double s=f.body.scale();
         f.x=Math.max(arena.x+p.anchorX()*s,Math.min(arena.getMaxX()-(p.width()-p.anchorX())*s,f.x));
@@ -384,7 +437,7 @@ public final class CombatMatch {
     private void render(Fighter f) {
         String animation=switch(f.state) {
             case IDLE, SEEK_TARGET -> "idle";
-            case APPROACH -> "approach";
+            case APPROACH -> f.moved?"approach":"idle";
             case ATTACK, SPECIAL_ATTACK -> f.attack==null?"idle":
                 f.attackAge<=f.attack.startup()?f.attack.chargeAnimation():
                 f.attackAge>f.attack.startup()+f.attack.active()?f.attack.recoveryAnimation():f.attack.animation();
@@ -405,7 +458,8 @@ public final class CombatMatch {
         }
         double y=Math.max(arena.y+f.profile.anchorY()*f.body.scale(),f.renderY());
         var sequence=f.profile.animations().get(animation);
-        String image=f.attack!=null||f.state==KO||f.state==VICTORY?sequence.poseAt(age):sequence.imageAt(age);
+        if(f.state==TRANSFORMING&&f.profile!=f.baseProfile)age=Math.max(0,age-f.baseProfile.transformation().revealTick());
+        String image=f.attack!=null||f.state==KO||f.state==VICTORY||f.state==TRANSFORMING?sequence.poseAt(age):sequence.imageAt(age);
         if(f.state==APPROACH&&(!animation.equals(f.lastAudioAnimation)||age!=f.lastAudioAge))sound(f,sequence.eventAt(age));
         f.lastAudioAnimation=animation;f.lastAudioAge=age;
         boolean airborne=y<f.y-.5;

@@ -37,4 +37,12 @@ public final class CharacterService {
   }
  }
  public boolean reload(String id){return Main.getInstance().reloadCharacter(id);}
+ public void removeOne(String id) {
+  var manager=Main.getInstance().getManager();
+  synchronized(manager.getMascots()) {
+   manager.setExitOnLastRemoved(false);
+   var instances=new java.util.LinkedHashSet<>(manager.getMascots());instances.addAll(manager.getAdded());
+   instances.stream().filter(m->m.getManager()==manager&&m.getImageSet().equals(id)).findFirst().ifPresent(Mascot::dispose);
+  }
+ }
 }

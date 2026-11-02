@@ -1,6 +1,7 @@
 # Maven Build Target
 /target/
 /output/
+/dist/
 
 # Logs and Lock files
 *.log
@@ -22,3 +23,29 @@ bin/
 
 # Bundled JRE runtime (exceeds GitHub's 100 MB file limit)
 /Shimeji-ee/runtime/
+
+# Local distributions, copyrighted packs and third-party binaries
+/Shimeji-ee/
+/img/
+/audio/
+/art/
+/tools/maven/
+/conf/settings.properties
+*.exe
+*.jar
+*.zip
+*.bundle
+*.class
+# Credentials, signing material and local settings
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+credentials*.json
+secrets*.json
+.publication-prepare.py

@@ -143,10 +143,18 @@ public class MascotEnvironment {
    }
 
    private boolean isScreenTopBottom() {
+      if(NativeFactory.getInstance() instanceof com.group_finity.mascot.win.NativeFactoryImpl) {
+         Area area=getWorkArea();Point p=mascot.getAnchor();
+         return DesktopWorkArea.isExterior(p,0,p.y==area.getTop()?-1:1);
+      }
       return this.impl.isScreenTopBottom(this.mascot.getAnchor());
    }
 
    private boolean isScreenLeftRight() {
+      if(NativeFactory.getInstance() instanceof com.group_finity.mascot.win.NativeFactoryImpl) {
+         Area area=getWorkArea();Point p=mascot.getAnchor();
+         return DesktopWorkArea.isExterior(p,p.x==area.getLeft()?-1:1,0);
+      }
       return this.impl.isScreenLeftRight(this.mascot.getAnchor());
    }
 }

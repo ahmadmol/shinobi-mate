@@ -1,14 +1,24 @@
 # ShinobiMate
 
+Latest local multi-monitor fix: `0.9.5-rc.3+monitor.1`. See [the reproduced falling/window collision defect and validation](MULTIMONITOR_HOTFIX.md). Artifacts were saved on C because D ran out of space; previous candidates are retained.
+
 **ShinobiMate** is an open-source, dynamic Desktop Companion Engine that displays interactive characters on your desktop screen.
 
-## Current Windows build: 0.9.3-beta
+## Final acceptance review: 0.9.5-rc.3+ui.1 — local review build
+
+[FINAL_RELEASE_GATE_CHECKLIST.md](FINAL_RELEASE_GATE_CHECKLIST.md) is the current acceptance decision. Three demonstrated Settings text-clipping defects were fixed for large fonts; no animation, combat or audio engine classes changed. The separate [UI review portable](dist/ShinobiMate-Portable-0.9.5-rc.3+ui.1.zip) and [UI review Setup](dist/ShinobiMate-Setup-0.9.5-rc.3+ui.1.exe) passed native UI and isolated installer checks. Original rc.3 artifacts and their evidence remain unchanged. The earlier 30-minute soak belongs to rc.3 and was not repeated for ui.1. Asset rights, upstream notices, trusted signing and production-identity clean-device acceptance still block production distribution.
+
+## Current Windows candidate: 0.9.5-rc.3 — redistribution rights remain unresolved
 
 The official project icon is `conf/ShinobiMate.ico`, with transparent 16, 32, 48, 64, 128 and 256 pixel images. It is embedded in ShinobiMate.exe and the Inno Setup installer, and used by application windows, the system tray and installer-created shortcuts.
 
-Download [ShinobiMate Setup 0.9.3-beta](dist/ShinobiMate-Setup-0.9.3-beta.exe) or [the portable ZIP](dist/ShinobiMate-Portable-0.9.3-beta.zip). Both include the Java runtime. The desktop shortcut is an optional installer task.
+Local artifacts: [Setup 0.9.5-rc.3](dist/ShinobiMate-Setup-0.9.5-rc.3.exe) and [portable ZIP](dist/ShinobiMate-Portable-0.9.5-rc.3.zip), with Java 21 included. The exact portable launcher was verified with bundled Java 21.0.8 in an isolated relocated profile. The native installer no longer depends on PowerShell or an execution-policy override. A separate-identity QA installer passed fresh install, active-app update/uninstall, data preservation and locked-file refusal. The existing real installation was preserved. These unsigned files have not been published; real-identity clean-device installation and redistribution rights remain release gates.
 
-Maven packaging, the portable build and Inno Setup compilation succeeded on 2026-10-12. The embedded icon resources were verified in both executables; see [the icon integration report](art/branding/ICON-INTEGRATION.md). Earlier release notes below describe their respective historical candidates.
+Current evidence report: [SHINOBIMATE_FINAL_PRODUCTION_QA.md](SHINOBIMATE_FINAL_PRODUCTION_QA.md). rc.3 shares monitor queries per engine frame, avoids unchanged native repaint requests, decodes manager previews off the EDT and immediately refreshes instance controls. Paired eight-character phases used about 26–34% less CPU while retaining 25Hz. The earlier 13.7Hz result did not reproduce in the new baseline; it is not presented as a controlled before/after gain. Full evidence and raw profiles are under `output/performance`.
+
+Earlier finalization evidence and handoff: [FINAL_REPORT.md](output/finalization/FINAL_REPORT.md), [QA_MATRIX.md](output/finalization/QA_MATRIX.md), [HANDOFF.md](output/finalization/HANDOFF.md). Startup opens Character Manager with zero companions unless session restore is explicitly enabled. Combat remains manual. The eight packs are Naruto, Sasuke, Gojo, Sukuna, Asta, Tom, Jerry and Eren; Titan is Eren's form. Artwork redistribution rights and upstream licensing remain unresolved. Historical sections below apply only to their named older builds.
+
+Build and verify with JDK 21: `tools/run-finalization-checks.ps1 -Jdk <JDK-directory>`. Add `-Native` for the native movement checks. Preserve private art locally with `tools/save-finalization-backup.ps1 -IncludePrivateAssets`; do not publish that archive.
 
 ## Key Features
 
@@ -52,7 +62,7 @@ battles never start automatically. See [the combat implementation report](art/co
 for profile fields, move lists, asset limitations and reproducible checks.
 
 ### Requirements
-- JDK 21 or higher (JDK 25 recommended)
+- JDK 21 (the release target)
 - Apache Maven (or bundled Maven in `tools/maven/apache-maven-3.9.9/bin/mvn`)
 
 ### Building
@@ -79,4 +89,4 @@ frame mappings, and the reproducible export workflow are in
 Import character packs from the Character Manager or use Add in the legacy chooser. Imported packs live in `%LOCALAPPDATA%\ShinobiMate\packs`; bundled `img/` resources remain application files. Pack data allows resources and bounded legacy expressions; arbitrary scripts, executables and Java methods are rejected.
 
 ## License
-The existing LICENSE is retained verbatim. Upstream licensing/attribution needs reconciliation; see [NOTICE.md](NOTICE.md). Dependency notices are preserved individually under `licenses/` in the distribution and Java runtime notices under `runtime/legal/`. The core engine's license does not grant rights to the five anime-inspired character packs. Asset permissions and exact upstream notices require review before wider redistribution or a public commercial release.
+The existing LICENSE is retained verbatim. Upstream licensing/attribution needs reconciliation; see [NOTICE.md](NOTICE.md). Dependency notices are preserved individually under `licenses/` in the distribution and Java runtime notices under `runtime/legal/`. The core engine's license does not grant rights to the eight anime/cartoon character packs. Asset permissions and exact upstream notices require review before wider redistribution or a public commercial release.

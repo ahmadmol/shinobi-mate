@@ -6,7 +6,7 @@
 
     <groupId>com.group_finity</groupId>
     <artifactId>shinobi-mate</artifactId>
-    <version>0.9.3-beta</version>
+    <version>0.9.5-rc.3+monitor.1</version>
     <packaging>jar</packaging>
 
     <name>ShinobiMate</name>
