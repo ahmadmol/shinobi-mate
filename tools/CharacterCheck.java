@@ -27,6 +27,7 @@ public class CharacterCheck extends CombatCheck {
   System.setProperty("app.dir",Path.of("output/product-ui").toAbsolutePath().toString());
   factory=new Factory();Field nativeField=NativeFactory.class.getDeclaredField("instance");nativeField.setAccessible(true);nativeField.set(null,factory);
   Main app=Main.getInstance();var manager=app.getManager();manager.setExitOnLastRemoved(false);
+  Field ready=Main.class.getDeclaredField("characterLoadingReady");ready.setAccessible(true);ready.setBoolean(app,true);
   Field lang=Main.class.getDeclaredField("languageBundle");lang.setAccessible(true);
   lang.set(app,ResourceBundle.getBundle("language",Locale.forLanguageTag("ar"),new com.joconner.i18n.ConfDirectoryUtf8Control(new java.io.File("conf"))));
   Field configurations=Main.class.getDeclaredField("configurations");configurations.setAccessible(true);var configs=(Map<String,com.group_finity.mascot.config.Configuration>)configurations.get(app);

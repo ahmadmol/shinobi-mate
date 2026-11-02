@@ -14,6 +14,8 @@ try {
  Copy-Item -LiteralPath conf -Destination output/product-ui -Recurse -Force
  $taskImages=Join-Path $taskRoot 'output/product-ui/img'
  if(-not(Test-Path -LiteralPath $taskImages)){New-Item -ItemType Junction -Path $taskImages -Target (Join-Path $taskRoot 'img') | Out-Null}
+ $taskAudio=Join-Path $taskRoot 'output/product-ui/audio'
+ if(-not(Test-Path -LiteralPath $taskAudio)){New-Item -ItemType Junction -Path $taskAudio -Target (Join-Path $taskRoot 'audio') | Out-Null}
  $taskDefaults="Language=ar`nActiveShimeji=NarutoShippuden`nAlwaysShowShimejiChooser=false`nOnboardingComplete=true`nMenuDPI=96`nMute=true`n"
  $taskProfile=Join-Path $taskRoot 'output/product-profile';New-Item -ItemType Directory -Force $taskProfile | Out-Null
  $taskSettings=Join-Path $taskProfile 'settings.properties'

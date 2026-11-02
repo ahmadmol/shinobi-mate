@@ -16,14 +16,40 @@ $env:JAVA_HOME = '<your JDK directory>'
 ```
 
 The release/version/publisher are read from Maven-generated `app/build-info.properties`.
-Expected output: `dist/ShinobiMate-Setup-0.9.0-beta.exe`; checksums are refreshed automatically.
+Expected output: `dist/ShinobiMate-Setup-0.9.5-rc.3.exe`; checksums are refreshed automatically.
 Use `-Compiler '<path to ISCC.exe>'` if the compiler is installed elsewhere.
 
-The compiler is absent on the audited development machine. The recipe, including its
-custom uninstall dialog, has **not been compiled or install/uninstall tested**.
-After installing the compiler, test: fresh install, shortcuts, unchecked startup,
-startup enable/disable through Settings, launch after install, update preserving
-profile data, uninstall retaining data, explicit data deletion, and silent uninstall.
-Then test Setup.exe on another Windows computer before calling the release ready.
+Inno Setup 6.7.3 is installed on the development machine. See
+`../../output/lifecycle-qa/REPORT-0.9.4-beta.md` for actual execution evidence and limitations.
+
+rc.3 updates and uninstall use native Inno/Winsock code: authenticated loopback STOP
+for 0.9.4+, followed by a 20-second cooperative wait for exclusive existing-file
+access. No files are written during this check. Loaded/busy/inaccessible resources
+block replacement; reparse points block traversal. No PowerShell script or
+execution-policy override is used by Setup. `request-shutdown.ps1` remains a
+development diagnostic tool, not an installer dependency. No RmShutdown, taskkill,
+Stop-Process or generic Java process termination is used.
+Older releases require Tray > Exit and Retry; a failed preparation leaves the
+payload untouched. `CloseApplications=no` prevents Inno's independent automatic
+shutdown path, including its force mode. `RestartApplications=no` avoids automatic
+respawn; the optional postinstall launch goes through the normal single-instance guard.
+Setup holds a session maintenance mutex during replacement; 0.9.4+ launch exits
+promptly while it exists. Native preflight checks every installed resource except
+Inno's own uninstaller files, which Inno manages itself. Unexpected third-party
+file owners are logged and block installation; they are never closed.
+
+SetupLogging and UninstallLogging are enabled. Pass `/LOG="absolute-path.log"`
+for deterministic QA logs, including STOP acknowledgement and blocked resource
+paths. Silent failures return nonzero and preserve the profile. Startup deletion
+checks the shortcut's actual target or a quoted legacy batch target and preserves
+another installation's startup entry.
+
+Latest native lifecycle evidence: `../../output/performance/logs/qa-native-*.log`
+and `qa-native-results.txt`. A test-only compile can override `/DAppGuid` and
+`/DAppProfile` while keeping the payload identical; this avoids overwriting the
+user's real uninstall registration/profile. The shipped build uses the defaults.
+The older check-install-lifecycle script targets the older PowerShell design.
+Test agents are excluded from the release. Test the real identity/signed release
+on clean Windows 10/11 machines separately.
 
 The existing bundled OpenJDK 21 jpackage launcher/runtime are reused for portable packaging. Renamed launcher/config behavior is verified with a real runtime smoke test; source/tests/logs are never shipped.

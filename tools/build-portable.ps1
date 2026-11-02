@@ -63,7 +63,8 @@ ShinobiMate Portable <VERSION>
 استخرج المجلد كاملًا، ثم شغّل ShinobiMate.exe. Java مضمّنة.
 Extract the entire folder, then run ShinobiMate.exe. Java is included.
 
-First launch: language, first character, interaction guide.
+First launch: choose a language, then select companions in Character Manager.
+No character starts automatically unless you explicitly enable session restore.
 Manage companions and settings from the tray. Combat starts only from a character's right-click menu.
 User settings, messages, progress, imported packs and logs: %LOCALAPPDATA%\ShinobiMate.
 Updates preserve this directory. Startup is optional. This is a private Friends Beta.

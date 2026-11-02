@@ -99,4 +99,3 @@ def export(name,source):
  (art/'frames.json').write_text(json.dumps(meta,indent=2),encoding='utf-8');sheet.save(art/'contact-sheet.png')
  print(name,atlas.size,'scale',scale,'24 frames')
 if __name__=='__main__':export(sys.argv[1],Path(sys.argv[2]))
-

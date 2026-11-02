@@ -14,7 +14,7 @@ public class ProductionCheck extends CharacterCheck {
  static void production()throws Exception {
   Path profile=Path.of(System.getProperty("app.userDataDir"));AppPaths.initialize();
   require(!SettingsStore.path().startsWith(AppPaths.application()),"profile writes application directory");
-  require(BuildInfo.VERSION.equals("0.9.0-beta")&&PackManifest.ENGINE_VERSION.equals("0.9.0"),"metadata mismatch");
+  require(BuildInfo.VERSION.startsWith(BuildInfo.NUMERIC_VERSION)&&PackManifest.ENGINE_VERSION.equals(BuildInfo.NUMERIC_VERSION)&&PackManifest.compare(PackManifest.ENGINE_VERSION,"0.9.0")>=0,"metadata mismatch");
   Properties invalid=new Properties();invalid.setProperty("Scaling","NaN");invalid.setProperty("Opacity","Infinity");invalid.setProperty("WindowSize","garbage");invalid.setProperty("MenuDPI","oops");invalid.setProperty("Background","invalid");invalid.setProperty("Language","../../fake");invalid.setProperty("Environment","some.Class");
   SettingsStore.save(invalid,SettingsStore.path());var recovered=SettingsStore.load();
   require(recovered.getProperty("Scaling").equals("1.0")&&recovered.getProperty("Opacity").equals("1.0"),"bad numeric settings");require(recovered.getProperty("Language").equals("ar")&&recovered.getProperty("Environment").equals("generic"),"bad language/environment");
