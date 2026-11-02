@@ -24,7 +24,7 @@ Review their actual license terms, third-party notices and runtime provenance
 before commercial redistribution. Inno Setup's commercial licensing also needs
 review if the project is later distributed commercially.
 
-The five Naruto, Sasuke, Gojo, Sukuna and Asta character packs are separate
+The eight Naruto, Sasuke, Gojo, Sukuna, Asta, Tom, Jerry and Eren character packs are separate
 third-party/anime-inspired assets. Their inclusion does not grant ownership of
 the characters, artwork, names, trademarks or sound assets. Asset authors,
 source provenance and redistribution/commercial permissions remain unverified.

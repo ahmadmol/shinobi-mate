@@ -13,6 +13,8 @@ public class Pose {
    private final int duration;
    private final String sound;
    private final String soundEvent;
+   private final Point imageAnchor;
+   private java.lang.ref.WeakReference<com.group_finity.mascot.image.MascotImage> anchoredLeft=new java.lang.ref.WeakReference<>(null),anchoredRight=new java.lang.ref.WeakReference<>(null);
 
    public Pose(String image) {
       this(image, "", 0, 0, 1);
@@ -42,6 +44,9 @@ public class Pose {
       this(image,rightImage,dx,dy,duration,sound,null);
    }
    public Pose(String image, String rightImage, int dx, int dy, int duration, String sound,String soundEvent) {
+      this(image,rightImage,dx,dy,duration,sound,soundEvent,null);
+   }
+   public Pose(String image, String rightImage, int dx, int dy, int duration, String sound,String soundEvent,Point imageAnchor) {
       this.image = image;
       this.rightImage = rightImage;
       this.dx = dx;
@@ -49,6 +54,7 @@ public class Pose {
       this.duration = duration;
       this.sound = sound;
       this.soundEvent = soundEvent;
+      this.imageAnchor=imageAnchor==null?null:new Point(imageAnchor);
    }
 
    public String toString() {
@@ -58,8 +64,21 @@ public class Pose {
 
    public void next(Mascot mascot) {
       mascot.movePose(mascot.isLookRight() ? -this.getDx() : this.getDx(),this.getDy());
-      mascot.setImage(ImagePairs.getImage(this.getImageName(), mascot.isLookRight()));
+      mascot.setImage(poseImage(mascot.isLookRight()));
       mascot.setSound(this.getSoundName());
+   }
+   private com.group_finity.mascot.image.MascotImage poseImage(boolean right) {
+      var source=ImagePairs.getImage(getImageName(),right);
+      if(source==null||imageAnchor==null)return source;
+      int x=right?source.size().width-imageAnchor.x:imageAnchor.x;
+      if(source.center().x==x&&source.center().y==imageAnchor.y)return source;
+      var cached=(right?anchoredRight:anchoredLeft).get();
+      if(cached!=null&&cached.image()==source.image())return cached;
+      // Anchor is pose geometry, not part of the shared PNG's identity. Keep the bounded
+      // native bitmap cache; weak wrappers must not retain every pose after eviction.
+      var result=new com.group_finity.mascot.image.MascotImage(source.image(),new Point(x,imageAnchor.y),source.size());
+      if(right)anchoredRight=new java.lang.ref.WeakReference<>(result);else anchoredLeft=new java.lang.ref.WeakReference<>(result);
+      return result;
    }
    public void emitSound(Mascot mascot) {
       if(soundEvent!=null&&!soundEvent.isBlank())mascot.playAudio(soundEvent);

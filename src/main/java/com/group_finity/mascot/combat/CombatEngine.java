@@ -21,6 +21,12 @@ public final class CombatEngine {
     private double accumulatedTicks;
     private final Set<CombatMatch> reported=new HashSet<>();
     public CombatEngine(Manager manager) {this.manager=manager;}
+    public void close() {
+        synchronized(manager.getMascots()) {
+            for(Pair p:new ArrayList<>(pairs)){p.match.stop();p.effects.close();}
+            pairs.clear();reported.clear();lastOpponent.clear();
+        }
+    }
     private Path pack(Mascot m) {
         return AppPaths.pack(m.getImageSet());
     }
@@ -155,12 +161,12 @@ public final class CombatEngine {
             scale=Double.parseDouble(settings.getProperty("Scaling","1.0"));
             if(!Double.isFinite(scale)||scale<=0) throw new IllegalArgumentException("Invalid Scaling");
             double opacity=Double.parseDouble(settings.getProperty("Opacity","1.0"));
-            for(var anim:profile.animations().values()) for(var frame:anim.frames()) if(!frames.containsKey(frame.image())) {
+            for(var form:profile.forms()) for(var anim:form.animations().values()) for(var frame:anim.frames()) if(!frames.containsKey(frame.image())) {
                 String key="/"+mascot.getImageSet()+"/"+frame.image();
-                ImagePairLoader.load(key,null,new Point(profile.anchorX(),profile.anchorY()),scale,ImagePairLoader.Filter.BICUBIC,opacity);
+                ImagePairLoader.load(key,null,new Point(form.anchorX(),form.anchorY()),scale,ImagePairLoader.Filter.BICUBIC,opacity);
                 ImagePair source=ImagePairs.getImagePair(key);
                 var left=source.getImage(false);var right=source.getImage(true);
-                int cx=(int)Math.round(profile.anchorX()*scale),cy=(int)Math.round(profile.anchorY()*scale);
+                int cx=(int)Math.round(form.anchorX()*scale),cy=(int)Math.round(form.anchorY()*scale);
                 // Ordinary actions can cache this PNG with wall/hanging/throw anchors.
                 // Share the native bitmap, but give combat its own stable feet anchor.
                 frames.put(frame.image(),new ImagePair(

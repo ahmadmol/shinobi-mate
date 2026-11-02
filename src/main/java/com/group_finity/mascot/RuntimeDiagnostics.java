@@ -9,6 +9,8 @@ public final class RuntimeDiagnostics {
  private static final Logger LOG=Logger.getLogger(RuntimeDiagnostics.class.getName());
  private static final AtomicBoolean started=new AtomicBoolean(),queued=new AtomicBoolean();
  private static volatile long edtSeen=System.nanoTime(),engineSeen=edtSeen;
+ private static volatile Thread monitorThread;
+ public static void close(){Thread t=monitorThread;if(t!=null)t.interrupt();}
  private RuntimeDiagnostics(){}
  public static void event(String code,long... numbers){
   if(!code.matches("[A-Z_0-9]+"))throw new IllegalArgumentException("Diagnostic event code");
@@ -18,6 +20,9 @@ public final class RuntimeDiagnostics {
  }
  public static void start(Manager manager){
   if(!started.compareAndSet(false,true))return;
+  // Class loading and character restoration may precede monitoring by seconds.
+  // Start the stall clock here, rather than counting startup work as a missed ping.
+  edtSeen=engineSeen=System.nanoTime();
   event("STARTUP_BETA_0_9_0");
   Thread monitor=new Thread(()->{
    long previous=-1,lastReport=0;
@@ -33,6 +38,6 @@ public final class RuntimeDiagnostics {
      }
     }
    }catch(InterruptedException ex){Thread.currentThread().interrupt();return;}
-  },"ShinobiMate diagnostics");monitor.setDaemon(true);monitor.start();
+  },"ShinobiMate diagnostics");monitorThread=monitor;monitor.setDaemon(true);monitor.start();
  }
 }

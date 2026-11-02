@@ -11,7 +11,16 @@ import org.w3c.dom.Element;
 /** Immutable, pack-owned configuration. Units are pixels at scale 1 and 40ms ticks. */
 public record CombatProfile(Path root, int width, int height, int anchorX, int anchorY,
         Rectangle hurtbox, double speed, Personality personality, Map<String, Animation> animations,
-        List<Attack> attacks, Map<String, Effect> effects) {
+        List<Attack> attacks, Map<String, Effect> effects, Transformation transformation) {
+    public CombatProfile(Path root,int width,int height,int anchorX,int anchorY,Rectangle hurtbox,
+            double speed,Personality personality,Map<String,Animation> animations,List<Attack> attacks,Map<String,Effect> effects) {
+        this(root,width,height,anchorX,anchorY,hurtbox,speed,personality,animations,attacks,effects,null);
+    }
+    public record Transformation(CombatProfile target,double hpThreshold,boolean oncePerBattle,
+            int prepareTicks,int revealTick,int landingTick,int duration) { }
+    public List<CombatProfile> forms() {
+        return transformation==null?List.of(this):List.of(this,transformation.target());
+    }
     public record Personality(double aggression, double technique, double dodge, double block,
             double counter, double taunt, double dodgeSpeed, int jumpHeight, int defenseCooldown,
             int defenseCost, double blockReduction, double projectileParry, String blockEffect, String dodgeEffect) { }
@@ -79,12 +88,15 @@ public record CombatProfile(Path root, int width, int height, int anchorX, int a
 
     private static int optional(Element e,String name,int fallback){return e.hasAttribute(name)?i(e,name,-150,150):fallback;}
     public static CombatProfile load(Path root) throws Exception {
+        return load(root,"conf/combat.xml",true);
+    }
+    private static CombatProfile load(Path root,String file,boolean allowTransformation) throws Exception {
         root = root.toAbsolutePath().normalize();
         var factory = DocumentBuilderFactory.newInstance();
         factory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
         factory.setAttribute(XMLConstants.ACCESS_EXTERNAL_DTD, "");
         factory.setAttribute(XMLConstants.ACCESS_EXTERNAL_SCHEMA, "");
-        Element e = factory.newDocumentBuilder().parse(root.resolve("conf/combat.xml").toFile()).getDocumentElement();
+        Element e = factory.newDocumentBuilder().parse(root.resolve(asset(root,file)).toFile()).getDocumentElement();
         if (!e.getTagName().equals("combat") || !e.getAttribute("version").equals("1"))
             throw new IllegalArgumentException("Expected <combat version=\"1\">");
         Element p = child(e, "personality");
@@ -127,7 +139,7 @@ public record CombatProfile(Path root, int width, int height, int anchorX, int a
             String kind = a.getAttribute("kind"), anim = a.getAttribute("animation"), charge = a.getAttribute("chargeAnimation");
             String recovery=a.hasAttribute("recoveryAnimation")?a.getAttribute("recoveryAnimation"):"recover";
             String chargeEffect=a.hasAttribute("chargeEffect")?a.getAttribute("chargeEffect"):a.getAttribute("effect");
-            if (!Set.of("melee","ranged","dash","special","aerial").contains(kind)
+            if (!Set.of("melee","ranged","dash","special","aerial","retreat").contains(kind)
                     || !animations.containsKey(anim) || !animations.containsKey(charge) || !animations.containsKey(recovery)
                     || !effects.containsKey(chargeEffect)
                     || !effects.containsKey(a.getAttribute("effect")) || !ids.add(a.getAttribute("id")))
@@ -160,9 +172,22 @@ public record CombatProfile(Path root, int width, int height, int anchorX, int a
                 a.getAttribute("effect"),Boolean.parseBoolean(a.getAttribute("clone")),recovery,chargeEffect,polish));
         }
         if (attacks.isEmpty() || attacks.size() > 32) throw new IllegalArgumentException("Expected 1..32 attacks");
+        Transformation transformation=null;
+        var configs=children(e,"transformation");
+        if(!configs.isEmpty()) {
+            if(!allowTransformation||configs.size()!=1)throw new IllegalArgumentException("Nested/duplicate transformation");
+            Element t=configs.getFirst();
+            int prepare=i(t,"prepareTicks",1,100),reveal=i(t,"revealTick",2,200),landing=i(t,"landingTick",3,250),duration=i(t,"duration",4,300);
+            if(!(prepare<reveal&&reveal<landing&&landing<duration))throw new IllegalArgumentException("Invalid transformation timeline");
+            if(!Set.of("true","false").contains(t.getAttribute("transformOncePerBattle")))throw new IllegalArgumentException("Invalid transformOncePerBattle");
+            CombatProfile target=load(root,t.getAttribute("profile"),false);
+            for(var form:List.of(animations,target.animations()))if(!form.containsKey("transforming"))throw new IllegalArgumentException("Missing transforming animation");
+            for(String fx:List.of("transform-burst","transform-smoke","transform-lightning"))if(!effects.containsKey(fx))throw new IllegalArgumentException("Missing "+fx);
+            transformation=new Transformation(target,n(t,"transformationHpThreshold",.01,.99),Boolean.parseBoolean(t.getAttribute("transformOncePerBattle")),prepare,reveal,landing,duration);
+        }
         return new CombatProfile(root,i(e,"width",16,512),i(e,"height",16,512),i(e,"anchorX",0,512),
             i(e,"anchorY",0,512),box(child(e,"hurtbox")),n(e,"movementSpeed",1,20),personality,
-            Map.copyOf(animations),List.copyOf(attacks),Map.copyOf(effects));
+            Map.copyOf(animations),List.copyOf(attacks),Map.copyOf(effects),transformation);
     }
     private static String attribute(Element e,String key,String fallback) {return e.hasAttribute(key)?e.getAttribute(key):fallback;}
     private static String asset(Path root, String name) {

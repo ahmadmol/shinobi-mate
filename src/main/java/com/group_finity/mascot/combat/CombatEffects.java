@@ -28,7 +28,7 @@ public final class CombatEffects implements AutoCloseable {
     private final Rectangle arena;
     public CombatEffects(CombatProfile a,CombatProfile b,Rectangle arena) throws Exception {
         this.arena=arena;
-        for(var p:List.of(a,b)) for(var effect:p.effects().values()) {
+        for(var base:List.of(a,b)) for(var p:base.forms()) for(var effect:p.effects().values()) {
             for(String frame:effect.frames()) load(p,frame);
             if(effect.cloneImage()!=null) load(p,effect.cloneImage());
         }
@@ -72,7 +72,7 @@ public final class CombatEffects implements AutoCloseable {
         if(GraphicsEnvironment.isHeadless()) return;
         if(window==null) {
             window=new JWindow();window.setName("ShinobiMateCombatEffects");
-            window.setFocusableWindowState(false);window.setAutoRequestFocus(false);window.setAlwaysOnTop(com.group_finity.mascot.settings.RuntimeSettings.flag("AlwaysOnTop",true));
+            window.setFocusableWindowState(false);window.setAutoRequestFocus(false);window.setAlwaysOnTop(com.group_finity.mascot.ui.CompanionLayering.alwaysOnTop());
             window.setBackground(new Color(0,0,0,0));
             panel=new JPanel() {
                 @Override protected void paintComponent(Graphics g) {
@@ -105,7 +105,7 @@ public final class CombatEffects implements AutoCloseable {
                 User32.INSTANCE.SetWindowLongW(handle,-20,style|0x20|0x08000000);
             }
         }
-        boolean onTop=com.group_finity.mascot.settings.RuntimeSettings.flag("AlwaysOnTop",true);
+        boolean onTop=com.group_finity.mascot.ui.CompanionLayering.alwaysOnTop();
         if(window.isAlwaysOnTop()!=onTop)window.setAlwaysOnTop(onTop);
         Rectangle bounds=null;
         for(Draw d:displayed) {
@@ -115,7 +115,7 @@ public final class CombatEffects implements AutoCloseable {
         }
         for(Hud h:displayedHud) bounds=bounds==null?h.bounds():bounds.union(h.bounds());
         bounds=bounds.intersection(arena);
-        if(bounds.isEmpty()) {window.setVisible(false);return;}
+        if(bounds.isEmpty()||com.group_finity.mascot.ui.CompanionLayering.coversControls(bounds)) {window.setVisible(false);return;}
         window.setBounds(bounds);panel.repaint();if(!window.isVisible()) window.setVisible(true);
     }
     private Hud hud(CombatMatch.Fighter f) {

@@ -89,11 +89,12 @@ public final class SpiritualCloud {
         }
         Rectangle monitor = CloudPlacement.monitorFor(mascot, monitors());
         if (window == null) createWindow();
-        boolean onTop=com.group_finity.mascot.settings.RuntimeSettings.flag("AlwaysOnTop",true);
+        boolean onTop=com.group_finity.mascot.ui.CompanionLayering.alwaysOnTop();
         if(window.isAlwaysOnTop()!=onTop)window.setAlwaysOnTop(onTop);
         panel.setTextSize((float)com.group_finity.mascot.settings.RuntimeSettings.number("CloudTextSize",16,12,26));
         panel.setMessage(state.message(), monitor.width);
         Rectangle bounds = CloudPlacement.place(mascot, panel.getPreferredSize(), monitor);
+        if(com.group_finity.mascot.ui.CompanionLayering.coversControls(bounds)){window.setVisible(false);return;}
         if (!window.getBounds().equals(bounds)) window.setBounds(bounds);
         panel.setOpacity(state.opacity()*(float)com.group_finity.mascot.settings.RuntimeSettings.number("CloudOpacity",1,.2,1));
         if (!window.isVisible()) window.setVisible(true);

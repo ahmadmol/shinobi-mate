@@ -363,8 +363,11 @@ public class Mascot {
    }
 
    public void apply() {
-      boolean onTop=com.group_finity.mascot.settings.RuntimeSettings.flag("AlwaysOnTop",true);
+      boolean onTop=com.group_finity.mascot.ui.CompanionLayering.alwaysOnTop();
       if(onTop!=this.appliedAlwaysOnTop){this.appliedAlwaysOnTop=onTop;this.getWindow().setAlwaysOnTop(onTop);}
+      if(com.group_finity.mascot.ui.CompanionLayering.coversControls(this.getBounds())){
+         this.getWindow().asComponent().setVisible(false);this.spiritualCloud.update();return;
+      }
       if (this.isAnimating()) {
          if (this.getImage() != null) {
             this.getWindow().asComponent().setBounds(this.getBounds());

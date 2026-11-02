@@ -102,9 +102,10 @@ public class Main {
    private JDialog form;
    private TrayIcon trayIcon;
    private final java.util.concurrent.atomic.AtomicBoolean exiting=new java.util.concurrent.atomic.AtomicBoolean();
-   private volatile boolean interfaceReady, activationRequested, backgroundLaunch;
-   private volatile boolean characterLoadingReady=true;
-   public boolean isCharacterLoadingReady(){return characterLoadingReady;}
+   private final Object lifecycleLock=new Object();
+   private volatile boolean interfaceReady;
+   private volatile boolean characterLoadingReady=false;
+   public boolean isCharacterLoadingReady(){return characterLoadingReady&&!this.exiting.get();}
    private static final JFrame frame;
 
    private void setupFlatLafTheme() {
@@ -139,7 +140,7 @@ public class Main {
       applyCustomThemeColors();
       com.group_finity.mascot.ui.Theme.defaults();
       if (menuScaling != 1.0F) {
-         UIManager.put("defaultFont", UIManager.getFont("Label.font").deriveFont((float)UIManager.getFont("Label.font").getSize() * menuScaling));
+         UIManager.put("defaultFont", new Font("Segoe UI",Font.PLAIN,Math.round(16*menuScaling)));
       }
 
       JFrame.setDefaultLookAndFeelDecorated(true);
@@ -228,15 +229,21 @@ public class Main {
    public static void main(String[] args) {
       try {
          AppPaths.initialize();
+         if(WindowsMaintenance.active()) {
+            ProductionLogging.initialize();
+            log.warning("ShinobiMate is being updated or removed. Launch it after Setup finishes.");
+            System.exit(0);return;
+         }
          SingleInstance guard=SingleInstance.acquire(AppPaths.userData());
          if(guard==null){
             if(!SingleInstance.activate(AppPaths.userData()))JOptionPane.showMessageDialog(null,"تعذر إظهار نافذة ShinobiMate الحالية. راجع أيقونة علبة النظام أو سجل الأخطاء.\nCould not show the running ShinobiMate window. Check its tray icon or error log.",BuildInfo.NAME,JOptionPane.WARNING_MESSAGE);
             System.exit(0);return;
          }
+         // Close the check/acquire race with an installer starting concurrently.
+         if(WindowsMaintenance.active()){guard.close();System.exit(0);return;}
          Runtime.getRuntime().addShutdownHook(new Thread(()->{try{guard.close();}catch(IOException ignored){}}));
          ProductionLogging.initialize();
-         getInstance().backgroundLaunch=Arrays.asList(args).contains("--background");
-         guard.listen(getInstance()::requestManager);
+         guard.listen(getInstance()::requestManager,getInstance()::exit);
          configureHighDPIGlobally();
          getInstance().run();
       } catch(OutOfMemoryError error) {
@@ -250,6 +257,13 @@ public class Main {
    }
 
    public void run() {
+      synchronized(this.lifecycleLock){
+         if(this.exiting.get())return;
+         this.runApplication();
+      }
+   }
+
+   private void runApplication() {
       this.characterLoadingReady=false;
       if (!System.getProperty("sun.arch.data.model").equals("64")) {
          this.platform = Platform.x86;
@@ -285,6 +299,7 @@ public class Main {
       }
 
       if(firstRun&&!this.showInitialOnboarding()){this.exit();return;}
+      if(this.exiting.get())return;
       this.getManager().setExitOnLastRemoved(false);
       this.createTrayIcon();
       LicenseManager licenseManager = LicenseManager.getInstance();
@@ -310,7 +325,7 @@ public class Main {
 
    private boolean showInitialOnboarding() {
       var completed=new java.util.concurrent.atomic.AtomicBoolean();
-      Runnable show=()->{var guide=new com.group_finity.mascot.ui.OnboardingDialog(frame,false);guide.setVisible(true);completed.set(guide.completed());};
+      Runnable show=()->{if(this.exiting.get())return;var guide=new com.group_finity.mascot.ui.OnboardingDialog(frame,false);guide.setVisible(true);completed.set(guide.completed());};
       try{if(SwingUtilities.isEventDispatchThread())show.run();else SwingUtilities.invokeAndWait(show);}
       catch(InterruptedException ex){Thread.currentThread().interrupt();throw new IllegalStateException("Onboarding interrupted",ex);}
       catch(java.lang.reflect.InvocationTargetException ex){throw new IllegalStateException("Onboarding failed",ex.getCause());}
@@ -318,7 +333,6 @@ public class Main {
    }
 
    public void requestManager() {
-      this.activationRequested=true;
       if(this.interfaceReady&&!this.exiting.get())javax.swing.SwingUtilities.invokeLater(com.group_finity.mascot.ui.CharacterManagerWindow::open);
    }
 
@@ -896,6 +910,7 @@ public class Main {
    }
 
    public void createMascot(String imageSet) {
+      if(this.exiting.get())return;
       log.log(Level.INFO, "create a mascot");
       Mascot mascot = new Mascot(imageSet);
       mascot.setAnchor(new Point(-4000, -4000));
@@ -903,7 +918,10 @@ public class Main {
 
       try {
          mascot.setBehavior(this.getConfiguration(imageSet).buildNextBehavior((String)null, mascot));
-         this.getManager().add(mascot);
+         synchronized(this.getManager().getMascots()) {
+            if(this.exiting.get()){mascot.dispose();return;}
+            this.getManager().add(mascot);
+         }
          com.group_finity.mascot.audio.AudioManager.play("ui.character.spawn");
       } catch (BehaviorInstantiationException e) {
          log.log(Level.SEVERE, "Failed to initialize the first action", e);
@@ -1040,10 +1058,11 @@ public class Main {
 
    public void refreshProductTheme() {
       this.setupFlatLafTheme();
-      for(java.awt.Window window:java.awt.Window.getWindows()) javax.swing.SwingUtilities.updateComponentTreeUI(window);
+      for(java.awt.Window window:java.awt.Window.getWindows()) {javax.swing.SwingUtilities.updateComponentTreeUI(window);com.group_finity.mascot.ui.Theme.refreshControls(window);}
    }
 
-   public void reloadAppearance() {
+   public synchronized void reloadAppearance() {
+      if(this.exiting.get())return;
       synchronized(this.manager.getMascots()) {
          ImagePairs.clear();
          for(String set:new ArrayList<String>(this.imageSets))this.loadConfiguration(set);
@@ -1067,6 +1086,7 @@ public class Main {
    }
 
    public synchronized boolean prepareCharacter(String id) {
+      if(this.exiting.get())return false;
       if(!this.configurations.containsKey(id)&&!this.loadConfiguration(id))return false;
       if(!this.imageSets.contains(id))this.imageSets.add(id);
       return true;
@@ -1074,8 +1094,10 @@ public class Main {
 
    /** Legacy chooser sees only the live session; resource loading cannot make a pack active. */
    public void activeCharactersChanged(Manager owner) {
-      if(owner==this.manager&&!this.exiting.get())this.properties.setProperty("ActiveShimeji",
-            String.join("/",new java.util.LinkedHashSet<>(com.group_finity.mascot.settings.CharacterSession.snapshot(owner))));
+      if(owner==this.manager&&!this.exiting.get()){
+         this.properties.setProperty("ActiveShimeji",String.join("/",new java.util.LinkedHashSet<>(com.group_finity.mascot.settings.CharacterSession.snapshot(owner))));
+         com.group_finity.mascot.ui.CharacterManagerWindow.activeCharactersChanged();
+      }
    }
 
    public void saveCharacterSession() {
@@ -1084,7 +1106,9 @@ public class Main {
       this.saveConfigFile();
    }
 
-   public boolean reloadCharacter(String id) {
+   public synchronized boolean reloadCharacter(String id) {
+      // Match prepareCharacter/loadConfiguration: Main monitor before mascot-list monitor.
+      if(this.exiting.get())return false;
       synchronized(this.manager.getMascots()) {
          this.manager.getCombat().reload(id);ImagePairs.removeAll(id);
          if(!this.loadConfiguration(id))return false;
@@ -1210,16 +1234,43 @@ public class Main {
 
    public void exit() {
       if(!this.exiting.compareAndSet(false,true))return;
+      // Startup owns lifecycleLock while the modal first-run guide runs on EDT.
+      // Release that guide before waiting for lifecycleLock on the shutdown thread.
+      javax.swing.SwingUtilities.invokeLater(()->{
+         for(java.awt.Window window:java.awt.Window.getWindows())
+            if("ShinobiMateOnboarding".equals(window.getName()))window.dispose();
+      });
       Runnable shutdown=()->{
+       synchronized(this.lifecycleLock){
+        try {
+         RuntimeDiagnostics.event("SHUTDOWN_BEGIN");
+         this.interfaceReady=false;
          this.getManager().stop();
-         if(this.characterLoadingReady)this.saveCharacterSession();
+         if(this.characterLoadingReady){
+            this.properties.setProperty(com.group_finity.mascot.settings.CharacterSession.HISTORY,
+               String.join("/",com.group_finity.mascot.settings.CharacterSession.snapshot(this.manager)));
+            com.group_finity.mascot.settings.SettingsStore.save(this.properties,
+               com.group_finity.mascot.settings.SettingsStore.path());
+         }
+         this.getManager().getCombat().close();
+         com.group_finity.mascot.focus.FocusService.session().stop();
          this.getManager().disposeAll();
          com.group_finity.mascot.audio.SoundSystem.close();
          com.group_finity.mascot.progression.ProgressionService.close();
+         javax.swing.SwingUtilities.invokeAndWait(()->{
+            if(this.trayIcon!=null&&SystemTray.isSupported())SystemTray.getSystemTray().remove(this.trayIcon);
+            for(java.awt.Window window:java.awt.Window.getWindows())window.dispose();
+         });
+         RuntimeDiagnostics.close();
+         RuntimeDiagnostics.event("SHUTDOWN_COMPLETE");
          System.exit(0);
+        }catch(Exception error){
+         log.log(Level.SEVERE,"Graceful shutdown failed; files remain protected. Close the application and retry Setup.",error);
+         this.exiting.set(false);
+        }
+       }
       };
-      if(javax.swing.SwingUtilities.isEventDispatchThread())new Thread(shutdown,"ShinobiMateShutdown").start();
-      else shutdown.run();
+      new Thread(shutdown,"ShinobiMateShutdown").start();
    }
 
    private void setupTrayMenuAutoSizing(JDialog form, JPanel panel, float scaling, TrayIcon icon, MouseEvent event, JButton... buttons) {

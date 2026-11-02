@@ -79,8 +79,13 @@ public class Manager {
          this.thread.interrupt();
 
          try {
-            if(Thread.currentThread()!=this.thread)this.thread.join();
+            if(Thread.currentThread()!=this.thread){
+               this.thread.join(5000);
+               if(this.thread.isAlive())throw new IllegalStateException("Engine did not stop within 5 seconds");
+            }
          } catch (InterruptedException ignored) {
+            Thread.currentThread().interrupt();
+            throw new IllegalStateException("Shutdown interrupted",ignored);
          }
       }
    }

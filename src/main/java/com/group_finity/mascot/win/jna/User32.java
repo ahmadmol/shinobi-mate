@@ -28,6 +28,8 @@ public interface User32 extends StdCallLibrary {
 
    int IsWindow(Pointer var1);
 
+   int GetWindowThreadProcessId(Pointer window, com.sun.jna.ptr.IntByReference processId);
+
    int IsWindowVisible(Pointer var1);
 
    int GetWindowLongW(Pointer var1, int var2);
@@ -54,7 +56,7 @@ public interface User32 extends StdCallLibrary {
 
    void ReleaseDC(Pointer var1, Pointer var2);
 
-   void UpdateLayeredWindow(Pointer var1, Pointer var2, POINT var3, SIZE var4, Pointer var5, POINT var6, int var7, BLENDFUNCTION var8, int var9);
+   int UpdateLayeredWindow(Pointer var1, Pointer var2, POINT var3, SIZE var4, Pointer var5, POINT var6, int var7, BLENDFUNCTION var8, int var9);
 
    void EnumWindows(WNDENUMPROC var1, Pointer var2);
 
