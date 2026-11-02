@@ -12,6 +12,10 @@ public final class Theme {
   UIManager.put("defaultFont",new Font("Segoe UI",Font.PLAIN,16));
   UIManager.put("Button.arc",14);UIManager.put("Component.arc",12);
   UIManager.put("TabbedPane.tabHeight",42);
+  UIManager.put("Component.focusWidth",2);
+  UIManager.put("Button.margin",new Insets(8,16,8,16));
+  UIManager.put("TextComponent.arc",12);
+  UIManager.put("ScrollBar.width",10);
  }
  public static String t(String ar,String en){return RuntimeSettings.label(ar,en);}
  public static JPanel card() {
@@ -35,7 +39,13 @@ public final class Theme {
  }
  public static JLabel title(String value){JLabel label=new JLabel(value);label.setFont(label.getFont().deriveFont(Font.BOLD,22f));return label;}
  public static JLabel text(String value){JLabel label=new JLabel(value);label.setAlignmentX(RuntimeSettings.arabic()?Component.RIGHT_ALIGNMENT:Component.LEFT_ALIGNMENT);label.setMaximumSize(new Dimension(Integer.MAX_VALUE,label.getPreferredSize().height));return label;}
- public static JButton button(String value){JButton b=new JButton(value);b.putClientProperty("JButton.buttonType","roundRect");b.addActionListener(e->com.group_finity.mascot.audio.AudioManager.play("ui.click"));return b;}
+ public static JButton button(String value){JButton b=new JButton(value);b.putClientProperty("JButton.buttonType","roundRect");b.putClientProperty("ShinobiMate.role","secondary");style(b);revealOnFocus(b);b.addActionListener(e->com.group_finity.mascot.audio.AudioManager.play("ui.click"));return b;}
+ public static void revealOnFocus(JComponent component){component.addFocusListener(new java.awt.event.FocusAdapter(){@Override public void focusGained(java.awt.event.FocusEvent e){component.scrollRectToVisible(new Rectangle(component.getSize()));}});if(component instanceof Container)for(Component child:component.getComponents())if(child instanceof JComponent input)revealOnFocus(input);}
+ public static JButton primary(String value){JButton b=button(value);b.putClientProperty("ShinobiMate.role","primary");style(b);return b;}
+ private static void style(JButton button){boolean primary="primary".equals(button.getClientProperty("ShinobiMate.role"));button.setBackground(primary?ACCENT:UIManager.getColor("TextField.background"));button.setForeground(primary?Color.WHITE:UIManager.getColor("Label.foreground"));if(primary)button.setFont(button.getFont().deriveFont(Font.BOLD));}
+ public static void refreshControls(Component root){if(root instanceof JButton b&&b.getClientProperty("ShinobiMate.role")!=null)style(b);if(root instanceof Container c)for(Component child:c.getComponents())refreshControls(child);}
+ public static JLabel muted(String value){JLabel label=new JLabel(value);Color color=UIManager.getColor("Label.disabledForeground");if(color!=null)label.setForeground(color);return label;}
+ public static JTextArea description(String value){JTextArea text=new JTextArea(value);text.setFont(UIManager.getFont("Label.font"));text.setOpaque(false);text.setEditable(false);text.setFocusable(false);text.setLineWrap(true);text.setWrapStyleWord(true);text.setRows(2);text.setBorder(new EmptyBorder(0,0,12,0));return text;}
  public static void fit(Window window,int width,int height) {
   AppIcon.apply(window);
   var gc=window.getGraphicsConfiguration();Rectangle r=new Rectangle(gc.getBounds());

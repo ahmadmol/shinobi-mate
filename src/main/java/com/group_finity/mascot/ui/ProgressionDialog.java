@@ -10,6 +10,7 @@ import javax.swing.border.EmptyBorder;
 public final class ProgressionDialog extends JDialog {
  private final JTabbedPane tabs=new JTabbedPane();
  private final Timer timer=new Timer(2000,e->refresh());
+ @Override public void dispose(){timer.stop();super.dispose();}
  public ProgressionDialog(Window owner){
   super(owner,Theme.t("المستويات والتحديات","Progression and challenges"),ModalityType.MODELESS);setName("ShinobiMateProgression");setDefaultCloseOperation(DISPOSE_ON_CLOSE);
   JPanel root=new JPanel(new BorderLayout(12,12));root.setBorder(new EmptyBorder(20,20,20,20));

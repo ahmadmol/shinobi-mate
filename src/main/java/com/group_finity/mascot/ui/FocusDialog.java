@@ -11,6 +11,7 @@ public final class FocusDialog extends JDialog {
  private final JButton start=Theme.button(Theme.t("ابدأ","Start")),stop=Theme.button(Theme.t("إيقاف","Stop"));
  private final java.util.List<JSpinner> durations=new java.util.ArrayList<>();
  private final Timer timer=new Timer(1000,e->refresh());
+ @Override public void dispose(){timer.stop();super.dispose();}
  public FocusDialog(Window owner) {
   super(owner,Theme.t("وقت التركيز","Focus time"),ModalityType.MODELESS);setName("ShinobiMateFocus");setDefaultCloseOperation(DISPOSE_ON_CLOSE);
   JPanel root=Theme.card();root.setBorder(new EmptyBorder(24,24,24,24));
